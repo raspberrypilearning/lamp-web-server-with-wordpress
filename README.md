@@ -10,7 +10,7 @@ On its own, Apache can serve HTML files over HTTP, and with additional modules c
 
 ### Install Apache
 
-First install the `apache2` package by typing the following command in to the Terminal:
+First install the `apache2` package by typing the following command into the terminal:
 
 ```
 sudo apt-get install apache2 -y
@@ -18,9 +18,9 @@ sudo apt-get install apache2 -y
 
 ### Test the web server
 
-By default, Apache puts a test HTML file in the web folder. This default web page is served when you browse to `http://localhost/` on the Pi itself, or `http://192.168.1.10` (whatever the Pi's IP address is) from another computer on the network. To find the Pi's IP address, type `hostname -I` at the command line (or read more about finding your [IP address](../../troubleshooting/hardware/networking/ip-address.md)).
+By default, Apache puts a test HTML file in the web folder. This default web page is served when you browse to `http://localhost/` on the Pi itself, or `http://192.168.1.10` (whatever the Pi's IP address is) from another computer on the network. To find out the Pi's IP address, type `hostname -I` at the command line (or read more about finding your [IP address](../../troubleshooting/hardware/networking/ip-address.md)).
 
-Browse to the default web page either on the Pi or from another computer on the network and you should see the following:
+Browse to the default web page, either on the Pi or from another computer on the network, and you should see the following:
 
 ![](images/apache-it-works.png)
 
@@ -28,7 +28,7 @@ This means you have Apache working!
 
 #### Changing the default web page
 
-This default web page is just a HTML file on the filesystem. It is located at `/var/www/index.html`. navigate to this directory in the Terminal and have a look at what's inside:
+This default web page is just an HTML file on the filesystem; it is located at `/var/www/index.html`. Navigate to this directory in the terminal and have a look at what's inside:
 
 ```
 cd /var/www
@@ -44,26 +44,26 @@ drwxr-xr-x 12 root root 4096 Jan  8 01:28 ..
 -rw-r--r--  1 root root  177 Jan  8 01:29 index.html
 ```
 
-This shows that there is one file in `/var/www/` called `index.html`. The `.` refers to the directory itself `/var/www/` and the `..` refers to the parent directory `/var/`.
+This shows that there is one file in `/var/www/` called `index.html`. The `.` refers to the directory itself `/var/www/`, and the `..` refers to the parent directory `/var/`.
 
 #### What the columns mean
 
 1. The permissions of the file or directory
-2. The number of files in the directory (or `1` if it's a file).
-3. The user which owns the file or directory
+2. The number of files in the directory (or `1` if it's a file)
+3. The user who owns the file or directory
 4. The group which owns the file or directory
 5. The file size
-6. The last modification date & time
+6. The last modification date and time
 
-As you can see, by default the `www` directory and `index.html` file are both owned by the `root` user. In order to edit the file, you must gain `root` permissions. Either change the owner to your own user (`sudo chown pi: index.html`) before editing, or edit with `sudo`, e.g. `sudo nano index.html`.
+As you can see, by default the `www` directory and `index.html` file are both owned by the `root` user. In order to edit the file, you must gain `root` permissions. Either change the owner to your own user before editing (using `sudo chown pi: index.html`), or edit with `sudo` (using `sudo nano index.html`).
 
 Try editing this file and refreshing the browser to see the web page change.
 
 ## Step 2: Install PHP
 
-PHP is a preprocessor, it's code that runs when the server receives a request for a web page. It runs, works out what needs to be shown on the page, then sends that page to the browser. Unlike static HTML, PHP can show different content under different circumstances. Other languages are capable of this, but since WordPress is written in PHP, that's what we need this time. PHP is a very popular language on the web: large projects like Facebook and Wikipedia are written in PHP.
+PHP is a preprocessor; it's code that runs when the server receives a request for a web page. It runs, works out what needs to be shown on the page, then sends that page to the browser. Unlike static HTML, PHP can show different content under different circumstances. Other languages are capable of this, but since WordPress is written in PHP, that's what we need to use this time. PHP is a very popular language on the web; large projects like Facebook and Wikipedia are written in PHP.
 
-Install the PHP and Apache packages
+Install the PHP and Apache packages with the following command:
 
 ```
 sudo apt-get install php5 libapache2-mod-php5 -y
@@ -77,25 +77,25 @@ Now move the `index.html` file to `index.php`:
 sudo mv index.html index.php
 ```
 
-and edit the file:
+Edit the file:
 
 ```
 sudo nano index.php
 ```
 
-to put some PHP content in it:
+Put some PHP content in it:
 
 ```
 <?php echo "hello world";
 ```
 
-Now save and refresh your browser. You should see "hello world". This is not dynamic but still served by PHP. Try something dynamic:
+Now save and refresh your browser. You should see "hello world". This is not dynamic but it is still served by PHP. Try something dynamic, for example:
 
 ```
 <?php echo date('Y-m-d H:i:s');
 ```
 
-or show your PHP info:
+Or show your PHP info:
 
 ```
 <?php phpinfo();
@@ -103,9 +103,9 @@ or show your PHP info:
 
 ## Step 3: Install MySQL
 
-MySQL (pronounced *My Sequel* or *My S-Q-L*) is a popular database engine. Like PHP, its overwhelming presence on web servers enhanced its popularity, which is why projects like WordPress use it (and why those projects are so popular).
+MySQL (pronounced *My Sequel* or *My S-Q-L*) is a popular database engine. Like PHP, its overwhelming presence on web servers enhanced its popularity. This is why projects like WordPress use it, and why those projects are so popular.
 
-Install the MySQL Server and PHP-MySQL packages by entering the following command in to the terminal:
+Install the MySQL Server and PHP-MySQL packages by entering the following command into the terminal:
 
 ```
 sudo apt-get install mysql-server php5-mysql -y
@@ -115,9 +115,9 @@ When installing MySQL you will be asked for a root password. You'll need to reme
 
 ## Step 4: Download WordPress
 
-You can download WordPress from [wordpress.org](http://wordpress.org/) using the `wget` command. Helpfully, a copy of the latest version of WordPress is always available at [wordpress.com/latest.tar.gz](http://wordpress.com/latest.tar.gz) and [wordpress.com/latest.zip](http://wordpress.com/latest.zip) so you can grab the latest version without having to look it up on the website. At the time of writing this is version 3.8.1.
+You can download WordPress from [wordpress.org](http://wordpress.org/) using the `wget` command. Helpfully, a copy of the latest version of WordPress is always available at [wordpress.com/latest.tar.gz](http://wordpress.com/latest.tar.gz) and [wordpress.com/latest.zip](http://wordpress.com/latest.zip), so you can grab the latest version without having to look it up on the website. At the time of writing, this is version 3.8.1.
 
-Navigate to `/var/www/`, and download WordPress to this location. You'll need to empty the folder first (be sure to check you're not deleting files you need before running `rm`), and change the ownership of this folder to the `pi` user too.
+Navigate to `/var/www/`, and download WordPress to this location. You'll need to empty the folder first (be sure to check you're not deleting files you need before running `rm`); change the ownership of this folder to the `pi` user too.
 
 ```
 cd /var/www
@@ -163,15 +163,15 @@ This is the source of a default WordPress installation. The files you edit to cu
 
 ## Step 5: Set up your WordPress Database
 
-To get your WordPress site set up, you need a database. Run the `mysql` command in the Terminal, and provide your login credentials (e.g. username `root`, password `password`):
+To get your WordPress site set up, you need a database. Run the `mysql` command in the terminal and provide your login credentials (e.g. username `root`, password `password`):
 
 ```
 mysql -uroot -ppassword
 ```
 
-Here I have provided my password (the word `password`) on the command line (no space between `-p` and your password).
+Here I have provided my password (the word `password`) on the command line; there is no space between `-p` and your password.
 
-Alternatively you can simply supply an empty `-p` flag and wait to be asked:
+Alternatively you can simply supply an empty `-p` flag and wait to be asked for a password:
 
 ```
 mysql -uroot -p
@@ -195,11 +195,11 @@ Exit out of the MySQL prompt with `Ctrl + D`.
 
 ## Step 6: WordPress Configuration
 
-You need to find out your Pi's IP Address to access it in the browser, so in a terminal type the command `hostname -I`.
+You need to find out your Pi's IP address to access it in the browser, so in a terminal type the command `hostname -I`.
 
 Navigate to `http://YOUR-IP-ADDRESS` e.g. `http://192.168.1.5` in the web browser on your Pi.
 
-You should see a WordPress Error page. This is good! Click the big button marked `Create a Configuration File` followed by the `Let's go!` button on the next page.
+You should see a WordPress error page; this is good! Click the big button marked `Create a Configuration File` followed by the `Let's go!` button on the next page.
 
 Now fill out the basic site information as follows:
 
@@ -215,7 +215,7 @@ Upon successful database connection, you will be given the contents of your `wp-
 
 ![](images/wp-config.png)
 
-Copy this text and return to the terminal on the Pi and edit the file with `nano wp-config.php` then paste the text in and save and exit with `Ctrl + X`, then `Y` for yes and `Enter`.
+Copy this text, return to the terminal on the Pi and edit the file with `nano wp-config.php`. Paste the text into this file, and save and exit with `Ctrl + X`, then `Y` for yes and `Enter`.
 
 Now hit the `Run the install` button.
 
@@ -225,13 +225,13 @@ Now you're getting close.
 
 ![](images/wp-info.png)
 
-Fill out the information - give your site a title, create yourself a username and password, put in your email address, untick the search engines box and hit the `Install WordPress` button, then log in using the account you just created.
+Fill out the information: give your site a title, create a username and password, put in your email address and untick the search engines box. Hit the `Install WordPress` button, then log in using the account you just created.
 
-Now you're logged in and have your site set up - you can see the website by visiting your IP address in the browser on the Pi or another computer on the network. To log in again (or on another computer), go to `http://YOUR-IP-ADDRESS/wp-admin`.
+Now you're logged in and have your site set up, you can see the website by visiting your IP address in the browser on the Pi or another computer on the network. To log in again (or on another computer), go to `http://YOUR-IP-ADDRESS/wp-admin`.
 
 ### Friendly permalinks
 
-It's recommended you change your permalink settings to make your URLs more friendly. To do this, log in to WordPress and go to the dashboard. Go to `Settings` then `Permalinks`. Select the `Post name` option and click `Save Changes`. After saving, you will be prompted to update your `.htaccess` file. You probably don't have one yet - so add one in `/var/www/` by typing `nano .htaccess` (note this is a hidden file, so it starts with a dot) and paste in the contents provided:
+It's recommended that you change your permalink settings to make your URLs more friendly. To do this, log in to WordPress and go to the dashboard. Go to `Settings` then `Permalinks`. Select the `Post name` option and click `Save Changes`. After saving, you will be prompted to update your `.htaccess` file. You probably don't have one yet, so add one in `/var/www/` by typing `nano .htaccess`; note this is a hidden file, so it starts with a dot. Then paste in the contents provided:
 
 ```
 <IfModule mod_rewrite.c>
@@ -246,7 +246,7 @@ RewriteRule . /index.php [L]
 
 Save the file and return to the website homepage. Click on the post title or the sample page link and you'll probably see a `Not Found` error page. This is because the `rewrite` module has not been enabled in Apache. To do this, enter `sudo a2enmod rewrite`.
 
-You'll also need to tell the virtual host serving the site to allow requests to be overwritten. Do this by editing the virtual host file (with root permissions): `sudo nano /etc/apache2/sites-available/default` and change the `AllowOverride` setting on line 11 (inside the `<Directory /var/www/>` block) from `None` to `All`. Save the file and then restart Apache with `sudo service apache2 restart`. Once it's restarted, refresh the page and it should load successfully. Now posts have URLs like `/hello-world/` instead of `/?p=123` and pages have URLs like `/sample-page/` instead of `/?page_id=2`.
+You'll also need to tell the virtual host serving the site to allow requests to be overwritten. Do this by editing the virtual host file (with root permissions): `sudo nano /etc/apache2/sites-available/default`; also, change the `AllowOverride` setting on line 11 (inside the `<Directory /var/www/>` block) from `None` to `All`. Save the file and then restart Apache with `sudo service apache2 restart`. Once it's restarted, refresh the page and it should load successfully. Now posts have URLs like `/hello-world/` instead of `/?p=123`, and pages have URLs like `/sample-page/` instead of `/?page_id=2`.
 
 ### Customisation
 
