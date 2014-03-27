@@ -130,7 +130,7 @@ Now extract the tarball, move the contents of the folder it extracted (`wordpres
 
 ```
 tar xzf latest.tar.gz
-mv wordpress/ .
+mv wordpress/* .
 rm -rf wordpress latest.tar.gz
 ```
 
