@@ -12,13 +12,13 @@ On its own, Apache can serve HTML files over HTTP, and with additional modules c
 
 First install the `apache2` package by typing the following command into the terminal:
 
-```
+```bash
 sudo apt-get install apache2 -y
 ```
 
 ### Test the web server
 
-By default, Apache puts a test HTML file in the web folder. This default web page is served when you browse to `http://localhost/` on the Pi itself, or `http://192.168.1.10` (whatever the Pi's IP address is) from another computer on the network. To find out the Pi's IP address, type `hostname -I` at the command line (or read more about finding your [IP address](../../troubleshooting/hardware/networking/ip-address.md)).
+By default, Apache puts a test HTML file in the web folder. This default web page is served when you browse to `http://localhost/` on the Pi itself, or `http://192.168.1.10` (whatever the Pi's IP address is) from another computer on the network. To find out the Pi's IP address, type `hostname -I` at the command line (or read more about finding your [IP address](http://www.raspberrypi.org/documentation/troubleshooting/hardware/networking/ip-address.md)) in our documentation.
 
 Browse to the default web page, either on the Pi or from another computer on the network, and you should see the following:
 
@@ -30,14 +30,14 @@ This means you have Apache working!
 
 This default web page is just an HTML file on the filesystem; it is located at `/var/www/index.html`. Navigate to this directory in the terminal and have a look at what's inside:
 
-```
+```bash
 cd /var/www
 ls -al
 ```
 
 This will show you:
 
-```
+```bash
 total 12
 drwxr-xr-x  2 root root 4096 Jan  8 01:29 .
 drwxr-xr-x 12 root root 4096 Jan  8 01:28 ..
@@ -65,7 +65,7 @@ PHP is a preprocessor; it's code that runs when the server receives a request fo
 
 Install the PHP and Apache packages with the following command:
 
-```
+```bash
 sudo apt-get install php5 libapache2-mod-php5 -y
 ```
 
@@ -73,31 +73,31 @@ sudo apt-get install php5 libapache2-mod-php5 -y
 
 Now move the `index.html` file to `index.php`:
 
-```
+```bash
 sudo mv index.html index.php
 ```
 
 Edit the file:
 
-```
+```bash
 sudo nano index.php
 ```
 
 Put some PHP content in it:
 
-```
+```php
 <?php echo "hello world";
 ```
 
 Now save and refresh your browser. You should see "hello world". This is not dynamic but it is still served by PHP. Try something dynamic, for example:
 
-```
+```php
 <?php echo date('Y-m-d H:i:s');
 ```
 
 Or show your PHP info:
 
-```
+```php
 <?php phpinfo();
 ```
 
@@ -107,7 +107,7 @@ MySQL (pronounced *My Sequel* or *My S-Q-L*) is a popular database engine. Like 
 
 Install the MySQL Server and PHP-MySQL packages by entering the following command into the terminal:
 
-```
+```bash
 sudo apt-get install mysql-server php5-mysql -y
 ```
 
@@ -119,7 +119,7 @@ You can download WordPress from [wordpress.org](http://wordpress.org/) using the
 
 Navigate to `/var/www/`, and download WordPress to this location. You'll need to empty the folder first (be sure to check you're not deleting files you need before running `rm`); change the ownership of this folder to the `pi` user too.
 
-```
+```bash
 cd /var/www
 chown pi: .
 rm *
@@ -128,7 +128,7 @@ wget http://wordpress.org/latest.tar.gz
 
 Now extract the tarball, move the contents of the folder it extracted (`wordpress`) to the current directory and remove the (now empty) folder and the tarball to tidy up:
 
-```
+```bash
 tar xzf latest.tar.gz
 mv wordpress/* .
 rm -rf wordpress latest.tar.gz
@@ -136,7 +136,7 @@ rm -rf wordpress latest.tar.gz
 
 Running the `ls` or (`tree -L 1`) command here will show you the contents of a WordPress project:
 
-```
+```bash
 .
 ├── index.php
 ├── license.txt
@@ -165,7 +165,7 @@ This is the source of a default WordPress installation. The files you edit to cu
 
 To get your WordPress site set up, you need a database. Run the `mysql` command in the terminal and provide your login credentials (e.g. username `root`, password `password`):
 
-```
+```bash
 mysql -uroot -ppassword
 ```
 
@@ -173,7 +173,7 @@ Here I have provided my password (the word `password`) on the command line; ther
 
 Alternatively you can simply supply an empty `-p` flag and wait to be asked for a password:
 
-```
+```bash
 mysql -uroot -p
 ```
 
