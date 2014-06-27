@@ -1,6 +1,6 @@
 # Contributing
 
-All contributions are assumed to be licensed under the same license as the source, i.e. CC BY-SA. This license must remain in all derivatives of this work.
+All contributions are assumed to be licensed under the same license as the source, i.e. [CC BY-SA](http://creativecommons.org/licenses/by-sa/4.0/). This license must remain in all derivatives of this work.
 
 ## Issues
 
@@ -20,8 +20,8 @@ The licence must remain in all derivatives of this work.
 
 Unless otherwise specified, everything in this repository is covered by the following licence:
 
-![Creative Commons License](http://i.creativecommons.org/l/by-sa/4.0/88x31.png)
+![Creative Commons Attribution 4.0 International Licence](http://i.creativecommons.org/l/by-sa/4.0/88x31.png)
 
-***Web Server Setup and WordPress*** by the [Raspberry Pi Foundation](http://raspberrypi.org) is licenced under a [Creative Commons Attribution 4.0 International License](http://creativecommons.org/licenses/by-sa/4.0/).
+***Web Server Setup and WordPress*** by the [Raspberry Pi Foundation](http://raspberrypi.org) is licenced under a [Creative Commons Attribution 4.0 International Licence](http://creativecommons.org/licenses/by-sa/4.0/).
 
 Based on a work at https://github.com/raspberrypilearning/web-server-wordpress
