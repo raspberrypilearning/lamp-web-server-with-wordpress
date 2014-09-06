@@ -86,19 +86,19 @@ sudo nano index.php
 Put some PHP content in it:
 
 ```php
-<?php echo "hello world";
+<?php echo "hello world";?>
 ```
 
 Now save and refresh your browser. You should see "hello world". This is not dynamic but it is still served by PHP. Try something dynamic, for example:
 
 ```php
-<?php echo date('Y-m-d H:i:s');
+<?php echo date('Y-m-d H:i:s');?>
 ```
 
 Or show your PHP info:
 
 ```php
-<?php phpinfo();
+<?php phpinfo();?>
 ```
 
 ## Step 3: Install MySQL
