@@ -71,11 +71,6 @@ sudo apt-get install php5 libapache2-mod-php5 -y
 
 ### Test PHP
 
-Now move the `index.html` file to `index.php`:
-
-```bash
-sudo mv index.html index.php
-```
 
 Edit the file:
 
