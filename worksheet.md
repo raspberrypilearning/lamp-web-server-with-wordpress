@@ -83,7 +83,12 @@ Put some PHP content in it:
 <?php echo "hello world";
 ```
 
-Now save and refresh your browser. You should see "hello world". This is not dynamic but it is still served by PHP. Try something dynamic, for example:
+Now save the file. Next delete index.html because it takes precendence over index.php:
+```bash
+sudo rm index.html
+```
+
+Refresh your browser. You should see "hello world". This is not dynamic but it is still served by PHP. Try something dynamic, for example:
 
 ```php
 <?php echo date('Y-m-d H:i:s');
