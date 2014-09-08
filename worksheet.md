@@ -2,7 +2,7 @@
 
 Set up a web server on your Pi and install WordPress
 
-## Step 1: Set up Apache Web Server
+## Step 1: Set up Apache Web Servers
 
 Apache is a popular web server application you can install on the Raspberry Pi to allow it to serve web pages.
 
