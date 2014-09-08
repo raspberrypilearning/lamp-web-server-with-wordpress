@@ -71,8 +71,7 @@ sudo apt-get install php5 libapache2-mod-php5 -y
 
 ### Test PHP
 
-
-Edit the file:
+Create the file index.php:
 
 ```bash
 sudo nano index.php
