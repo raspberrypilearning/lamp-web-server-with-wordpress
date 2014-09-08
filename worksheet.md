@@ -1,6 +1,6 @@
 # Web Server Setup and WordPress
 
-Set up a web server on your Pi and install WordPress
+Set up a web server on your Pi and install WordPress, a content management system that makes creating websites easier
 
 ## Step 1: Set up Apache Web Server
 
