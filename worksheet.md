@@ -46,16 +46,7 @@ drwxr-xr-x 12 root root 4096 Jan  8 01:28 ..
 
 This shows that there is one file in `/var/www/` called `index.html`. The `.` refers to the directory itself `/var/www/`, and the `..` refers to the parent directory `/var/`.
 
-#### What the columns mean
-
-1. The permissions of the file or directory
-2. The number of files in the directory (or `1` if it's a file)
-3. The user who owns the file or directory
-4. The group which owns the file or directory
-5. The file size
-6. The last modification date and time
-
-As you can see, by default the `www` directory and `index.html` file are both owned by the `root` user. In order to edit the file, you must gain `root` permissions. Either change the owner to your own user before editing (using `sudo chown pi: index.html`), or edit with `sudo` (using `sudo nano index.html`).
+The 3rd column shows that, by default the `www` directory and `index.html` file are both owned by the `root` user. In order to edit the file, you must gain `root` permissions. Either change the owner to your own user before editing (using `sudo chown pi: index.html`), or edit with `sudo` (using `sudo nano index.html`).
 
 Try editing this file and refreshing the browser to see the web page change.
 
