@@ -111,8 +111,8 @@ Navigate to `/var/www/`, and download WordPress to this location. You'll need to
 
 ```bash
 cd /var/www
-chown pi: .
-rm *
+sudo chown pi: .
+sudo rm *
 wget http://wordpress.org/latest.tar.gz
 ```
 
