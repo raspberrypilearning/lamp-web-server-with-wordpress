@@ -48,7 +48,7 @@ This shows that there is one file in `/var/www/` called `index.html`. The `.` re
 
 The 3rd column shows that, by default the `www` directory and `index.html` file are both owned by the `root` user. In order to edit the file, you must gain `root` permissions. Either change the owner to your own user before editing (using `sudo chown pi: index.html`), or edit with `sudo` (using `sudo nano index.html`).
 
-Try editing this file and refreshing the browser to see the web page change. To exit the nano text editor, and save your edits, use the Control kep and x together.
+Try editing this file and refreshing the browser to see the web page change. Press `Ctrl + X` and hit `Enter` to save and exit.
 
 ## Step 2: Install PHP
 
