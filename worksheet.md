@@ -10,7 +10,7 @@ Utilisé seul, Apache peut générer des fichiers HTML via le protocole HTTP, et
 
 ### Installer Apache
 
-D'abord installez le paquet `apache2` en tapant la commande suivante dans le terminal :
+Installez le paquet `apache2` en tapant la commande suivante dans le terminal :
 
 ```bash
 sudo apt-get install apache2 -y
@@ -18,9 +18,9 @@ sudo apt-get install apache2 -y
 
 ### Tester le serveur Web
 
-Par défaut, Apache met un fichier HTML de test dans le dossier Web. Cette page Web par défaut est générée lorsque vous naviguez vers `http: // localhost /` sur le Pi lui-même, ou `http: // 192.168.1.10` (quelle que soit l'adresse IP du Pi) depuis un autre ordinateur sur le réseau. Pour connaître l'adresse IP du Pi, tapez `hostname -i` en ligne de commande (pour en savoir plus sur la manière de trouver de votre [IP address](http://www.raspberrypi.org/documentation/troubleshooting/hardware/networking/ip-address.md) dans notre documentation).
+Par défaut, Apache met un fichier HTML de test dans le dossier Web. Cette page Web par défaut est générée lorsque vous naviguez vers `http://localhost/` sur le Pi lui-même, ou `http://192.168.1.10` (quelle que soit l'adresse IP du Pi) depuis un autre ordinateur sur le réseau. Pour connaître l'adresse IP du Pi, tapez `hostname -i` en ligne de commande (Cliquez sur le lien suivant pour en savoir plus sur la manière de trouver de votre [ADRESSE IP](http://www.raspberrypi.org/documentation/troubleshooting/hardware/networking/ip-address.md) dans notre documentation).
 
-Accédez à la page Web par défaut, soit sur le Pi ou depuis un autre ordinateur sur le réseau, et vous devriez voir ce qui suit:
+Accédez à la page Web par défaut, soit sur le Pi ou depuis un autre ordinateur sur le réseau, et vous devriez voir ce qui suit :
 
 ![](images/apache-it-works.png)
 
@@ -28,9 +28,7 @@ Cela signifie qu'Apache est en service et fonctionne !
 
 #### Changer la page Web par défaut
 
-This default Web page is just an HTML file on the filesystem; it is located at `/var/www/index.html`. Navigate to this directory in the terminal and have a look at what's inside:
-
-Cette page Web par défaut est simplement un fichier HTML placé sur le gestionnaire de fichiers ; il est situé à `/ var / www / index.html` . Accédez à ce répertoire via le terminal et jetez un oeil à ce qui est à l'intérieur :
+Cette page Web par défaut est simplement un fichier HTML placé sur le gestionnaire de fichiers ; il est situé à `/var/ www/index.html`. Accédez à ce répertoire via le terminal et jetez un oeil à ce qui est à l'intérieur :
 
 ```bash
 cd /var/www
@@ -48,13 +46,13 @@ drwxr-xr-x 12 root root 4096 Jan  8 01:28 ..
 
 Cela montre qu'il y a un fichier dans `/var/www/` appelé `index.html`. Le `.` se réfère au répertoire lui-même `/var/www/` et le `..` se réfère au répertoire parent `/var/`.
 
-La 3ème colonne montre que, par défaut, le répertoire `www` et le fichier `index.html` appartiennent tous les deux à l'utilisateur `root`. Afin de modifier le fichier, vous devez obtenir les permissions de `root`. Vous devrez donc soit changer les droits de votre propre utilisateur avant l'édition (en utilisant `sudo chown pi: index.html`), soit en utilisant le préfixe `sudo` lors de la commande d'édition (`sudo nano index.html`).
+La 3ème colonne montre que, par défaut, le répertoire `www` et le fichier `index.html` appartiennent tous les deux à l'utilisateur `root`. Afin de modifier le fichier, vous devrez obtenir les permissions de `root`. Vous devrez donc soit changer les droits de votre propre utilisateur avant l'édition (en utilisant `sudo chown pi: index.html`), soit en utilisant le préfixe `sudo` lors de la commande d'édition (`sudo nano index.html`).
 
 Essayez d'éditer ce fichier puis rafraîchissez la page Web pour voir le changement. Appuyez sur `Ctrl + X` puis sur `Enter` pour sauvegarder et quitter.
 
 ## Étape 2 : Installer PHP
 
-PHP est un préprocesseur : c'est le code qui fonctionne lorsque le serveur reçoit une requête pour une page Web. Il se lance, génère tout ce qui doit être montré sur la page, puis envoie la page dans le navigateur. Contrairement à du HTML statique, PHP peut montrer un contenu différent dans des circonstances différentes. D'autres langages sont capables de cela, mais étant donné que WordPress est écrit en PHP, c'est ce que nous devons utiliser ici. PHP est un langage très populaire sur le Web, de grands projets tels que Facebook et Wikipédia sont écrits en PHP .
+PHP est un préprocesseur : c'est le code qui fonctionne lorsque le serveur reçoit une requête pour une page Web. Il se lance, génère tout ce qui doit être montré sur la page, puis envoie la page dans le navigateur. Contrairement à du HTML statique, PHP peut montrer un contenu différent dans des circonstances différentes. D'autres langages sont capables de cela, mais étant donné que WordPress est écrit en PHP, c'est ce dernier que nous devons utiliser ici. PHP est un langage très populaire sur le Web, de grands projets tels que Facebook et Wikipédia sont écrits en PHP.
 
 Installez les paquets PHP et Apache avec la commande suivante :
 
@@ -103,13 +101,13 @@ Installez les paquets serveur MySQL et PHP - MySQL en entrant la commande suivan
 sudo apt-get install mysql-server php5-mysql -y
 ```
 
-A l'installation de MySQL, un mot de passe vous sera demandé pour l'utilisateur root. Vous devriez le choisir avec soin et vous en rappeler car vous en aurez besoin pour permettre à votre Site Web d'accéder à la baase de données.
+A l'installation de MySQL, un mot de passe vous sera demandé pour l'utilisateur root. Vous devriez le choisir avec soin et vous en rappeler car vous en aurez besoin pour permettre à votre Site Web d'accéder à la base de données.
 
 ## Étape 4 : Télécharger WordPress
 
 Vous pouvez télécharger WordPress à partir de son site [ wordpress.org ] ( http://wordpress.org/ ) en utilisant la commande `wget`. Par chance, une copie de la dernière version de WordPress est toujours disponible au [ wordpress.org/latest.tar.gz](https://wordpress.org/latest.tar.gz ) et [ wordpress.org/latest.zip ] ( https://wordpress.org/latest.zip ), de sorte que vous pouvez récupérer la dernière version sans avoir à chercher sur le Site. A la rédaction de ce tutoriel, il s'agit de la version 4.0.
 
-Accédez à `/var/www/`, et téléchargez WordPress à cet emplacement. Vous aurez besoin de vider le dossier en premier ( assurez-vous de ne pas supprimer de fichiers dont vous avez besoin avant d'exécuter `rm` ) et donnez la propriété de ce dossier à l'utilisateur de `pi` également.
+Accédez à `/var/www/`, et téléchargez WordPress à cet emplacement. Vous aurez besoin de vider le dossier en premier (assurez-vous de ne pas supprimer de fichiers dont vous avez besoin avant d'exécuter `rm`) et donnez la propriété de ce dossier à l'utilisateur de `pi` également.
 
 ```bash
 cd /var/www
@@ -155,7 +153,7 @@ Ceci est une installation WordPress par défaut. Les fichiers que vous modifiez 
 
 ## Étape 5 : Mettre en place votre base de données WordPress
 
-Pour la mise en place votre site WordPress, vous avez besoin d'une base de données. Exécutez la commande `mysql` dans le terminal et fournissez vos identifiants de connexion (par exemple nom d'utilisateur `root` , mot de passe `password`) :
+Pour la mise en place votre site WordPress, vous avez besoin d'une base de données. Exécutez la commande `mysql` dans le terminal et fournissez vos identifiants de connexion (par exemple nom d'utilisateur `root`, mot de passe `password`) :
 
 ```bash
 mysql -uroot -ppassword
@@ -163,7 +161,7 @@ mysql -uroot -ppassword
 
 Ici, je vous ai fourni mon mot de passe (le mot `password`) sur la ligne de commande ; il n'y a pas d'espace entre `-p` et le mot de passe.
 
-Sinon, vous pouvez simplement fournir un flag `-p` vide et attendez d'être invité pour renseigner le mot de passe :
+Sinon, vous pouvez simplement fournir un flag `-p` vide et attendre d'être invité pour renseigner le mot de passe :
 
 ```bash
 mysql -uroot -p
@@ -217,7 +215,7 @@ Vous y êtes presque.
 
 ![](images/wp-info.png)
 
-Remplissez les informations : donnez un titre à votre site, créez un nom d'utilisateur et un mot de passe, ajoutez votre adresse email et décochez la case des moteurs de recherche. Appuyez sur le bouton `Install WordPress` , puis connectez-vous en utilisant le compte que vous venez de créer .
+Remplissez les informations : donnez un titre à votre site, créez un nom d'utilisateur et un mot de passe, ajoutez votre adresse email et décochez la case des moteurs de recherche. Appuyez sur le bouton `Install WordPress`, puis connectez-vous en utilisant le compte que vous venez de créer.
 
 Maintenant connecté et votre site mis en place, vous pouvez consulter le site Web en visitant votre adresse IP dans le navigateur sur le Pi ou un autre ordinateur sur le réseau. Pour vous connecter à nouveau (ou sur un autre ordinateur), aller à `http://VOTRE-ADRESSE-IP/wp-admin`.
 
@@ -238,8 +236,7 @@ RewriteRule . /index.php [L]
 
 Enregistrez le fichier et revenez à la page d'accueil du site. Cliquez sur le titre ou le lien de la page d'échantillon et vous verrez probablement une page d'erreur `Not Found`. C'est parce que le `rewrite` module n'a pas été activé dans Apache. Pour l'activer, entrez `sudo a2enmod rewrite`.
 
-
-Vous aurez également besoin de dire à l'hôte virtuel du site d'autoriser la réécriture des requêtes. Pour ce faire,  éditez le fichier d'hôte virtuel ( avec les permissions root ) : `sudo nano /etc/apache2/sites-available/default`; Par ailleurs, changez le réglage `AllowOverride` de la ligne 11 (dans le bloc `<Directory /var/www/>`) de `None` à `All`. Sauvegarder le fichier puis redémarrez Apache avec `sudo service apache2 restart`. Une fois redémarré, rafraîchissez la page et elle devrait se charger correctement. DOrénavant, chaque article aura une url de type `/hello-world/` au lieu de `/?p=123`, et chaque page aura une URL de type `/sample-page/` au lieu de `/?page_id=2`.
+Vous aurez également besoin de dire à l'hôte virtuel du site d'autoriser la réécriture des requêtes. Pour ce faire,  éditez le fichier d'hôte virtuel (avec les permissions root) : `sudo nano /etc/apache2/sites-available/default`; Par ailleurs, changez le réglage `AllowOverride` de la ligne 11 (dans le bloc `<Directory /var/www/>`) de `None` à `All`. Sauvegardez le fichier puis redémarrez Apache avec `sudo service apache2 restart`. Une fois redémarré, rafraîchissez la page, elle devrait se charger correctement. Dorénavant, chaque article aura une url de type `/hello-world/` au lieu de `/?p=123`, et chaque page aura une URL de type `/sample-page/` au lieu de `/?page_id=2`.
 
 ### Personnalisation
 
