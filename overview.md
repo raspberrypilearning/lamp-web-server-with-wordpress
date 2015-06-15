@@ -1,1 +1,1 @@
-Set up a web server on your Pi and install WordPress.
+Mettre en place un serveur Web sur votre Pi et installer WordPress.
