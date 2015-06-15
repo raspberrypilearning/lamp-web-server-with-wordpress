@@ -1,25 +1,25 @@
-# Web Server Setup and WordPress
+# Mettre en place un serveur Web et WordPress
 
-Set up a web server on your Pi and install WordPress
+Mettre en place un serveur Web sur votre Pi et installer WordPress.
 
-## Requirements
+## Prérequis
 
-All you'll need is a Raspberry Pi with an SD card loaded with Raspbian.
+Tout ce dont vous avez besoin c'est un Raspberry Pi et avec Raspbian installé sur la carte SD.
 
-The worksheet contains downloads and installations so you'll need to be online to follow the steps.
+La fiche explicative contient téléchargements et installations, vous aurez besoin par conséquent d'être connecté à internet pour suivre les étapes.
 
-## Steps
+## Étapes
 
-1. Set up Apache Web Server
-1. Install PHP
-1. Install MySQL
-1. Download WordPress
-1. Set up your WordPress Database
-1. WordPress Configuration
+1. Mettre en place le serveur Web Apache
+1. Installer PHP
+1. Installer MySQL
+1. Télécharger WordPress
+1. Mettre en place votre base de données WordPress
+1. Configurer WordPress
 
-## Worksheet
+## Fiche explicative
 
-- [The worksheet](worksheet.md)
+- [Fiche explicative](worksheet.md)
 
 ## Licence
 
