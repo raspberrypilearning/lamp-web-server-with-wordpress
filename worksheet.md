@@ -2,7 +2,7 @@
 
 Set up a web server on your Pi and install WordPress, a content management system that makes creating websites easier
 
-## Step 1: Set up Apache Web Server
+## Set up Apache Web Server
 
 Apache is a popular web server application you can install on the Raspberry Pi to allow it to serve web pages.
 
@@ -50,7 +50,7 @@ The 3rd column shows that, by default the `www` directory and `index.html` file 
 
 Try editing this file and refreshing the browser to see the web page change. Press `Ctrl + X` and hit `Enter` to save and exit.
 
-## Step 2: Install PHP
+## Install PHP
 
 PHP is a preprocessor; it's code that runs when the server receives a request for a web page. It runs, works out what needs to be shown on the page, then sends that page to the browser. Unlike static HTML, PHP can show different content under different circumstances. Other languages are capable of this, but since WordPress is written in PHP, that's what we need to use this time. PHP is a very popular language on the web; large projects like Facebook and Wikipedia are written in PHP.
 
@@ -91,7 +91,7 @@ Or show your PHP info:
 <?php phpinfo();
 ```
 
-## Step 3: Install MySQL
+## Install MySQL
 
 MySQL (pronounced *My Sequel* or *My S-Q-L*) is a popular database engine. Like PHP, its overwhelming presence on web servers enhanced its popularity. This is why projects like WordPress use it, and why those projects are so popular.
 
@@ -103,7 +103,7 @@ sudo apt-get install mysql-server php5-mysql -y
 
 When installing MySQL you will be asked for a root password. You'll need to remember this to allow your website to access the database.
 
-## Step 4: Download WordPress
+## Download WordPress
 
 You can download WordPress from [wordpress.org](http://wordpress.org/) using the `wget` command. Helpfully, a copy of the latest version of WordPress is always available at [wordpress.org/latest.tar.gz](https://wordpress.org/latest.tar.gz) and [wordpress.org/latest.zip](https://wordpress.org/latest.zip), so you can grab the latest version without having to look it up on the website. At the time of writing, this is version 4.0.
 
@@ -151,7 +151,7 @@ Running the `ls` or (`tree -L 1`) command here will show you the contents of a W
 
 This is the source of a default WordPress installation. The files you edit to customise your installation belong in the `wp-content` folder.
 
-## Step 5: Set up your WordPress Database
+## Set up your WordPress Database
 
 To get your WordPress site set up, you need a database. Run the `mysql` command in the terminal and provide your login credentials (e.g. username `root`, password `password`):
 
@@ -183,7 +183,7 @@ Query OK, 1 row affected (0.00 sec)
 
 Exit out of the MySQL prompt with `Ctrl + D`.
 
-## Step 6: WordPress Configuration
+## WordPress Configuration
 
 You need to find out your Pi's IP address to access it in the browser, so in a terminal type the command `hostname -I`.
 
