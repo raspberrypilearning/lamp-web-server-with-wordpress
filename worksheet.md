@@ -241,3 +241,10 @@ You'll also need to tell the virtual host serving the site to allow requests to 
 ### Customisation
 
 WordPress is very customisable. By clicking your site name in the WordPress banner along the top of the page (when logged in), you'll be taken to the Dashboard. From here you can change the theme, add pages and posts, edit the menu, add plugins and lots more. This is just a taster for getting something interesting set up on the Raspberry Pi's web server.
+
+## What next?
+
+- Try adding pages and posts to your website
+- Try installing different themes from the Appearance menu
+- Try customising your theme, or creating your own
+- Try using your web server to display useful information to people on your network
