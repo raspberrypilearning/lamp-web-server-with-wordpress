@@ -2,6 +2,8 @@
 
 Set up a web server on your Pi and install WordPress
 
+![](cover.png)
+
 ## Requirements
 
 All you'll need is a Raspberry Pi with an SD card loaded with Raspbian.
