@@ -1,23 +1,14 @@
-# Web Server Setup and WordPress
+# Build a LAMP Web Server with WordPress
 
-Set up a web server on your Pi and install WordPress
+Set up a LAMP (Linux, Apache, MySQL & PHP) web server on your Raspberry Pi, then download and configure a WordPress site.
 
-![](cover.png)
+![Build a LAMP Web Server with WordPress](cover.png)
 
 ## Requirements
 
 All you'll need is a Raspberry Pi with an SD card loaded with Raspbian.
 
 The worksheet contains downloads and installations so you'll need to be online to follow the steps.
-
-## Steps
-
-1. Set up Apache Web Server
-1. Install PHP
-1. Install MySQL
-1. Download WordPress
-1. Set up your WordPress Database
-1. WordPress Configuration
 
 ## Worksheet
 
@@ -29,6 +20,6 @@ Unless otherwise specified, everything in this repository is covered by the foll
 
 [![Creative Commons Attribution 4.0 International Licence](http://i.creativecommons.org/l/by-sa/4.0/88x31.png)](http://creativecommons.org/licenses/by-sa/4.0/)
 
-***Web Server Setup and WordPress*** by the [Raspberry Pi Foundation](http://raspberrypi.org) is licensed under a [Creative Commons Attribution 4.0 International Licence](http://creativecommons.org/licenses/by-sa/4.0/).
+***LAMP Web Server with WordPress*** by the [Raspberry Pi Foundation](https://www.raspberrypi.org/) is licensed under a [Creative Commons Attribution 4.0 International Licence](http://creativecommons.org/licenses/by-sa/4.0/).
 
 Based on a work at https://github.com/raspberrypilearning/web-server-wordpress
