@@ -6,4 +6,4 @@ Unless otherwise specified, everything in this repository is covered by the foll
 
 ***LAMP Web Server with WordPress*** by the [Raspberry Pi Foundation](https://www.raspberrypi.org/) is licensed under a [Creative Commons Attribution 4.0 International Licence](http://creativecommons.org/licenses/by-sa/4.0/).
 
-Based on a work at https://github.com/raspberrypilearning/web-server-wordpress
+Based on a work at https://github.com/raspberrypilearning/lamp-web-server-with-wordpress
