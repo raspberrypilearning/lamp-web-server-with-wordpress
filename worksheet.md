@@ -95,13 +95,13 @@ sudo rm index.html
 Refresh your browser. You should see "hello world". This is not dynamic but it is still served by PHP. Try something dynamic, for example:
 
 ```php
-<?php echo date('Y-m-d H:i:s');
+<?php echo date('Y-m-d H:i:s'); ?>
 ```
 
 Or show your PHP info:
 
 ```php
-<?php phpinfo();
+<?php phpinfo(); ?>
 ```
 
 ## Install MySQL
