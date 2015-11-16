@@ -84,7 +84,7 @@ sudo nano index.php
 Put some PHP content in it:
 
 ```php
-<?php echo "hello world";
+<?php echo "hello world"; ?>
 ```
 
 Now save the file. Next delete index.html because it takes precendence over index.php:
