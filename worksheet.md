@@ -92,7 +92,15 @@ Now save the file. Next delete index.html because it takes precendence over inde
 sudo rm index.html
 ```
 
-Refresh your browser. You should see "hello world". This is not dynamic but it is still served by PHP. Try something dynamic, for example:
+Refresh your browser. You should see "hello world". This is not dynamic but it is still served by PHP. 
+If you see the raw PHP above instead of "hello world", reload and restart Apache like so:
+
+```
+sudo /etc/init.d/apache2 reload
+sudo /etc/init.d/apache2 restart
+```
+
+Otherwise try something dynamic, for example:
 
 ```php
 <?php echo date('Y-m-d H:i:s'); ?>
