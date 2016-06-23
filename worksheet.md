@@ -210,25 +210,10 @@ You need to find out your Pi's IP address to access it in the browser, so in a t
 
 Navigate to `http://YOUR-IP-ADDRESS` e.g. `http://192.168.1.5` in the web browser on your Pi.
 
-You should see a WordPress error page; this is good! Click the big button marked `Create a Configuration File` followed by the `Let's go!` button on the next page.
+You have to use the following command to allow WordPress to create the configuration file and let it write new files:
+`sudo chown -R www-data:www-data /var/www/html`
 
-Now fill out the basic site information as follows:
-
-```
-Database Name:      wordpress
-User Name:          root
-Password:           <YOUR PASSWORD>
-Database Host:      localhost
-Table Prefix:       wp_
-```
-
-Upon successful database connection, you will be given the contents of your `wp-config.php` file:
-
-![](images/wp-config.png)
-
-Copy this text, return to the terminal on the Pi and edit the file with `nano wp-config.php`. Paste the text into this file, and save and exit with `Ctrl + X`, then `Y` for yes and `Enter`.
-
-Now hit the `Run the install` button.
+Enter the database details and you click on next.
 
 ### Welcome screen
 
