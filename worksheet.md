@@ -22,7 +22,7 @@ By default, Apache puts a test HTML file in the web folder. This default web pag
 
 Browse to the default web page, either on the Pi or from another computer on the network, and you should see the following:
 
-![](images/apache-it-works.png)
+![Apache it works](images/apache-it-works.png)
 
 This means you have Apache working!
 
@@ -59,7 +59,7 @@ This shows that there is one file in `/var/www/html/` called `index.html`. The `
 5. The file size
 6. The last modification date & time
 
-As you can see, by default the `html` directory and `index.html` file are both owned by the `root` user. In order to edit the file, you must gain `root` permissions. Change the owner to your own user with `sudo chown pi: index.html` before editing.
+As you can see, by default the `html` directory and `index.html` file are both owned by the `root` user, so you'll need to use `sudo` to edit them.
 
 Try editing this file and refreshing the browser to see the web page change. Press `Ctrl + X` and hit `Enter` to save and exit.
 
@@ -123,6 +123,12 @@ sudo apt-get install mysql-server php5-mysql -y
 
 When installing MySQL you will be asked for a root password. You'll need to remember this to allow your website to access the database.
 
+Now restart Apache:
+
+```bash
+sudo service apache2 restart
+```
+
 ## Download WordPress
 
 You can download WordPress from [wordpress.org](http://wordpress.org/) using the `wget` command. Helpfully, a copy of the latest version of WordPress is always available at [wordpress.org/latest.tar.gz](https://wordpress.org/latest.tar.gz) and [wordpress.org/latest.zip](https://wordpress.org/latest.zip), so you can grab the latest version without having to look it up on the website. At the time of writing, this is version 4.0.
@@ -171,6 +177,12 @@ Running the `ls` or (`tree -L 1`) command here will show you the contents of a W
 
 This is the source of a default WordPress installation. The files you edit to customise your installation belong in the `wp-content` folder.
 
+You should now change the ownership of these files to the Apache user:
+
+```bash
+sudo chown -R www-data: .
+```
+
 ## Set up your WordPress Database
 
 To get your WordPress site set up, you need a database. Run the `mysql` command in the terminal and provide your login credentials (e.g. username `root`, password `password`):
@@ -209,7 +221,7 @@ You need to find out your Pi's IP address to access it in the browser, so in a t
 
 Navigate to `http://YOUR-IP-ADDRESS` e.g. `http://192.168.1.5` in the web browser on your Pi.
 
-You should see a WordPress error page; this is good! Click the big button marked `Create a Configuration File` followed by the `Let's go!` button on the next page.
+You should see a WordPress weclome page. Click the `Let's go!` button.
 
 Now fill out the basic site information as follows:
 
@@ -221,11 +233,7 @@ Database Host:      localhost
 Table Prefix:       wp_
 ```
 
-Upon successful database connection, you will be given the contents of your `wp-config.php` file:
-
-![](images/wp-config.png)
-
-Copy this text, return to the terminal on the Pi and edit the file with `nano wp-config.php`. Paste the text into this file, and save and exit with `Ctrl + X`, then `Y` for yes and `Enter`.
+and click `Submit` to proceed.
 
 Now hit the `Run the install` button.
 
@@ -233,30 +241,61 @@ Now hit the `Run the install` button.
 
 Now you're getting close.
 
-![](images/wp-info.png)
+![WordPress Welcome screen](images/wp-info.png)
 
-Fill out the information: give your site a title, create a username and password, put in your email address and untick the search engines box. Hit the `Install WordPress` button, then log in using the account you just created.
+Fill out the information: give your site a title, create a username and password and enter your email address. Hit the `Install WordPress` button, then log in using the account you just created.
 
 Now you're logged in and have your site set up, you can see the website by visiting your IP address in the browser on the Pi or another computer on the network. To log in again (or on another computer), go to `http://YOUR-IP-ADDRESS/wp-admin`.
 
 ### Friendly permalinks
 
-It's recommended that you change your permalink settings to make your URLs more friendly. To do this, log in to WordPress and go to the dashboard. Go to `Settings` then `Permalinks`. Select the `Post name` option and click `Save Changes`. After saving, you will be prompted to update your `.htaccess` file. You probably don't have one yet, so add one in `/var/www/html/` by typing `nano .htaccess`; note this is a hidden file, so it starts with a dot. Then paste in the contents provided:
+It's recommended that you change your permalink settings to make your URLs more friendly.
+
+To do this, log in to WordPress and go to the dashboard.
+
+Go to `Settings` then `Permalinks`.
+
+Select the `Post name` option and click `Save Changes`.
+
+You'll need to enable Apache's `rewrite` mod:
+
+```bash
+sudo a2enmod rewrite
+```
+
+You'll also need to tell the virtual host serving the site to allow requests to be overwritten.
+
+Edit the Apache configuration file for your virtual host:
+
+```bash
+sudo leafpad /etc/apache2/sites-available/000-default.conf
+```
+
+(or `nano`)
+
+Add the following lines after line 1:
 
 ```
-<IfModule mod_rewrite.c>
-RewriteEngine On
-RewriteBase /
-RewriteRule ^index\.php$ - [L]
-RewriteCond %{REQUEST_FILENAME} !-f
-RewriteCond %{REQUEST_FILENAME} !-d
-RewriteRule . /index.php [L]
-</IfModule>
+<Directory "/var/www/html">
+    AllowOverride All
+</Directory>
 ```
 
-Save the file and return to the website homepage. Click on the post title or the sample page link and you'll probably see a `Not Found` error page. This is because the `rewrite` module has not been enabled in Apache. To do this, enter `sudo a2enmod rewrite`.
+ensuring it's within the `<VirtualHost *:80>` like so:
 
-You'll also need to tell the virtual host serving the site to allow requests to be overwritten. Do this by editing the virtual host file (with root permissions): `sudo nano /etc/apache2/sites-available/default`; also, change the `AllowOverride` setting on line 11 (inside the `<Directory /var/www/html/>` block) from `None` to `All`. Save the file and then restart Apache with `sudo service apache2 restart`. Once it's restarted, refresh the page and it should load successfully. Now posts have URLs like `/hello-world/` instead of `/?p=123`, and pages have URLs like `/sample-page/` instead of `/?page_id=2`.
+```
+<VirtualHost *:80>
+    <Directory "/var/www/html">
+        AllowOverride All
+    </Directory>
+    ...
+```
+
+And then restart Apache again:
+
+```bash
+sudo service apache2 restart
+```
 
 ### Customisation
 
