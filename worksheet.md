@@ -95,9 +95,8 @@ sudo rm index.html
 Refresh your browser. You should see "hello world". This is not dynamic but it is still served by PHP. 
 If you see the raw PHP above instead of "hello world", reload and restart Apache like so:
 
-```
-sudo /etc/init.d/apache2 reload
-sudo /etc/init.d/apache2 restart
+```bash
+sudo service apache2 restart
 ```
 
 Otherwise try something dynamic, for example:
