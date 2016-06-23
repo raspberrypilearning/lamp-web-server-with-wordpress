@@ -146,9 +146,9 @@ sudo wget http://wordpress.org/latest.tar.gz
 Now extract the tarball, move the contents of the folder it extracted (`wordpress`) to the current directory and remove the (now empty) folder and the tarball to tidy up:
 
 ```bash
-tar xzf latest.tar.gz
-mv wordpress/* .
-rm -rf wordpress latest.tar.gz
+sudo tar xzf latest.tar.gz
+sudo mv wordpress/* .
+sudo rm -rf wordpress latest.tar.gz
 ```
 
 Running the `ls` or (`tree -L 1`) command here will show you the contents of a WordPress project:
