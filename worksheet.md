@@ -78,8 +78,10 @@ sudo apt-get install php5 libapache2-mod-php5 -y
 Create the file index.php:
 
 ```bash
-sudo nano index.php
+sudo leafpad index.php
 ```
+
+(or use `nano`)
 
 Put some PHP content in it:
 
@@ -92,7 +94,7 @@ Now save the file. Next delete index.html because it takes precendence over inde
 sudo rm index.html
 ```
 
-Refresh your browser. You should see "hello world". This is not dynamic but it is still served by PHP. 
+Refresh your browser. You should see "hello world". This is not dynamic but it is still served by PHP.
 If you see the raw PHP above instead of "hello world", reload and restart Apache like so:
 
 ```bash
@@ -131,13 +133,12 @@ sudo service apache2 restart
 
 ## Download WordPress
 
-You can download WordPress from [wordpress.org](http://wordpress.org/) using the `wget` command. Helpfully, a copy of the latest version of WordPress is always available at [wordpress.org/latest.tar.gz](https://wordpress.org/latest.tar.gz) and [wordpress.org/latest.zip](https://wordpress.org/latest.zip), so you can grab the latest version without having to look it up on the website. At the time of writing, this is version 4.0.
+You can download WordPress from [wordpress.org](http://wordpress.org/) using the `wget` command. Helpfully, a copy of the latest version of WordPress is always available at [wordpress.org/latest.tar.gz](https://wordpress.org/latest.tar.gz) and [wordpress.org/latest.zip](https://wordpress.org/latest.zip), so you can grab the latest version without having to look it up on the website. At the time of writing, this is version 4.5.
 
 Navigate to `/var/www/html/`, and download WordPress to this location. You'll need to empty the folder first (be sure to check you're not deleting files you need before running `rm`); change the ownership of this folder to the `pi` user too.
 
 ```bash
 cd /var/www/html/
-sudo chown pi: .
 sudo rm *
 wget http://wordpress.org/latest.tar.gz
 ```
@@ -221,7 +222,11 @@ You need to find out your Pi's IP address to access it in the browser, so in a t
 
 Navigate to `http://YOUR-IP-ADDRESS` e.g. `http://192.168.1.5` in the web browser on your Pi.
 
-You should see a WordPress weclome page. Click the `Let's go!` button.
+You should see a WordPress weclome page.
+
+![WordPress welcome screen](images/wordpress-welcome.png)
+
+Click the `Let's go!` button.
 
 Now fill out the basic site information as follows:
 
@@ -236,8 +241,6 @@ Table Prefix:       wp_
 and click `Submit` to proceed.
 
 Now hit the `Run the install` button.
-
-### Welcome screen
 
 Now you're getting close.
 
@@ -271,7 +274,7 @@ Edit the Apache configuration file for your virtual host:
 sudo leafpad /etc/apache2/sites-available/000-default.conf
 ```
 
-(or `nano`)
+(or use `nano`)
 
 Add the following lines after line 1:
 
