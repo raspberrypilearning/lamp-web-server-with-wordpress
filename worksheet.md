@@ -140,7 +140,7 @@ Navigate to `/var/www/html/`, and download WordPress to this location. You'll ne
 ```bash
 cd /var/www/html/
 sudo rm *
-wget http://wordpress.org/latest.tar.gz
+sudo wget http://wordpress.org/latest.tar.gz
 ```
 
 Now extract the tarball, move the contents of the folder it extracted (`wordpress`) to the current directory and remove the (now empty) folder and the tarball to tidy up:
