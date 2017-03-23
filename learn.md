@@ -4,3 +4,6 @@
  - How to install and configure Apache, PHP and MySQL to create a LAMP web server
  - How to download WordPress and run it as a local website on your Raspberry Pi
  - How to configure WordPress and make your website accessible to other devices on your local network
+
+This resource covers elements from the following strands of the [Raspberry Pi Digital Making Curriculum](https://www.raspberrypi.org/curriculum/):
+
