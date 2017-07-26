@@ -6,7 +6,7 @@ description: Learn how to install a LAMP stack on your Raspberry Pi and set up a
 original_url: https://raspberrypi.org/learning/lamp-web-server-with-wordpress
 theme: red
 duration: 2
-listed: false
+listed: true
 ingredient: false
 copyedit: true
 curriculum: creator, design-0, programming-0, phys-comp-0, manufacture-0, community-0
