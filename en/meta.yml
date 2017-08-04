@@ -4,7 +4,7 @@ hero_image: images/banner.png
 description: Learn how to install a LAMP stack on your Raspberry Pi and set up a web
   server with WordPress
 original_url: https://raspberrypi.org/learning/lamp-web-server-with-wordpress
-theme: red
+theme: turquoise
 duration: 2
 listed: true
 ingredient: false
