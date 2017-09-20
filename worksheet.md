@@ -67,8 +67,12 @@ Try editing this file and refreshing the browser to see the web page change. Pre
 
 PHP is a preprocessor; it's code that runs when the server receives a request for a web page. It runs, works out what needs to be shown on the page, then sends that page to the browser. Unlike static HTML, PHP can show different content under different circumstances. Other languages are capable of this, but since WordPress is written in PHP, that's what we need to use this time. PHP is a very popular language on the web; large projects like Facebook and Wikipedia are written in PHP.
 
-Install the PHP and Apache packages with the following command:
+Install the PHP and Apache packages with the following command on Raspbian Stretch:
 
+```bash
+sudo apt-get install php libapache2-mod-php -y
+```
+On Wheezy or Jessie:
 ```bash
 sudo apt-get install php5 libapache2-mod-php5 -y
 ```
@@ -117,8 +121,12 @@ Or show your PHP info:
 
 MySQL (pronounced *My Sequel* or *My S-Q-L*) is a popular database engine. Like PHP, its overwhelming presence on web servers enhanced its popularity. This is why projects like WordPress use it, and why those projects are so popular.
 
-Install the MySQL Server and PHP-MySQL packages by entering the following command into the terminal:
+Install the MySQL Server and PHP-MySQL packages by entering the following command into the terminal on Raspbian Stretch:
 
+```bash
+sudo apt-get install mysql-server php-mysql -y
+```
+On Wheezy or Jessie:
 ```bash
 sudo apt-get install mysql-server php5-mysql -y
 ```
