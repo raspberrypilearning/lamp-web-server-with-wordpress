@@ -244,7 +244,9 @@ MariaDB [(none)]> FLUSH PRIVILEGES;
 Query OK, 0 rows affected (0.00 sec)
 
 MariaDB [(none)]> quit
-Bye ```
+Bye
+
+```
 
 Exit out of the MySQL prompt with `Ctrl + D` or `quit`.
 
