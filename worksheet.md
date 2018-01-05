@@ -70,8 +70,10 @@ PHP is a preprocessor; it's code that runs when the server receives a request fo
 Install the PHP and Apache packages with the following command:
 
 ```bash
-sudo apt-get install php5 libapache2-mod-php5 -y
+sudo apt-get install php7.0 libapache2-mod-php7.0 -y
 ```
+
+For
 
 ### Test PHP
 
@@ -120,7 +122,7 @@ MySQL (pronounced *My Sequel* or *My S-Q-L*) is a popular database engine. Like 
 Install the MySQL Server and PHP-MySQL packages by entering the following command into the terminal:
 
 ```bash
-sudo apt-get install mysql-server php5-mysql -y
+sudo apt-get install mysql-server php7.0-mysql -y
 ```
 
 When installing MySQL you will be asked for a root password. You'll need to remember this to allow your website to access the database.
@@ -133,7 +135,7 @@ sudo service apache2 restart
 
 ## Download WordPress
 
-You can download WordPress from [wordpress.org](http://wordpress.org/) using the `wget` command. Helpfully, a copy of the latest version of WordPress is always available at [wordpress.org/latest.tar.gz](https://wordpress.org/latest.tar.gz) and [wordpress.org/latest.zip](https://wordpress.org/latest.zip), so you can grab the latest version without having to look it up on the website. At the time of writing, this is version 4.5.
+You can download WordPress from [wordpress.org](http://wordpress.org/) using the `wget` command. Helpfully, a copy of the latest version of WordPress is always available at [wordpress.org/latest.tar.gz](https://wordpress.org/latest.tar.gz) and [wordpress.org/latest.zip](https://wordpress.org/latest.zip), so you can grab the latest version without having to look it up on the website. At the time of writing, this is version 4.9.1
 
 Navigate to `/var/www/html/`, and download WordPress to this location. You'll need to empty the folder first (be sure to check you're not deleting files you need before running `rm`); change the ownership of this folder to the `pi` user too.
 
@@ -204,17 +206,49 @@ Now you will be prompted to enter the root user password you created earlier.
 
 Once you're connected to MySQL, you can create the database your WordPress installation will use:
 
-```
-mysql> create database wordpress;
-```
-
-Note the semi-colon ending the statement. On success you should see the following message:
+Replace wpuser with chosen new username and passwd with new paswword for WORDPRESS configuration
 
 ```
+CREATE USER wpuser@localhost IDENTIFIED BY 'passwd';
+
+CREATE DATABASE wordpress;
+
+GRANT ALL PRIVILEGES ON wordpress.* TO  wpuser@localhost IDENTIFIED BY 'passwd';
+
+FLUSH PRIVILEGES;
+```
+
+Note the semi-colon ending the statement. On success you should see the following messages:
+
+
+
+```
+Welcome to the MariaDB monitor.  Commands end with ; or \g.
+Your MariaDB connection id is 8
+Server version: 10.1.23-MariaDB-9+deb9u1 Raspbian 9.0
+
+Copyright (c) 2000, 2017, Oracle, MariaDB Corporation Ab and others.
+
+Type 'help;' or '\h' for help. Type '\c' to clear the current input statement.
+
+MariaDB [(none)]>  CREATE USER wpuser@localhost IDENTIFIED BY 'passwd';
+Query OK, 0 rows affected (0.01 sec)
+
+MariaDB [(none)]> CREATE DATABASE wordpress;
 Query OK, 1 row affected (0.00 sec)
+
+MariaDB [(none)]>  GRANT ALL PRIVILEGES ON wordpress.* TO  wpuser@localhost IDENTIFIED BY 'passwd';
+Query OK, 0 rows affected (0.00 sec)
+
+MariaDB [(none)]> FLUSH PRIVILEGES;
+Query OK, 0 rows affected (0.00 sec)
+
+MariaDB [(none)]> quit
+Bye
+
 ```
 
-Exit out of the MySQL prompt with `Ctrl + D`.
+Exit out of the MySQL prompt with `Ctrl + D` or `quit`.
 
 ## WordPress Configuration
 
@@ -232,8 +266,8 @@ Now fill out the basic site information as follows:
 
 ```
 Database Name:      wordpress
-User Name:          root
-Password:           <YOUR PASSWORD>
+User Name:          wpuser
+Password:           <passwd>
 Database Host:      localhost
 Table Prefix:       wp_
 ```
