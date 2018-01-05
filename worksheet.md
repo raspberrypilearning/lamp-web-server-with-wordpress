@@ -209,20 +209,46 @@ Once you're connected to MySQL, you can create the database your WordPress insta
 Replace wpuser with chosen new username and passwd with new paswword for WORDPRESS configuration
 
 ```
-mysql> CREATE USER wpuser@localhost IDENTIFIED BY 'passwd';
-mysql> CREATE DATABASE wordpress;
-mysql> GRANT ALL PRIVILEGES ON wordpress.* TO wpuser@localhost IDENTIFIED BY 'passwd';
-mysql> FLUSH PRIVILEGES;
-mysql> quit;
+CREATE USER wpuser@localhost IDENTIFIED BY 'passwd';
+
+CREATE DATABASE wordpress;
+
+GRANT ALL PRIVILEGES ON wordpress.* TO  wpuser@localhost IDENTIFIED BY 'passwd';
+
+FLUSH PRIVILEGES;
+
+quit
 ```
 
-Note the semi-colon ending the statement. On success you should see the following message:
+Note the semi-colon ending the statement. On success you should see the following messages:
+
+
 
 ```
+Welcome to the MariaDB monitor.  Commands end with ; or \g.
+Your MariaDB connection id is 8
+Server version: 10.1.23-MariaDB-9+deb9u1 Raspbian 9.0
+
+Copyright (c) 2000, 2017, Oracle, MariaDB Corporation Ab and others.
+
+Type 'help;' or '\h' for help. Type '\c' to clear the current input statement.
+
+MariaDB [(none)]>  CREATE USER wpuser@localhost IDENTIFIED BY 'passwd';
+Query OK, 0 rows affected (0.01 sec)
+
+MariaDB [(none)]> CREATE DATABASE wordpress;
 Query OK, 1 row affected (0.00 sec)
-```
 
-Exit out of the MySQL prompt with `Ctrl + D`.
+MariaDB [(none)]>  GRANT ALL PRIVILEGES ON wordpress.* TO  wpuser@localhost IDENTIFIED BY 'passwd';
+Query OK, 0 rows affected (0.00 sec)
+
+MariaDB [(none)]> FLUSH PRIVILEGES;
+Query OK, 0 rows affected (0.00 sec)
+
+MariaDB [(none)]> quit
+Bye ```
+
+Exit out of the MySQL prompt with `Ctrl + D` or `quit`.
 
 ## WordPress Configuration
 
@@ -241,7 +267,7 @@ Now fill out the basic site information as follows:
 ```
 Database Name:      wordpress
 User Name:          wpuser
-Password:           <YOUR PASSWORD>
+Password:           <passwd>
 Database Host:      localhost
 Table Prefix:       wp_
 ```
