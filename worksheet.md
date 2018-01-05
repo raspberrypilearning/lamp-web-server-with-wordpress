@@ -216,8 +216,6 @@ CREATE DATABASE wordpress;
 GRANT ALL PRIVILEGES ON wordpress.* TO  wpuser@localhost IDENTIFIED BY 'passwd';
 
 FLUSH PRIVILEGES;
-
-quit
 ```
 
 Note the semi-colon ending the statement. On success you should see the following messages:
