@@ -15,8 +15,6 @@ sudo rm *
 sudo wget http://wordpress.org/latest.tar.gz
 ```
 
-TODO - should I? there were no instructions?  change the ownership of this folder to the `pi` user too.
-
 + Extract the WordPress tarball.
 
 ```bash

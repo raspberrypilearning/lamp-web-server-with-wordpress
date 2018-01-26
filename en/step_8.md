@@ -2,7 +2,7 @@
 
 + Open your web browser and goto `http://localhost`, you should see a WordPress page asking to pick your language.
 
-![WordPress select language](images/path)
+![WordPress select language](images/wordpress_language.png)
 
 + Select your language and press `Continue`.
 

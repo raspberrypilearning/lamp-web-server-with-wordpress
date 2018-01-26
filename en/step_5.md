@@ -8,8 +8,6 @@ Install the MySQL Server and PHP-MySQL packages by entering the following comman
 sudo apt-get install mysql-server php-mysql -y
 ```
 
-TODO - I WASNT When installing MySQL you will be asked for a root password. You'll need to remember this to allow your website to access the database.
-
 Now restart Apache:
 
 ```bash
