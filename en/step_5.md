@@ -1,50 +1,16 @@
-## Install PHP
+## Install MySQL
 
-PHP is a preprocessor; it's code that runs when the server receives a request for a web page. It runs, works out what needs to be shown on the page, then sends that page to the browser. Unlike static HTML, PHP can show different content under different circumstances. Other languages are capable of this, but since WordPress is written in PHP, that's what we need to use this time. PHP is a very popular language on the web; large projects like Facebook and Wikipedia are written in PHP.
+MySQL (pronounced *My Sequel* or *My S-Q-L*) is a popular database engine. Like PHP, its overwhelming presence on web servers enhanced its popularity. This is why projects like WordPress use it, and why those projects are so popular.
 
-Install the PHP and Apache packages with the following command:
-
-```bash
-sudo apt-get install php5 libapache2-mod-php5 -y
-```
-
-### Test PHP
-
-Create the file index.php:
+Install the MySQL Server and PHP-MySQL packages by entering the following command into the terminal:
 
 ```bash
-sudo leafpad index.php
+sudo apt-get install mysql-server php-mysql -y
 ```
 
-(or use `nano`)
-
-Put some PHP content in it:
-
-```php
-<?php echo "hello world"; ?>
-```
-
-Now save the file. Next delete index.html because it takes precendence over index.php:
-```bash
-sudo rm index.html
-```
-
-Refresh your browser. You should see "hello world". This is not dynamic but it is still served by PHP.
-If you see the raw PHP above instead of "hello world", reload and restart Apache like so:
+Now restart Apache:
 
 ```bash
 sudo service apache2 restart
-```
-
-Otherwise try something dynamic, for example:
-
-```php
-<?php echo date('Y-m-d H:i:s'); ?>
-```
-
-Or show your PHP info:
-
-```php
-<?php phpinfo(); ?>
 ```
 
