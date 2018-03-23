@@ -2,6 +2,8 @@
 
 You can download WordPress from [wordpress.org](http://wordpress.org/) using the `wget` command. Helpfully, a copy of the latest version of WordPress is always available at [wordpress.org/latest.tar.gz](https://wordpress.org/latest.tar.gz) and [wordpress.org/latest.zip](https://wordpress.org/latest.zip), so you can grab the latest version without having to look it up on the website. At the time of writing, this is version 4.5.
 
+In case you're wondering, `.tar` stands for tarball, a computer file format that combines and compresses multiple files. Open-source software is usually available for download in `.tar` format, because downloading a tarball is way faster than downloading the non-compressed software files.
+
 + Change directory to `/var/www/html/` and delete all the files in the folder.
 
 ```bash
@@ -15,25 +17,25 @@ sudo rm *
 sudo wget http://wordpress.org/latest.tar.gz
 ```
 
-+ Extract the WordPress tarball.
++ Extract the WordPress tarball to get at the WordPress files.
 
 ```bash
 sudo tar xzf latest.tar.gz
 ```
 
-+ Move the contents of the `wordpress` directory it extracted to the current directory.
++ Move the contents of the extracted `wordpress` directory to the current directory.
 
 ```bash
 sudo mv wordpress/* .
 ```
 
-+ Tidy up by removing the, now empty, `wordpress` directory and tarball 
++ Tidy up by removing the tarball and the now empty `wordpress` directory.
 
 ```bash
 sudo rm -rf wordpress latest.tar.gz
 ```
 
-Running the `ls` or `tree -L 1` command here will show you the contents of a WordPress project:
+- Running the `ls` or `tree -L 1` command now will show you the contents of a WordPress project:
 
 ```bash
 .
@@ -62,9 +64,8 @@ Running the `ls` or `tree -L 1` command here will show you the contents of a Wor
 
 This is the source of a default WordPress installation. The files you edit to customise your installation belong in the `wp-content` folder.
 
-+ You should now change the ownership of these files to the Apache user:
++ You should now change the ownership of all these files to the Apache user:
 
 ```bash
 sudo chown -R www-data: .
 ```
-
