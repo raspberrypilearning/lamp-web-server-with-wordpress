@@ -60,7 +60,7 @@ Query OK, 1 row affected (0.00 sec)
 GRANT ALL PRIVILEGES ON wordpress.* TO 'root'@'localhost' IDENTIFIED BY 'YOURPASSWORD';
 ```
 
-+ Flush the database privileges:
++ For the changes to take effect you will need to flush the database privileges:
 
 ```
 FLUSH PRIVILEGES;
