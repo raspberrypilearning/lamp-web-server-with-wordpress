@@ -1,16 +1,16 @@
-## WordPress Configuration
+## WordPress configuration
 
-+ Open your web browser and goto `http://localhost`, you should see a WordPress page asking to pick your language.
++ Open your web browser and goto `http://localhost`, you should see a WordPress page asking to pick yourlanguage.
 
 ![WordPress select language](images/wordpress_language.png)
 
-+ Select your language and press `Continue`.
++ Select your language and click **Continue**.
 
 You will be presented with the WordPress welcome screen.
 
 ![WordPress welcome screen](images/wordpress-welcome.png)
 
-+ Click the `Let's go!` button.
++ Click the **Let's go!** button.
 
 + Now fill out the basic site information as follows:
 
@@ -22,17 +22,17 @@ Database Host:      localhost
 Table Prefix:       wp_
 ```
 
-+ Click `Submit` to proceed.
++ Click **Submit** to proceed.
 
-+ Press the `Run the install` button.
++ Click the **Run the install** button.
 
-Now you're getting close.
+Now you're getting close!
 
 ![WordPress Welcome screen](images/wp-info.png)
 
-Fill out the information: give your site a title, create a username and password and enter your email address. Hit the `Install WordPress` button, then log in using the account you just created.
+Fill out the information: give your site a title, create a username and password, and enter your email address. Hit the `Install WordPress` button, then log in using the account you just created.
 
-Now you're logged in and have your site set up, you can see the website by visiting your `http://localhost/wp-admin`. To log in from another computer), go to `http://PI-IP-ADDRESS/wp-admin`.
+Now you're logged in and have your site set up, you can see the website by visiting your `http://localhost/wp-admin`. To log in from another computer, go to `http://PI-IP-ADDRESS/wp-admin`, using your Pi's IP address.
 
 ### Friendly permalinks
 
@@ -40,9 +40,9 @@ It's recommended that you change your permalink settings to make your URLs more 
 
 To do this, log in to WordPress and go to the dashboard.
 
-+ Go to `Settings` then `Permalinks`.
++ Go to **Setting**, then **Permalinks**.
 
-+ Select the `Post name` option and click `Save Changes`.
++ Select the **Post name** option and click **Save Changes**.
 
 You'll need to enable Apache's `rewrite` mod:
 
@@ -66,7 +66,7 @@ sudo leafpad /etc/apache2/sites-available/000-default.conf
 </Directory>
 ```
 
-Ensuring it's within the `<VirtualHost *:80>` like so:
+- Ensure it's within the `<VirtualHost *:80>` like so:
 
 ```
 <VirtualHost *:80>
@@ -86,5 +86,4 @@ sudo service apache2 restart
 
 ### Customisation
 
-WordPress is very customisable. By clicking your site name in the WordPress banner along the top of the page (when logged in), you'll be taken to the Dashboard. From here you can change the theme, add pages and posts, edit the menu, add plugins and lots more. This is just a taster for getting something interesting set up on the Raspberry Pi's web server.
-
+WordPress is very customisable. By clicking your site name in the WordPress banner at the top of the page (when logged you're in), you'll be taken to the Dashboard. From there, you can change the theme, add pages and posts, edit the menu, add plugins, and lots more. This is just a taster for getting something interesting set up on the Raspberry Pi's web server.

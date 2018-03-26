@@ -2,5 +2,4 @@
 
 ### Hardware
 
-- A Raspberry Pi Computer
-- an internet connection
+- A Raspberry Pi computer connected to the internet
