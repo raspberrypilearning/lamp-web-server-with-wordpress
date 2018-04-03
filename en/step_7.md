@@ -60,11 +60,10 @@ Query OK, 1 row affected (0.00 sec)
 GRANT ALL PRIVILEGES ON wordpress.* TO 'root'@'localhost' IDENTIFIED BY 'YOURPASSWORD';
 ```
 
-+ For the changes to take effect you will need to flush the database privileges:
++ For the changes to take effect, you will need to flush the database privileges:
 
 ```
 FLUSH PRIVILEGES;
 ```
 
-+ Exit out of the MariaDB prompt with `Ctrl + D`.
-
++ Exit the MariaDB prompt with <kbd>Ctrl</kbd> + <kbd>D</kbd>.
