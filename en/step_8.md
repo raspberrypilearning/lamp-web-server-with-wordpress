@@ -40,7 +40,7 @@ Now you're logged in and have your site set up, you can see the website by visit
 title: Log in to WordPress from another computer
 ---
 
-To log in from another computer, go to `http://PI-IP-ADDRESS/wp-admin`, using your Pi's IP address.
+To log in from another computer, open a browser and go to `http://PI-IP-ADDRESS/wp-admin`, using your Pi's IP address.
 
 You can find your Pi's IP address using this command:
 
