@@ -1,6 +1,6 @@
 ## WordPress configuration
 
-+ Open the web browser on your and goto `http://localhost`, you should see a WordPress page asking to pick your language.
++ Open the web browser on your Pi and goto `http://localhost`, you should see a WordPress page asking to pick your language.
 
 ![WordPress select language](images/wordpress_language.png)
 
@@ -37,7 +37,7 @@ Now you're logged in and have your site set up, you can see the website by visit
 --- collapse ---
 
 ---
-title: Login to Wordpress from another computer
+title: Log in to WordPress from another computer
 ---
 
 To log in from another computer, go to `http://PI-IP-ADDRESS/wp-admin`, using your Pi's IP address.
@@ -49,7 +49,6 @@ hostname -I
 ```
 
 ![hostname](images/hostname_annotated.png)
-
 
 --- /collapse ---
 
