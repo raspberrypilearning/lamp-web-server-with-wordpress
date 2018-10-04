@@ -24,7 +24,7 @@ sudo leafpad index.php
 
 + Save the file. 
 
-+ Delete `index.html`, because it takes precendence over `index.php`:
++ Delete `index.html`, because it takes precedence over `index.php`:
 
 ```bash
 sudo rm index.html
