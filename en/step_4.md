@@ -2,7 +2,7 @@
 
 PHP is a **preprocessor**: it's code that runs when the server receives a request for a web page via a web browser. It works out what needs to be shown on the page, and then sends that page to the browser. Unlike static HTML, PHP can show different content under different circumstances. Other languages are also capable of doing this, but since WordPress is written in PHP, that's what we need to use this time. PHP is a very popular language on the web: huge projects like Facebook and Wikipedia are written in PHP.
 
-+ Install the PHP and Apache packages with the following command:
++ Install the PHP package with the following command:
 
 ```bash
 sudo apt-get install php -y
