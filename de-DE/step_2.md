@@ -1,5 +1,5 @@
-## What you will need
+## Was du brauchen wirst
 
 ### Hardware
 
-- A Raspberry Pi computer connected to the internet
+- Ein Raspberry Pi-Computer, der mit dem Internet verbunden ist
