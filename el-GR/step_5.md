@@ -1,14 +1,14 @@
-## Install MySQL
+## Εγκατέστησε την MySQL
 
-MySQL (pronounced *My Sequel* or *My S-Q-L*) is a popular database engine. Like PHP, it's widely used on web servers, which is why projects like WordPress use it, and why those projects are so popular.
+Η MySQL (προφέρεται *My Sequel* ή *My SQL*) είναι μια δημοφιλής μηχανή βάσης δεδομένων. Όπως και η PHP, χρησιμοποιείται ευρέως σε διακομιστές ιστού και γι' αυτό τον λόγο  έργα όπως το WordPress την χρησιμοποιούν και επειδή  αυτά τα έργα είναι τόσο δημοφιλή.
 
-Install the MySQL Server and PHP-MySQL packages by entering the following command into the terminal window:
+Εγκατέστησε τα πακέτα διακομιστή MySQL και PHP-MySQL εισάγοντας τη ακόλουθη εντολή στο παράθυρο τερματικού:
 
 ```bash
 sudo apt-get install mysql-server php-mysql -y
 ```
 
-Now restart Apache:
+Τώρα κάνε επανεκκίνηση τον Apache:
 
 ```bash
 sudo service apache2 restart
