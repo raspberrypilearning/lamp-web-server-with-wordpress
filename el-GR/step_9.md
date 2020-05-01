@@ -1,7 +1,7 @@
-## What next?
+## Και τώρα;
 
-- Try adding pages and posts to your website.
-- Try installing different themes from the Appearance menu.
-- Try customising your website's theme, or creating your own.
-- Try using your web server to display useful information for people on your network.
+- Δοκίμασε να προσθέσεις σελίδες και αναρτήσεις στον ιστότοπό σου.
+- Δοκίμασε να εγκαταστήσεις διαφορετικά θέματα από το μενού Εμφάνιση.
+- Δοκίμασε να προσαρμόσεις το θέμα του ιστότοπού σου ή να δημιουργήσεις το δικό σου.
+- Δοκίμασε να χρησιμοποιήσεις τον διακομιστή ιστού για να εμφανίσεις χρήσιμες πληροφορίες για άτομα στο δίκτυό σου.
 
