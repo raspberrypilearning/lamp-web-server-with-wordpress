@@ -1,10 +1,10 @@
-## What you will make
-Learn to set up a LAMP (**L**inux, **A**pache, **M**ySQL, **P**HP) stack on your Raspberry Pi and configure it to work as a web server. You'll download and install WordPress and set up a basic website which you can access on any device on the same network as your Pi.
+## Τι θα φτιάξεις
+Θα μάθεις να ρυθμίζεις ένα LAMP (**L**inux, **Α**pache, **Μ**ySQL,** P**HP) stack στο Raspberry Pi σου και να το διαμορφώσεις έτσι ώστε να λειτουργεί ως διακομιστής ιστού. Θα κατεβάσεις, θα εγκαταστήσεις το WordPress και θα στήσεις έναν βασικό ιστότοπο στον οποίο θα έχεις πρόσβαση από οποιαδήποτε συσκευή στο ίδιο δίκτυο με το Pi σου.
 
-## What you will learn
- By following this resource and setting up a web server and WordPress website you will learn how to:
+## Τι θα μάθεις
+ Ακολουθώντας αυτόν τον πόρο και ρυθμίζοντας έναν διακομιστή ιστού και έναν ιστότοπο WordPress θα μάθεις πώς να:
 
- - Install software on your Raspberry Pi
- - Install and configure Apache, PHP, and MySQL to create a LAMP web server
- - Download WordPress and run it as a local website on your Raspberry Pi
- - Configure WordPress and make your website accessible to other devices on your local network
+ - Εγκαταστήσεις λογισμικό στο Raspberry Pi
+ - Εγκαταστήσεις και να ρυθμίσεις τα Apache, PHP και MySQL για να δημιουργήσεις έναν διακομιστή ιστού LAMP
+ - Κάνεις λήψη του WordPress και να το εκτελείς ως τοπικό ιστότοπο στο Raspberry Pi
+ - Διαμορφώσεις το WordPress και να κάνεις τον ιστότοπό σου προσβάσιμο από άλλες συσκευές στο τοπικό σου δίκτυο
