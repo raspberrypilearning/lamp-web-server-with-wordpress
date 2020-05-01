@@ -1,7 +1,7 @@
 ---
-title: Build a LAMP Web Server with WordPress
+title: Δημιούργησε έναν Διακομιστή Ιστού LAMP με WordPress
 hero_image: images/banner.png
-description: Set up a local server for a website on your Raspberry Pi
+description: Ρύθμισε έναν τοπικό διακομιστή για έναν ιστότοπο στο Raspberry Pi
 original_url: https://raspberrypi.org/learning/lamp-web-server-with-wordpress
 theme: turquoise
 duration: 2
@@ -18,20 +18,20 @@ version: 4
 last_tested: 2017-01-01
 steps:
   - 
-    title: Introduction
+    title: Εισαγωγή
   - 
-    title: What you will need
+    title: Τι θα χρειαστείς
   - 
-    title: Set up an Apache web server
+    title: Ρύθμισε ένα διακομιστή ιστού Apache
   - 
-    title: Install PHP
+    title: Εγκατέστησε την PHP
   - 
-    title: Install MySQL
+    title: Εγκατέστησε την MySQL
   - 
-    title: Download WordPress
+    title: Κάνε λήψη του WordPress
   - 
-    title: Set up your WordPress database
+    title: Ρύθμισε την βάση δεδομένων του WordPress σου
   - 
-    title: WordPress configuration
+    title: Διαμόρφωση του WordPress
   - 
-    title: What next?
+    title: Και τώρα;
