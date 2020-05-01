@@ -1,7 +1,7 @@
 ---
-title: Build a LAMP Web Server with WordPress
+title: Créer un serveur Web LAMP avec WordPress
 hero_image: images/banner.png
-description: Set up a local server for a website on your Raspberry Pi
+description: Configurer un serveur local pour un site Web sur ton Raspberry Pi
 original_url: https://raspberrypi.org/learning/lamp-web-server-with-wordpress
 theme: turquoise
 duration: 2
@@ -20,18 +20,18 @@ steps:
   - 
     title: Introduction
   - 
-    title: What you will need
+    title: Ce dont tu auras besoin
   - 
-    title: Set up an Apache web server
+    title: Configurer un serveur Web Apache
   - 
-    title: Install PHP
+    title: Installer PHP
   - 
-    title: Install MySQL
+    title: Installer MySQL
   - 
-    title: Download WordPress
+    title: Télécharger WordPress
   - 
-    title: Set up your WordPress database
+    title: Configure ta base de données WordPress
   - 
-    title: WordPress configuration
+    title: Configuration de WordPress
   - 
-    title: What next?
+    title: Et ensuite ?
