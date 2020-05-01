@@ -1,5 +1,5 @@
-## What you will need
+## Τι θα χρειαστείς
 
-### Hardware
+### Υλικό
 
-- A Raspberry Pi computer connected to the internet
+- Έναν υπολογιστή Raspberry Pi συνδεδεμένο στο Διαδίκτυο
