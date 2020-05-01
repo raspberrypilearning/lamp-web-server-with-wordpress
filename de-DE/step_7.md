@@ -1,69 +1,69 @@
-## Set up your WordPress Database
+## Richte deine WordPress Datenbank ein
 
-#### Set up MySQL/MariaDB
+#### Richte MySQL/MariaDB ein
 
-To get your WordPress site set up, you need a database. This is where MySQL and MariaDB come in!
+Um deine WordPress-Seite einrichten zu können, brauchst du eine Datenbank. Hier kommen MySQL und MariaDB ins Spiel!
 
-+ Run the MySQL secure installation command in the terminal window.
++ Führe den Befehl zur sicheren Installation von MySQL im Terminal-Fenster aus.
 
 ```bash
 sudo mysql_secure_installation
 ```
 
-+ You will be asked `Enter current password for root (enter for none):` — press **Enter**.
++ Du wirst gefragt, das aktuelle Passwort für den root-Nutzer einzugeben (`Enter current password for root (enter for none):`) — drücke **Enter**.
 
-+ Type in **Y** and press **Enter** to `Set root password?`.
++ Gib **Y** (für Yes, also Ja) ein und drücke **Enter**, um das root-Passwort zu setzen (`Set root password?`).
 
-+ Type in a password at the `New password:` prompt, and press **Enter**. **Important:** remember this root password, as you will need it later to set up WordPress.
++ Gib nach der Eingabeaufforderung `New password:` ein Passwort ein und drücke **Enter**. **Wichtig:** Merke dir dieses root-Passwort, da du es später brauchen wirst um WordPress einzurichten.
 
-+ Type in **Y** to `Remove anonymous users`.
++ Gib **Y** ein, um den Anonymen-Benutzer zu entfernen (`Remove anonymous users`).
 
-+ Type in **Y** to `Disallow root login remotely`.
++ Gib **Y**, um Root-Anmeldungen aus der Ferne zu verbieten (`Disallow root login remotely`).
 
-+ Type in **Y** to `Remove test database and access to it`.
++ Gib **Y** ein, um die Testdatenbank und den Zugriff darauf zu entfernen (`Remove test database and access to it`).
 
-+ Type in **Y** to `Reload privilege tables now`.
++ Gib **Y** ein, um die Berechtigungstabelle neu zu laden (`Reload privilege tables now`).
 
-When complete, you will see the message `All done!` and `Thanks for using MariaDB!`.
+Wenn alles fertig ist, wirst du die Nachricht `All done!` ("Alles fertig!") und `Thanks for using MariaDB!` ("Danke, dass du MariaDB nutzt!") sehen.
 
-#### Create the WordPress database
+#### Erstelle die WordPress-Datenbank
 
-+ Run `mysql` in the terminal window:
++ Führe `mysql` im Terminalfenster aus:
 
 ```bash 
 sudo mysql -uroot -p
 ```
 
-+ Enter the root password you created.
++ Gib das von dir erstellte Root-Passwort ein.
 
-You will be greeted by the message `Welcome to the MariaDB monitor`.
+Du wirst von der Nachricht `Welcome to the MariaDB monitor` ("Willkommen beim MariaDB Monitor") begrüßt.
 
-+ Create the database for your WordPress installation at the `MariaDB [(none)]>` prompt using:
++ Erstelle eine Datenbank für deine WordPress-Installation in der `MariaDB [(none)]>`-Eingabeaufforderung mit folgendem Befehl:
 
 ```
 create database wordpress;
 ```
 
-  Note the semi-colon ending the statement.
+  Beachte das Semikolon, das die Anweisung beendet.
 
-If this has been successful, you should see this:
+Wenn das geklappt hat, solltest du Folgendes sehen:
 
 ```
 Query OK, 1 row affected (0.00 sec)
 ```
 
-![create database](images/create-database.png)
+![Datenbank erstellen](images/create-database.png)
 
-+ Now grant database privileges to the root user. **Note:** you will need to enter your own password after `IDENTIFIED BY`.
++ Gewähre dem Root-Benutzer nun Datenbankberechtigungen. **Hinweis:** Nach `IDENTIFIED BY` musst du dein eigenes Passwort eingeben.
 
 ```
-GRANT ALL PRIVILEGES ON wordpress.* TO 'root'@'localhost' IDENTIFIED BY 'YOURPASSWORD';
+GRANT ALL PRIVILEGES ON wordpress.* TO 'root'@'localhost' IDENTIFIED BY 'DEINPASSWORT';
 ```
 
-+ For the changes to take effect, you will need to flush the database privileges:
++ Damit die Änderungen wirksam werden, musst du deine Datenbank-Berechtigungen neu in den Arbeitsspeicher laden:
 
 ```
 FLUSH PRIVILEGES;
 ```
 
-+ Exit the MariaDB prompt with <kbd>Ctrl</kbd> + <kbd>D</kbd>.
++ Verlasse die MariaDB-Eingabeaufforderung mit <kbd>Strg</kbd> + <kbd>D</kbd>.
