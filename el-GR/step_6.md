@@ -1,49 +1,49 @@
-## Download WordPress
+## Κάνε λήψη του WordPress
 
-You can download WordPress from [wordpress.org](http://wordpress.org/) using the `wget` command. Helpfully, a copy of the latest version of WordPress is always available at [wordpress.org/latest.tar.gz](https://wordpress.org/latest.tar.gz), so you can grab the latest version without having to look it up on the website. At the time of writing, this is version 4.5.
+Μπορείς να κάνεις λήψη του WordPress από την [wordpress.org](http://wordpress.org/) χρησιμοποιώντας την εντολή `wget`. Ένα αντίγραφο της τελευταίας έκδοσης του WordPress είναι πάντα διαθέσιμο στη διεύθυνση [wordpress.org/latest.tar.gz](https://wordpress.org/latest.tar.gz), ώστε να μπορείς να αποκτήσεις την πιο πρόσφατη έκδοση χωρίς να χρειάζεται να την αναζητήσεις στον ιστότοπο. Τη στιγμή της σύνταξης, υπάρχει η έκδοση 4.5.
 
 --- collapse ---
 
 ---
-title: What is a .tar.gz file?
+title: Τι είναι ένα αρχείο .tar.gz;
 ---
 
-In case you're wondering, `.tar.gz` stands for 'gzip-compressed tar archive'. `gzip` is a tool for compressing files, which means reducing their size so they can be stored or distributed more easily. `.tar` stands for tarball, which is a computer file format that combines and compresses multiple files. Software is often available for download in `.tar.gz` format, because downloading a tarball is a lot faster than downloading the non-compressed files.
+Σε περίπτωση που αναρωτιέσαι, το `.tar.gz` σημαίνει «gzip-συμπιεσμένο αρχείο tar». Το `gzip` είναι ένα εργαλείο συμπίεσης αρχείων, που σημαίνει μείωση του μεγέθους τους ώστε να μπορούν να αποθηκευτούν ή να διανεμηθούν πιο εύκολα. Το `.tar` σημαίνει tarball, που είναι μια μορφή αρχείου του υπολογιστή που συνδυάζει και συμπιέζει πολλά αρχεία. Το λογισμικό είναι συχνά διαθέσιμο για λήψη σε μορφή `.tar.gz`, επειδή η λήψη ενός tarball είναι πολύ πιο γρήγορη από τη λήψη των μη συμπιεσμένων αρχείων.
 
 --- /collapse ---
 
-+ Change directory to `/var/www/html/` and delete all the files in the folder.
++ Άλλαξε τον κατάλογο στον `/var/www/html/` και διέγραψε όλα τα αρχεία στο φάκελο.
 
 ```bash
 cd /var/www/html/
 sudo rm *
 ```
 
-+ Download WordPress using `wget`.
++ Κάνε λήψη του WordPress χρησιμοποιώντας την εντολή `wget`.
 
 ```bash
 sudo wget http://wordpress.org/latest.tar.gz
 ```
 
-+ Extract the WordPress tarball to get at the WordPress files.
++ Αποσυμπίεσε το WordPress tarball για να λάβεις τα αρχεία του WordPress.
 
 ```bash
 sudo tar xzf latest.tar.gz
 ```
 
-+ Move the contents of the extracted `wordpress` directory to the current directory.
++ Μετακίνησε τα περιεχόμενα του αποσυμπιεσμένου καταλόγου `wordpress` στον τρέχοντα κατάλογο.
 
 ```bash
 sudo mv wordpress/* .
 ```
 
-+ Tidy up by removing the tarball and the now empty `wordpress` directory.
++ Τακτοποίησε λίγο αφαιρώντας το tarball και τον άδειο κατάλογο `wordpress`.
 
 ```bash
 sudo rm -rf wordpress latest.tar.gz
 ```
 
-- Running the `ls` or `tree -L 1` command now will show you the contents of a WordPress project:
+- Η εκτέλεση τώρα της εντολής `ls` ή της `tree -L 1` θα σου δείξει το περιεχόμενο του έργου WordPress:
 
 ```bash
 .
@@ -67,12 +67,12 @@ sudo rm -rf wordpress latest.tar.gz
 ├── wp-trackback.php
 └── xmlrpc.php
 
-3 directories, 16 files
+3 κατάλογοι, 16 αρχεία
 ```
 
-This is the source of a default WordPress installation. The files you edit to customise your installation belong in the `wp-content` folder.
+Αυτή είναι η πηγή μιας προεπιλεγμένης εγκατάστασης WordPress. Τα αρχεία για επεξεργασία ώστε να προσαρμόσεις την εγκατάστασή σου ανήκουν στον φάκελο `wp-content`.
 
-+ You should now change the ownership of all these files to the Apache user:
++ Τώρα πρέπει να αλλάξεις την ιδιοκτησία όλων αυτών των αρχείων στον χρήστη Apache:
 
 ```bash
 sudo chown -R www-data: .
