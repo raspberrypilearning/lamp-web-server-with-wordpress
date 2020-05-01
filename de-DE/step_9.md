@@ -1,7 +1,7 @@
-## What next?
+## Was kommt als Nächstes?
 
-- Try adding pages and posts to your website.
-- Try installing different themes from the Appearance menu.
-- Try customising your website's theme, or creating your own.
-- Try using your web server to display useful information for people on your network.
+- Versuche, deiner Webseite weitere Seiten und Beiträge hinzuzufügen.
+- Versuche, verschiedene Themes aus dem Design-Menü zu installieren.
+- Versuche das Theme deiner Website anzupassen oder ein eigenes zu erstellen.
+- Versuche deinen Webserber zu verwenden, um nützliche Informationen für Personen in deinem Netzwerk darzustellen.
 
