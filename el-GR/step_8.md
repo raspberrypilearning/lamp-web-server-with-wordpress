@@ -1,83 +1,83 @@
-## WordPress configuration
+## Διαμόρφωση του WordPress
 
-+ Open the web browser on your Pi and goto `http://localhost`, you should see a WordPress page asking to pick your language.
++ Άνοιξε το πρόγραμμα περιήγησης ιστού στο Pi σου και μετακινήσου στη σελίδα `http://localhost`, όπου θα πρέπει να δεις μια σελίδα WordPress που  ζητά να επιλέξεις τη γλώσσα σου.
 
-![WordPress select language](images/wordpress_language.png)
+![Επέλεξε γλώσσα του WordPress](images/wordpress_language.png)
 
-+ Select your language and click **Continue**.
++ Επέλεξε τη γλώσσα σου και κάνε κλικ στο **Continue**.
 
-You will be presented with the WordPress welcome screen.
+Θα εμφανιστεί η οθόνη καλωσορίσματος του WordPress.
 
-![WordPress welcome screen](images/wordpress-welcome.png)
+![Οθόνη καλωσορίσματος WordPress](images/wordpress-welcome.png)
 
-+ Click the **Let's go!** button.
++ Κάνε κλικ στο κουμπί **Πάμε!**.
 
-+ Now fill out the basic site information as follows:
++ Τώρα συμπλήρωσε τις βασικές πληροφορίες του ιστότοπου ως εξής:
 
 ```
-Database Name:      wordpress
-User Name:          root
-Password:           <YOUR PASSWORD>
-Database Host:      localhost
-Table Prefix:       wp_
+Όνομα βάσης δεδομένων: wordpress
+Όνομα χρήστη: root
+Κωδικός πρόσβασης: <YOUR PASSWORD>
+Κεντρικός υπολογιστής βάσης δεδομένων: localhost
+Πρόθεμα πίνακα: wp_
 ```
 
-+ Click **Submit** to proceed.
++ Κάνε κλικ στο **Υποβολή** για να προχωρήσει.
 
-+ Click the **Run the install** button.
++ Κάνε κλικ στο κουμπί **Εκτέλεση εγκατάστασης**.
 
-Now you're getting close!
+Κοντεύεις!
 
-![WordPress Welcome screen](images/wp-info.png)
+![Οθόνη καλωσορίσματος WordPress](images/wp-info.png)
 
-Fill out the information: give your site a title, create a username and password, and enter your email address. Hit the `Install WordPress` button, then log in using the account you just created.
+Συμπλήρωσε τις πληροφορίες: δώσε έναν τίτλο στον ιστότοπό σου, δημιούργησε ένα όνομα χρήστη και ένα συνθηματικό και γράψε την ηλεκτρονική σου διεύθυνση. Πάτα το κουμπί `Εγκατάσταση WordPress` και στη συνέχεια  κάνε σύνδεση χρησιμοποιώντας τον λογαριασμό που μόλις δημιούργησες.
 
-Now you're logged in and have your site set up, you can see the website by visiting your `http://localhost/wp-admin`.
+Τώρα που έχεις συνδεθεί και έχεις ρυθμίσει τον ιστότοπό σου, μπορείς να δεις τον ιστότοπο μεταβαίνοντας στο `http://localhost/wp-admin`.
 
 --- collapse ---
 
 ---
-title: Log in to WordPress from another computer
+title: Κάνε είσοδο στο WordPress από άλλον υπολογιστή
 ---
 
-To log in from another computer, open a browser and go to `http://PI-IP-ADDRESS/wp-admin`, using your Pi's IP address.
+Για να συνδεθείς από έναν άλλο υπολογιστή, άνοιξε ένα πρόγραμμα περιήγησης και εισήγαγε τη διεύθυνση `http://PI-IP-ADDRESS/wp-admin`, χρησιμοποιώντας τη διεύθυνση IP του Pi σου.
 
-You can find your Pi's IP address using this command:
+Μπορείς να βρεις τη διεύθυνση IP του Pi χρησιμοποιώντας αυτήν την εντολή:
 
 ```bash
 hostname -I
 ```
 
-![hostname](images/hostname_annotated.png)
+![όνομα κεντρικού υπολογιστή](images/hostname_annotated.png)
 
 --- /collapse ---
 
 
-### Friendly permalinks
+### Φιλικοί σύνδεσμοι
 
-It's recommended that you change your permalink settings to make your URLs more friendly.
+Συνιστάται να αλλάξεις τις ρυθμίσεις μόνιμου συνδέσμου για να κάνεις τις διευθύνσεις URL πιο φιλικές.
 
-To do this, log in to WordPress and go to the dashboard.
+Για να το κάνεις αυτό, συνδέσου στο WordPress και μετακινήσου στον πίνακα ελέγχου.
 
-+ Go to **Setting**, then **Permalinks**.
++ Μετακινήσου στις **Ρυθμίσεις** και μετά στο **Μόνιμοι σύνδεσμοι**.
 
-+ Select the **Post name** option and click **Save Changes**.
++ Επέλεξε το **Όνομα ανάρτησης** και κάνε κλικ στο **Αποθήκευση αλλαγών**.
 
-You'll need to enable Apache's `rewrite` mod:
+Θα πρέπει να ενεργοποιήσεις την κατάσταση `επανεγγραφή` του Apache με την εντολή:
 
 ```bash
 sudo a2enmod rewrite
 ```
 
-You'll also need to tell the virtual host serving the site to allow requests to be overwritten.
+Θα πρέπει επίσης να ενημερώσεις τον εικονικό υπολογιστή που εξυπηρετεί τον ιστότοπο για να επιτρέψει την αντικατάσταση αιτημάτων.
 
-+ Edit the Apache configuration file for your virtual host:
++ Επεξεργάσου το αρχείο ρυθμίσεων του Apache για τον εικονικό υπολογιστή σου:
 
 ```bash
 sudo leafpad /etc/apache2/sites-available/000-default.conf
 ```
 
-+ Add the following lines after line 1.
++ Πρόσθεσε τις ακόλουθες γραμμές μετά τη γραμμή 1.
 
 ```
 <Directory "/var/www/html">
@@ -85,7 +85,7 @@ sudo leafpad /etc/apache2/sites-available/000-default.conf
 </Directory>
 ```
 
-- Ensure it's within the `<VirtualHost *:80>` like so:
+- Βεβαιωθείτε ότι είναι εντός του `<VirtualHost *:80>` ως εξής:
 
 ```
 <VirtualHost *:80>
@@ -95,14 +95,14 @@ sudo leafpad /etc/apache2/sites-available/000-default.conf
     ...
 ```
 
-+ Save the file and exit.
++ Αποθήκευσε το αρχείο και αποχώρησε.
 
-+ Restart Apache.
++ Κάνε επανεκκίνηση στον Apache.
 
 ```bash
 sudo service apache2 restart
 ```
 
-### Customisation
+### Προσαρμογή
 
-WordPress is very customisable. By clicking your site name in the WordPress banner at the top of the page (when logged you're in), you'll be taken to the Dashboard. From there, you can change the theme, add pages and posts, edit the menu, add plugins, and lots more. This is just a taster for getting something interesting set up on the Raspberry Pi's web server.
+Το WordPress είναι πολύ προσαρμόσιμο. Κάνοντας κλικ στο όνομα του ιστότοπού σου στην μπάρα του WordPress στο επάνω μέρος της σελίδας (όταν είσαι συνδεδεμένος), θα μεταφερθείς στον Πίνακα ελέγχου. Από εκεί, μπορείς να αλλάξεις το θέμα, να προσθέσεις σελίδες και δημοσιεύσεις, να επεξεργαστείς το μενού, να προσθέσεις πρόσθετα και πολλά άλλα. Αυτό είναι απλώς δοκιμαστικό για να δημιουργήσεις κάτι ενδιαφέρον στον διακομιστή ιστού του Raspberry Pi.
