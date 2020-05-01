@@ -1,14 +1,14 @@
-## Set up an Apache web server
+## Ρύθμισε ένα διακομιστή ιστού Apache
 
-Apache is a popular web server application you can install on the Raspberry Pi to allow it to serve web pages.
+Ο Apache είναι μια δημοφιλής εφαρμογή διακομιστή ιστού που μπορείς να εγκαταστήσεις στο Raspberry Pi για να επιτρέψεις την προβολή ιστοσελίδων.
 
-On its own, Apache can serve HTML files over HTTP. With additional modules it can serve dynamic web pages using scripting languages such as PHP.
+Από μόνος του ο Apache μπορεί να εξυπηρετεί αρχεία HTML μέσω HTTP. Με πρόσθετα αρθρώματα μπορεί να εξυπηρετήσει δυναμικές ιστοσελίδες χρησιμοποιώντας γλώσσες δέσμης ενεργειών όπως η PHP.
 
 ### Install Apache
 
-+ Open a terminal window by selecting **Accessories** > **Terminal** from the menu.
++ Άνοιξε ένα παράθυρο τερματικού επιλέγοντας **Εργαλεία** > **Τερματικό** από το μενού.
 
-+ Install the `apache2` package by typing the following command into the terminal and pressing <kbd>Enter<kbd>:</p></li> </ul> 
++ Εγκατέστησε το πακέτο `apache2` πληκτρολογώντας την ακόλουθη εντολή στο τερματικό και πάτησε <kbd>Enter<kbd>:</p></li></ul> 
   
   <pre><code class="bash">sudo apt-get install apache2 -y
 </code></pre>
@@ -18,32 +18,32 @@ On its own, Apache can serve HTML files over HTTP. With additional modules it ca
   </p>
 
 <h3 spaces-before="0">
-  Test the web server
+  Δοκίμασε τον διακομιστή ιστού
 </h3>
 
 <p spaces-before="0">
-  By default, Apache puts a test HTML file in the web folder that you will be able to view from your Pi or another computer on your network.
+  Από προεπιλογή, ο Apache τοποθετεί ένα δοκιμαστικό αρχείο HTML στο φάκελο ιστού που θα μπορείς να δεις από το Pi ή από άλλον υπολογιστή στο δίκτυό σου.
 </p>
 
 <p spaces-before="0">
-  Open the Apache default web page on your Raspberry Pi:
+  Άνοιξε την προεπιλεγμένη ιστοσελίδα του Apache στο Raspberry Pi:
 </p>
 
 <ul>
   <li>
     <p spaces-before="0">
-      Open Chromium by selecting <strong x-id="1">Internet</strong> > <strong x-id="1">Chromium Web Browser</strong> from the menu.
+      Άνοιξε το Chromium επιλέγοντας <strong x-id="1">Διαδίκτυο</strong> > <strong x-id="1">Πρόγραμμα περιήγησης ιστού Chromium</strong> από το μενού.
     </p>
   </li>
   <li>
     <p spaces-before="0">
-      Enter the address <code>http://localhost</code>.
+      Πληκτρολόγησε τη διεύθυνση <code>http://localhost</code>.
     </p>
   </li>
 </ul>
 
 <p spaces-before="0">
-  You should see this in your browser window:
+  Θα πρέπει να δεις αυτό στο παράθυρο του προγράμματος περιήγησής σου:
 </p>
 
 <p spaces-before="0">
@@ -51,28 +51,28 @@ On its own, Apache can serve HTML files over HTTP. With additional modules it ca
 </p>
 
 <p spaces-before="0">
-  This means you have Apache working!
+  Αυτό σημαίνει ότι ο Apache λειτουργεί!
 </p>
 
 <p spaces-before="0">
-  You will also be able to open this web page from any other computer on your network using the IP address of your Raspberry Pi, e.g. <code>http://192.168.1.10</code>.
+  Θα μπορείς επίσης να ανοίξεις αυτήν την ιστοσελίδα από οποιονδήποτε άλλο υπολογιστή στο δίκτυό σου χρησιμοποιώντας τη διεύθυνση IP του Raspberry Pi, π.χ. <code>http://192.168.1.10</code>.
 </p>
 
 <p spaces-before="0">
-  To find out your Raspberry Pi's IP address, type <code>hostname -I</code> into the terminal window.  Your Raspberry Pi's <a href="https://www.raspberrypi.org/documentation/remote-access/ip-address.md">IP address</a> is a really useful and will allow you to remotely access it.
+  Για να μάθεις τη διεύθυνση IP του Raspberry Pi, πληκτρολόγησε στο παράθυρο του τερματικού την εντολή <code>hostname -I</code>.  Η <a href="https://www.raspberrypi.org/documentation/remote-access/ip-address.md">διεύθυνση IP</a> του Raspberry Pi είναι πραγματικά χρήσιμη και θα σου επιτρέψει να έχεις απομακρυσμένη πρόσβαση σε αυτό.
 </p>
 
 <h3 spaces-before="0">
-  Changing the default web page
+  Άλλαξε την προεπιλεγμένη ιστοσελίδα
 </h3>
 
 <p spaces-before="0">
-  This default web page is just a HTML file on the file system. It is located at <code>/var/www/html/index.html</code>.
+  Αυτή η προεπιλεγμένη ιστοσελίδα είναι απλώς ένα αρχείο HTML στο σύστημα αρχείων. Βρίσκεται στη διεύθυνση <code>/var/www/html/index.html</code>.
 </p>
 
 <ul>
   <li>
-    Navigate to this directory in the terminal and have a look at what's inside:
+    Μετακινήσου σε αυτόν τον κατάλογο στο τερματικό και ρίξε μια ματιά στο εσωτερικό του:
   </li>
 </ul>
 
@@ -81,7 +81,7 @@ ls -al
 </code></pre>
 
 <p spaces-before="0">
-  You should see this in the window:
+  Θα πρέπει να το δείς αυτό στο παράθυρο:
 </p>
 
 <pre><code class="bash">total 12
@@ -91,50 +91,50 @@ drwxr-xr-x  3 root root 4096 Jan  8 01:28 ..
 </code></pre>
 
 <p spaces-before="0">
-  This shows that there is one file in <code>/var/www/html/</code> called <code>index.html</code>. <code>.</code> refers to the directory itself <code>/var/www/html</code>, and <code>..</code> refers to the parent directory <code>/var/www/</code>.
+  Αυτό δείχνει ότι υπάρχει ένα αρχείο στον κατάλογο <code>/var/www/html/</code> που ονομάζεται <code>index.html</code>. Η <code>.</code>αναφέρεται στον ίδιο τον κατάλογο <code>/var/www/html</code> και οι <code>..</code> αναφέρονται στον γονικό κατάλογο <code>/var/www/</code>.
 </p>
 
 <h3 spaces-before="0">
-  What the columns mean
+  Τι σημαίνουν οι στήλες
 </h3>
 
 <ol start="1">
   <li>
-    The permissions of the file or directory
+    Τα δικαιώματα του αρχείου ή του καταλόγου
   </li>
   
   <li>
-    The number of files in the directory (or <code>1</code> if it's a file).
+    Ο αριθμός των αρχείων στον κατάλογο (ή <code>1</code> αν είναι αρχείο).
   </li>
   
   <li>
-    The user that owns the file or directory
+    Ο χρήστης που έχει κυριότητα του αρχείου ή του καταλόγου
   </li>
   
   <li>
-    The group that owns the file or directory
+    Η ομάδα που έχει κυριότητα του αρχείου ή του καταλόγου
   </li>
   
   <li>
-    The size of the file or directory
+    Το μέγεθος του αρχείου ή του καταλόγου
   </li>
   
   <li>
-    The date and time of the last modification
+    Η ημερομηνία και η ώρα της τελευταίας τροποποίησης
   </li>
 </ol>
 
 <p spaces-before="0">
-  As you can see, the <code>html</code> directory and <code>index.html</code> file are both owned by the <code>root</code> user, so you'll need to use <code>sudo</code> to edit them.
+  Όπως μπορείς να δεις, ο κατάλογος <code>html</code> και το αρχείο <code>index.html</code> ανήκουν και τα δύο στον χρήστη <code>root</code>, οπότε θα πρέπει να χρησιμοποιήσεις την εντολή <code>sudo</code> για να τα επεξεργαστείς.
 </p>
 
 <p spaces-before="0">
-  You can edit this file using leafpad:
+  Μπορείς να επεξεργαστείς αυτό το αρχείο με τη χρήση του προγράμματος leafpad:
 </p>
 
 <pre><code class="bash">sudo leafpad index.html
 </code></pre>
 
 <p spaces-before="0">
-  If you make a change to the file, save it, and refresh the browser, you will see your change appear.
+  Εάν κάνεις μια αλλαγή στο αρχείο, αποθήκευσέ το και κάνε ανανέωση στο πρόγραμμα περιήγησης, ώστε να δεις να εμφανίζεται η αλλαγή σου.
 </p>
