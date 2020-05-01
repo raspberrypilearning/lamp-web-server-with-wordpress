@@ -1,14 +1,14 @@
-## Set up an Apache web server
+## Configurer un serveur Web Apache
 
-Apache is a popular web server application you can install on the Raspberry Pi to allow it to serve web pages.
+Apache est une application de serveur Web populaire que tu peux installer sur le Raspberry Pi pour lui permettre de servir des pages Web.
 
-On its own, Apache can serve HTML files over HTTP. With additional modules it can serve dynamic web pages using scripting languages such as PHP.
+À lui seul, Apache peut servir des fichiers HTML sur HTTP. Avec des modules supplémentaires, il peut servir des pages Web dynamiques en utilisant des langages de script tels que PHP.
 
-### Install Apache
+### Installer Apache
 
-+ Open a terminal window by selecting **Accessories** > **Terminal** from the menu.
++ Ouvre une fenêtre de terminal en sélectionnant **Accessoires** > **Terminal** dans le menu.
 
-+ Install the `apache2` package by typing the following command into the terminal and pressing <kbd>Enter<kbd>:</p></li> </ul> 
++ Installe le paquet `apache2` en tapant la commande suivante dans le terminal et en appuyant sur <kbd>Entrée<kbd> : </p></li> </ul> 
   
   <pre><code class="bash">sudo apt-get install apache2 -y
 </code></pre>
@@ -18,32 +18,32 @@ On its own, Apache can serve HTML files over HTTP. With additional modules it ca
   </p>
 
 <h3 spaces-before="0">
-  Test the web server
+  Teste le serveur Web
 </h3>
 
 <p spaces-before="0">
-  By default, Apache puts a test HTML file in the web folder that you will be able to view from your Pi or another computer on your network.
+  Par défaut, Apache place un fichier HTML de test dans le dossier Web que tu pourras visualiser depuis ton Pi ou un autre ordinateur de ton réseau.
 </p>
 
 <p spaces-before="0">
-  Open the Apache default web page on your Raspberry Pi:
+  Ouvre la page Web par défaut d'Apache sur ton Raspberry Pi :
 </p>
 
 <ul>
   <li>
     <p spaces-before="0">
-      Open Chromium by selecting <strong x-id="1">Internet</strong> > <strong x-id="1">Chromium Web Browser</strong> from the menu.
+      Ouvre Chrome en sélectionnant <strong x-id="1">Internet</strong> > <strong x-id="1">Navigateur Web Chromium</strong> dans le menu.
     </p>
   </li>
   <li>
     <p spaces-before="0">
-      Enter the address <code>http://localhost</code>.
+      Entre l'adresse <code>http://localhost</code> .
     </p>
   </li>
 </ul>
 
 <p spaces-before="0">
-  You should see this in your browser window:
+  Tu devrais voir ceci dans la fenêtre de ton navigateur :
 </p>
 
 <p spaces-before="0">
@@ -51,28 +51,28 @@ On its own, Apache can serve HTML files over HTTP. With additional modules it ca
 </p>
 
 <p spaces-before="0">
-  This means you have Apache working!
+  Cela signifie que Apache fonctionne !
 </p>
 
 <p spaces-before="0">
-  You will also be able to open this web page from any other computer on your network using the IP address of your Raspberry Pi, e.g. <code>http://192.168.1.10</code>.
+  Tu pourras également ouvrir cette page Web depuis n'importe quel autre ordinateur de ton réseau en utilisant l'adresse IP de ton Raspberry Pi, par exemple <code>http://192.168.1.10</code> .
 </p>
 
 <p spaces-before="0">
-  To find out your Raspberry Pi's IP address, type <code>hostname -I</code> into the terminal window.  Your Raspberry Pi's <a href="https://www.raspberrypi.org/documentation/remote-access/ip-address.md">IP address</a> is a really useful and will allow you to remotely access it.
+  Pour connaître l'adresse IP de ton Raspberry Pi, tape <code>hostname -I </code> dans la fenêtre du terminal.  <a href="https://www.raspberrypi.org/documentation/remote-access/ip-address.md">L'adresse IP</a> de ton Raspberry Pi est vraiment utile et te permettras d'y accéder à distance.
 </p>
 
 <h3 spaces-before="0">
-  Changing the default web page
+  Modification de la page Web par défaut
 </h3>
 
 <p spaces-before="0">
-  This default web page is just a HTML file on the file system. It is located at <code>/var/www/html/index.html</code>.
+  Cette page Web par défaut n'est qu'un fichier HTML sur le système de fichiers. Il se trouve à <code>/var/www/html/index.html</code> .
 </p>
 
 <ul>
   <li>
-    Navigate to this directory in the terminal and have a look at what's inside:
+    Accède à ce répertoire dans le terminal et regarde ce qu'il contient :
   </li>
 </ul>
 
@@ -81,60 +81,60 @@ ls -al
 </code></pre>
 
 <p spaces-before="0">
-  You should see this in the window:
+  Tu devrais voir ceci dans la fenêtre :
 </p>
 
 <pre><code class="bash">total 12
-drwxr-xr-x  2 root root 4096 Jan  8 01:29 .
+drwxr-xr-x 2 root root 4096 Jan 8 01:29.
 drwxr-xr-x  3 root root 4096 Jan  8 01:28 ..
--rw-r--r--  1 root root  177 Jan  8 01:29 index.html
+-rw-r-r-- 1 root root 177 Jan  8 01:29 index.html
 </code></pre>
 
 <p spaces-before="0">
-  This shows that there is one file in <code>/var/www/html/</code> called <code>index.html</code>. <code>.</code> refers to the directory itself <code>/var/www/html</code>, and <code>..</code> refers to the parent directory <code>/var/www/</code>.
+  Cela montre qu'il y a un fichier dans <code>/var/www/html/</code> appelé <code>index.html</code> . <code>.</code> fait référence au répertoire en lui-même <code>/var/www/html</code> et <code>..</code> fait référence au répertoire parent <code>/var/www/</code> .
 </p>
 
 <h3 spaces-before="0">
-  What the columns mean
+  Signification des colonnes
 </h3>
 
 <ol start="1">
   <li>
-    The permissions of the file or directory
+    Les autorisations du fichier ou du répertoire
   </li>
   
   <li>
-    The number of files in the directory (or <code>1</code> if it's a file).
+    Le nombre de fichiers dans le répertoire (ou <code>1</code> s'il s'agit d'un fichier).
   </li>
   
   <li>
-    The user that owns the file or directory
+    L'utilisateur propriétaire du fichier ou du répertoire
   </li>
   
   <li>
-    The group that owns the file or directory
+    Le groupe propriétaire du fichier ou du répertoire
   </li>
   
   <li>
-    The size of the file or directory
+    La taille du fichier ou du répertoire
   </li>
   
   <li>
-    The date and time of the last modification
+    La date et l'heure de la dernière modification
   </li>
 </ol>
 
 <p spaces-before="0">
-  As you can see, the <code>html</code> directory and <code>index.html</code> file are both owned by the <code>root</code> user, so you'll need to use <code>sudo</code> to edit them.
+  Comme tu peux le voir, le répertoire <code>html</code> et le fichier <code>index.html</code> appartiennent à l'utilisateur <code>root</code> , tu devrais donc utiliser <code>sudo</code> pour les modifier.
 </p>
 
 <p spaces-before="0">
-  You can edit this file using leafpad:
+  Tu peux éditer ce fichier en utilisant leafpad :
 </p>
 
 <pre><code class="bash">sudo leafpad index.html
 </code></pre>
 
 <p spaces-before="0">
-  If you make a change to the file, save it, and refresh the browser, you will see your change appear.
+  Si tu apportes une modification au fichier, enregistre-le et actualise le navigateur, tu verras ta modification apparaître.
 </p>
