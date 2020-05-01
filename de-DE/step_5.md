@@ -1,14 +1,14 @@
-## Install MySQL
+## Installiere MySQL
 
-MySQL (pronounced *My Sequel* or *My S-Q-L*) is a popular database engine. Like PHP, it's widely used on web servers, which is why projects like WordPress use it, and why those projects are so popular.
+MySQL (ausgesprochen *My Sequel* oder *Mei S-Q-L*) ist eine beliebte Datenbank-Engine. Wie PHP wird es häufig auf Webservern verwendet, weshalb Projekte wie WordPress es verwenden und weshalb diese Projekte so beliebt sind.
 
-Install the MySQL Server and PHP-MySQL packages by entering the following command into the terminal window:
+Installiere die MySQL-Server- und PHP-MySQL-Pakete, indem du folgenden Befehl in das Terminal-Fenster eingibst:
 
 ```bash
 sudo apt-get install mysql-server php-mysql -y
 ```
 
-Now restart Apache:
+Starte jetzt Apache neu:
 
 ```bash
 sudo service apache2 restart
