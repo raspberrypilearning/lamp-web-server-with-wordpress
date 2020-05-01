@@ -1,49 +1,49 @@
-## Download WordPress
+## Télécharger WordPress
 
-You can download WordPress from [wordpress.org](http://wordpress.org/) using the `wget` command. Helpfully, a copy of the latest version of WordPress is always available at [wordpress.org/latest.tar.gz](https://wordpress.org/latest.tar.gz), so you can grab the latest version without having to look it up on the website. At the time of writing, this is version 4.5.
+Tu peux télécharger WordPress à partir de [wordpress.org](http://wordpress.org/) en utilisant la commande `wget`. Heureusement, une copie de la dernière version de WordPress est toujours disponible sur [wordpress.org/latest.tar.gz](https://wordpress.org/latest.tar.gz) , afin que tu puisses récupérer la dernière version sans avoir à la rechercher sur le site Web. Au moment de la rédaction, il s'agit de la version 4.5.
 
 --- collapse ---
 
 ---
-title: What is a .tar.gz file?
+title: Qu'est-ce qu'un fichier .tar.gz ?
 ---
 
-In case you're wondering, `.tar.gz` stands for 'gzip-compressed tar archive'. `gzip` is a tool for compressing files, which means reducing their size so they can be stored or distributed more easily. `.tar` stands for tarball, which is a computer file format that combines and compresses multiple files. Software is often available for download in `.tar.gz` format, because downloading a tarball is a lot faster than downloading the non-compressed files.
+Au cas où tu te poses la question, `.tar.gz` signifie « archive tar compressée par gzip ». `gzip` est un outil pour compresser des fichiers, ce qui signifie réduire leur taille afin qu'ils puissent être stockés ou distribués plus facilement. `.tar` signifie tarball, qui est un format de fichier informatique qui combine et compresse plusieurs fichiers. Le logiciel est souvent disponible pour téléchargement en format `.tar.gz`, car le téléchargement d'une archive « tar » est beaucoup plus rapide que le téléchargement des fichiers non compressés.
 
 --- /collapse ---
 
-+ Change directory to `/var/www/html/` and delete all the files in the folder.
++ Change le répertoire en `/var/www/html/` et supprime tous les fichiers du dossier.
 
 ```bash
 cd /var/www/html/
 sudo rm *
 ```
 
-+ Download WordPress using `wget`.
++ Télécharger WordPress en utilisant `wget`.
 
 ```bash
 sudo wget http://wordpress.org/latest.tar.gz
 ```
 
-+ Extract the WordPress tarball to get at the WordPress files.
++ Extrais l'archive « tar » de WordPress pour accéder aux fichiers WordPress.
 
 ```bash
 sudo tar xzf latest.tar.gz
 ```
 
-+ Move the contents of the extracted `wordpress` directory to the current directory.
++ Déplace le contenu du répertoire `wordpress` extrait dans le répertoire actuel.
 
 ```bash
 sudo mv wordpress/* .
 ```
 
-+ Tidy up by removing the tarball and the now empty `wordpress` directory.
++ Remets de l'ordre en supprimant l'archive tar et le répertoire `wordpress` qui est maintenant vide.
 
 ```bash
 sudo rm -rf wordpress latest.tar.gz
 ```
 
-- Running the `ls` or `tree -L 1` command now will show you the contents of a WordPress project:
+- L'exécution de la commande `ls` ou `tree -L 1` te montreras maintenant le contenu d'un projet WordPress :
 
 ```bash
 .
@@ -70,9 +70,9 @@ sudo rm -rf wordpress latest.tar.gz
 3 directories, 16 files
 ```
 
-This is the source of a default WordPress installation. The files you edit to customise your installation belong in the `wp-content` folder.
+C'est la source d'une installation WordPress par défaut. Les fichiers que tu modifies pour personnaliser ton installation appartiennent au dossier `wp-contents` .
 
-+ You should now change the ownership of all these files to the Apache user:
++ Tu dois maintenant changer la propriété de tous ces fichiers à l'utilisateur Apache :
 
 ```bash
 sudo chown -R www-data: .
