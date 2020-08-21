@@ -5,7 +5,7 @@ MariaDB is a popular database engine. Like PHP, it's widely used on web servers,
 Install the MariaDB Server and PHP-MySQL packages by entering the following command into the terminal window:
 
 ```bash
-sudo apt-get install mariadb-server-10.0 php-mysql -y
+sudo apt-get install mariadb-server php-mysql -y
 ```
 
 Now restart Apache:
