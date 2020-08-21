@@ -69,10 +69,10 @@ This shows that there is one file in `/var/www/html/` called `index.html`. `.` r
 
 As you can see, the `html` directory and `index.html` file are both owned by the `root` user, so you'll need to use `sudo` to edit them.
 
-You can edit this file using leafpad:
+You can edit this file using mousepad:
 
 ```bash
-sudo leafpad index.html
+sudo mousepad index.html
 ```
 
 If you make a change to the file, save it, and refresh the browser, you will see your change appear.
