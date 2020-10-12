@@ -1,69 +1,75 @@
-## Set up your WordPress Database
+## Stel je WordPress-database in
 
-#### Set up MySQL/MariaDB
+#### Stel MySQL/MariaDB in
 
-To get your WordPress site set up, you need a database. This is where MySQL and MariaDB come in!
+Om je WordPress-site in te stellen, heb je een database nodig. Dit is waar MySQL en MariaDB voor gebruikt worden!
 
-+ Run the MySQL secure installation command in the terminal window.
++ Voer de MySQL veilige installatieopdracht uit in het terminalvenster.
 
 ```bash
 sudo mysql_secure_installation
 ```
 
-+ You will be asked `Enter current password for root (enter for none):` — press **Enter**.
++ Je wordt gevraagd `Enter current password for root (enter for none):` — druk op **Enter**.
 
-+ Type in **Y** and press **Enter** to `Set root password?`.
++ Typ **Y** en druk op **Enter** voor `Set root password?`.
 
-+ Type in a password at the `New password:` prompt, and press **Enter**. **Important:** remember this root password, as you will need it later to set up WordPress.
++ Voer een wachtwoord in bij de `New password:` prompt en druk op **Enter**. **Belangrijk:** onthoud dit root-wachtwoord, omdat je het later nodig hebt om WordPress in te stellen.
 
-+ Type in **Y** to `Remove anonymous users`.
++ Typ **Y** voor `Remove anonymous users`.
 
-+ Type in **Y** to `Disallow root login remotely`.
++ Typ **Y** voor `Disallow root login remotely`.
 
-+ Type in **Y** to `Remove test database and access to it`.
++ Typ **Y** voor `Remove test database and access to it`.
 
-+ Type in **Y** to `Reload privilege tables now`.
++ Typ **Y** voor `Reload privilege tables now`.
 
-When complete, you will see the message `All done!` and `Thanks for using MariaDB!`.
+Als je klaar bent, zie je het bericht `All done!` en `Thanks for using MariaDB!`.
 
-#### Create the WordPress database
+#### Maak de WordPress-database
 
-+ Run `mysql` in the terminal window:
++ Voer `mysql` uit in het terminalvenster:
 
 ```bash 
 sudo mysql -uroot -p
 ```
 
-+ Enter the root password you created.
++ Voer het root-wachtwoord in dat je hebt gemaakt.
 
-You will be greeted by the message `Welcome to the MariaDB monitor`.
+Je wordt begroet met het bericht `Welcome to the MariaDB monitor`.
 
-+ Create the database for your WordPress installation at the `MariaDB [(none)]>` prompt using:
++ Maak de database voor je WordPress-installatie op de `MariaDB [(none)]>` prompt met:
 
 ```
 create database wordpress;
 ```
 
-  Note the semi-colon ending the statement.
+  Let op de puntkomma die de instructie beëindigt.
 
-If this has been successful, you should see this:
+Als dit is gelukt, zou je dit moeten zien:
 
 ```
-Query OK, 1 row affected (0.00 sec)
+Query OK, 1 row affected (0.000 sec)
 ```
 
-![create database](images/create-database.png)
+![database aanmaken](images/create-database.png)
 
-+ Now grant database privileges to the root user. **Note:** you will need to enter your own password after `IDENTIFIED BY`.
++ Verleen nu databaseprivileges aan de root-gebruiker. **Opmerking:** je moet je eigen wachtwoord invoeren na `IDENTIFIED BY`.
 
 ```
 GRANT ALL PRIVILEGES ON wordpress.* TO 'root'@'localhost' IDENTIFIED BY 'YOURPASSWORD';
 ```
 
-+ For the changes to take effect, you will need to flush the database privileges:
++ Om de wijzigingen door te voeren, moet je de databasemachtigingen opschonen:
 
 ```
 FLUSH PRIVILEGES;
 ```
 
 + Exit the MariaDB prompt with <kbd>Ctrl</kbd> + <kbd>D</kbd>.
+
++ Restart your Raspberry Pi:
+
+```
+sudo reboot
+```
