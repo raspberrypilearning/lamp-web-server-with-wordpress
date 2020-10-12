@@ -74,7 +74,7 @@ You'll also need to tell the virtual host serving the site to allow requests to 
 + Edit the Apache configuration file for your virtual host:
 
 ```bash
-sudo leafpad /etc/apache2/sites-available/000-default.conf
+sudo mousepad /etc/apache2/sites-available/000-default.conf
 ```
 
 + Add the following lines after line 1.
