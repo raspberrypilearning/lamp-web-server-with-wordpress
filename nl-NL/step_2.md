@@ -1,5 +1,6 @@
-## What you will need
+## Wat heb je nodig
 
 ### Hardware
 
-- A Raspberry Pi computer connected to the internet
+- Een Raspberry Pi-computer verbonden met internet
+- [An up to date install of the Raspberry Pi OS](https://www.raspberrypi.org/downloads/)
