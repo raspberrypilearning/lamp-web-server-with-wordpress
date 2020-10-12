@@ -13,7 +13,7 @@ sudo apt-get install php -y
 + Δημιούργησε το αρχείο `index.php`:
 
 ```bash
-sudo leafpad index.php
+sudo mousepad index.php
 ```
 
 + Βάλε λίγο περιεχόμενο PHP μέσα στο αρχείο:
