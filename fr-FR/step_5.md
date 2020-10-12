@@ -1,11 +1,11 @@
-## Installer MySQL
+## Install MariaDB
 
-MySQL (prononcé *My Sequel * ou *My S-Q-L*) est un moteur de base de données populaire. Comme PHP, il est largement utilisé sur les serveurs Web, c'est pourquoi des projets comme WordPress l'utilisent, et pourquoi ces projets sont si populaires.
+MariaDB is a popular database engine. Comme PHP, il est largement utilisé sur les serveurs Web, c'est pourquoi des projets comme WordPress l'utilisent, et pourquoi ces projets sont si populaires.
 
-Installe les paquets MySQL Server et PHP-MySQL en entrant la commande suivante dans la fenêtre du terminal :
+Install the MariaDB Server and PHP-MySQL packages by entering the following command into the terminal window:
 
 ```bash
-sudo apt-get install mysql-server php-mysql -y
+sudo apt-get install mariadb-server php-mysql -y
 ```
 
 Redémarre maintenant Apache :
