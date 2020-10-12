@@ -74,7 +74,7 @@ Tu devras également indiquer à l'hôte virtuel qui dessert le site pour autori
 + Modifie le fichier de configuration Apache pour ton hôte virtuel :
 
 ```bash
-sudo leafpad /etc/apache2/sites-available/000-default.conf
+sudo mousepad /etc/apache2/sites-available/000-default.conf
 ```
 
 + Ajoute les lignes suivantes après la ligne 1.
