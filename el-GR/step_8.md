@@ -74,7 +74,7 @@ sudo a2enmod rewrite
 + Επεξεργάσου το αρχείο ρυθμίσεων του Apache για τον εικονικό υπολογιστή σου:
 
 ```bash
-sudo leafpad /etc/apache2/sites-available/000-default.conf
+sudo mousepad /etc/apache2/sites-available/000-default.conf
 ```
 
 + Πρόσθεσε τις ακόλουθες γραμμές μετά τη γραμμή 1.
