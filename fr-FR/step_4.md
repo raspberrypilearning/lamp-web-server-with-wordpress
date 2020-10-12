@@ -13,7 +13,7 @@ sudo apt-get install php -y
 + Crée le fichier `index.php` :
 
 ```bash
-sudo leafpad index.php
+sudo mousepad index.php
 ```
 
 + Mets du contenu PHP dedans :
