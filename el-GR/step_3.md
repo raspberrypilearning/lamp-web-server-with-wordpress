@@ -4,7 +4,7 @@
 
 Από μόνος του ο Apache μπορεί να εξυπηρετεί αρχεία HTML μέσω HTTP. Με πρόσθετα αρθρώματα μπορεί να εξυπηρετήσει δυναμικές ιστοσελίδες χρησιμοποιώντας γλώσσες δέσμης ενεργειών όπως η PHP.
 
-### Install Apache
+### Εγκατέστησε τον Apache
 
 + Άνοιξε ένα παράθυρο τερματικού επιλέγοντας **Εργαλεία** > **Τερματικό** από το μενού.
 
@@ -91,50 +91,50 @@ drwxr-xr-x  3 root root 4096 Jan  8 01:28 ..
 </code></pre>
 
 <p spaces-before="0">
-  Αυτό δείχνει ότι υπάρχει ένα αρχείο στον κατάλογο <code>/var/www/html/</code> που ονομάζεται <code>index.html</code>. Η <code>.</code>αναφέρεται στον ίδιο τον κατάλογο <code>/var/www/html</code> και οι <code>..</code> αναφέρονται στον γονικό κατάλογο <code>/var/www/</code>.
+  Αυτό δείχνει ότι υπάρχει ένα αρχείο στον κατάλογο <code>/var/www/html/</code> που ονομάζεται <code>index.html</code>. <code>.</code> refers to the directory itself <code>/var/www/html</code>, and <code>..</code> refers to the parent directory <code>/var/www/</code>.
 </p>
 
 <h3 spaces-before="0">
-  Τι σημαίνουν οι στήλες
+  What the columns mean
 </h3>
 
 <ol start="1">
   <li>
-    Τα δικαιώματα του αρχείου ή του καταλόγου
+    The permissions of the file or directory
   </li>
   
   <li>
-    Ο αριθμός των αρχείων στον κατάλογο (ή <code>1</code> αν είναι αρχείο).
+    The number of files in the directory (or <code>1</code> if it's a file).
   </li>
   
   <li>
-    Ο χρήστης που έχει κυριότητα του αρχείου ή του καταλόγου
+    The user that owns the file or directory
   </li>
   
   <li>
-    Η ομάδα που έχει κυριότητα του αρχείου ή του καταλόγου
+    The group that owns the file or directory
   </li>
   
   <li>
-    Το μέγεθος του αρχείου ή του καταλόγου
+    The size of the file or directory
   </li>
   
   <li>
-    Η ημερομηνία και η ώρα της τελευταίας τροποποίησης
+    The date and time of the last modification
   </li>
 </ol>
 
 <p spaces-before="0">
-  Όπως μπορείς να δεις, ο κατάλογος <code>html</code> και το αρχείο <code>index.html</code> ανήκουν και τα δύο στον χρήστη <code>root</code>, οπότε θα πρέπει να χρησιμοποιήσεις την εντολή <code>sudo</code> για να τα επεξεργαστείς.
+  As you can see, the <code>html</code> directory and <code>index.html</code> file are both owned by the <code>root</code> user, so you'll need to use <code>sudo</code> to edit them.
 </p>
 
 <p spaces-before="0">
-  Μπορείς να επεξεργαστείς αυτό το αρχείο με τη χρήση του προγράμματος leafpad:
+  You can edit this file using mousepad:
 </p>
 
-<pre><code class="bash">sudo leafpad index.html
+<pre><code class="bash">sudo mousepad index.html
 </code></pre>
 
 <p spaces-before="0">
-  Εάν κάνεις μια αλλαγή στο αρχείο, αποθήκευσέ το και κάνε ανανέωση στο πρόγραμμα περιήγησης, ώστε να δεις να εμφανίζεται η αλλαγή σου.
+  If you make a change to the file, save it, and refresh the browser, you will see your change appear.
 </p>
