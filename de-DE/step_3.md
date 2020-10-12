@@ -91,50 +91,50 @@ drwxr-xr-x  3 root root 4096 Jan  8 01:28 ..
 </code></pre>
 
 <p spaces-before="0">
-  Das zeigt, dass sich in <code>/var/www/html/</code> eine Datei namens <code>index.html</code> befindet. <code>.</code> verweist auf das Verzeichnis selbst <code>/var/www/html</code> und <code>..</code> verweist auf das Eltern-Verzeichnis <code>/var/www/</code>.
+  Das zeigt, dass sich in <code>/var/www/html/</code> eine Datei namens <code>index.html</code> befindet. <code>.</code> refers to the directory itself <code>/var/www/html</code>, and <code>..</code> refers to the parent directory <code>/var/www/</code>.
 </p>
 
 <h3 spaces-before="0">
-  Was die Spalten bedeuten
+  What the columns mean
 </h3>
 
 <ol start="1">
   <li>
-    Die Berechtigungen der Datei oder des Verzeichnisses
+    The permissions of the file or directory
   </li>
   
   <li>
-    Die Anzahl an Dateien im Verzeichnis (oder <code>1</code> falls es eine Datei ist).
+    The number of files in the directory (or <code>1</code> if it's a file).
   </li>
   
   <li>
-    Der Benutzer, der die Datei oder das Verzeichnis besitzt
+    The user that owns the file or directory
   </li>
   
   <li>
-    Die Gruppe, die die Datei oder das Verzeichnis besitzt
+    The group that owns the file or directory
   </li>
   
   <li>
-    Die Größe der Datei oder des Verzeichnisses
+    The size of the file or directory
   </li>
   
   <li>
-    Das Datum und die Zeit der letzten Änderung
+    The date and time of the last modification
   </li>
 </ol>
 
 <p spaces-before="0">
-  Wie du siehst, gehören das Verzeichnis <code>html</code> und die Datei <code>index.html</code> beide dem <code>root</code>-Benutzer, also musst du <code>sudo</code> nutzen um sie zu bearbeiten
+  As you can see, the <code>html</code> directory and <code>index.html</code> file are both owned by the <code>root</code> user, so you'll need to use <code>sudo</code> to edit them.
 </p>
 
 <p spaces-before="0">
-  Du kannst diese Datei mit leafpad bearbeiten:
+  You can edit this file using mousepad:
 </p>
 
-<pre><code class="bash">sudo leafpad index.html
+<pre><code class="bash">sudo mousepad index.html
 </code></pre>
 
 <p spaces-before="0">
-  Wenn du die Datei änderst, speichere sie und lade den Browser neu, damit die Änderungen sichtbar werden.
+  If you make a change to the file, save it, and refresh the browser, you will see your change appear.
 </p>
