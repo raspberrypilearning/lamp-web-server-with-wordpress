@@ -74,7 +74,7 @@ Du wirst außerdem dem virtuellen Host (engl.: "Gastgeber"), der die Seite berei
 + Bearbeite die Apache-Konfigurationsdatei für deinen virtuellen Host:
 
 ```bash
-sudo leafpad /etc/apache2/sites-available/000-default.conf
+sudo mousepad /etc/apache2/sites-available/000-default.conf
 ```
 
 + Füge die folgenden Zeilen nach Zeile 1 hinzu.
