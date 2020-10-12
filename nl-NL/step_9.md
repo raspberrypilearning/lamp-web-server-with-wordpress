@@ -1,7 +1,7 @@
-## What next?
+## Wat kun je verder nog doen?
 
-- Try adding pages and posts to your website.
-- Try installing different themes from the Appearance menu.
-- Try customising your website's theme, or creating your own.
-- Try using your web server to display useful information for people on your network.
+- Probeer pagina's en berichten aan je website toe te voegen.
+- Probeer verschillende thema's te installeren in het menu Weergave.
+- Pas het thema van je website aan of maak er zelf een.
+- Gebruik je webserver om nuttige informatie weer te geven voor mensen in je netwerk.
 
