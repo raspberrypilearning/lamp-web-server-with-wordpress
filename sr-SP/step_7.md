@@ -67,3 +67,9 @@ FLUSH PRIVILEGES;
 ```
 
 + Exit the MariaDB prompt with <kbd>Ctrl</kbd> + <kbd>D</kbd>.
+
++ Restart your Raspberry Pi:
+
+```
+sudo reboot
+```
