@@ -129,10 +129,10 @@ drwxr-xr-x  3 root root 4096 Jan  8 01:28 ..
 </p>
 
 <p spaces-before="0">
-  You can edit this file using leafpad:
+  You can edit this file using mousepad:
 </p>
 
-<pre><code class="bash">sudo leafpad index.html
+<pre><code class="bash">sudo mousepad index.html
 </code></pre>
 
 <p spaces-before="0">
