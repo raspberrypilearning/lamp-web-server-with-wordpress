@@ -1,14 +1,14 @@
-## Set up an Apache web server
+## Stel een Apache-webserver in
 
-Apache is a popular web server application you can install on the Raspberry Pi to allow it to serve web pages.
+Apache is een populaire webserver-applicatie die je op de Raspberry Pi kunt installeren om webpagina's te kunnen weergeven.
 
-On its own, Apache can serve HTML files over HTTP. With additional modules it can serve dynamic web pages using scripting languages such as PHP.
+Op zichzelf kan Apache HTML-bestanden via HTTP doorgeven. Met extra modules kan het dynamische webpagina's doorgeven met scripttalen zoals PHP.
 
-### Install Apache
+### Installeer Apache
 
-+ Open a terminal window by selecting **Accessories** > **Terminal** from the menu.
++ Open een terminalvenster door **Hulpmiddelen** > **Terminal** te selecteren in het menu.
 
-+ Install the `apache2` package by typing the following command into the terminal and pressing <kbd>Enter<kbd>:</p></li> </ul> 
++ Installeer het `apache2` pakket door de volgende opdracht in de terminal te typen en op <kbd>Enter<kbd> te drukken:</p></li> </ul> 
   
   <pre><code class="bash">sudo apt-get install apache2 -y
 </code></pre>
@@ -18,32 +18,32 @@ On its own, Apache can serve HTML files over HTTP. With additional modules it ca
   </p>
 
 <h3 spaces-before="0">
-  Test the web server
+  Test de webserver
 </h3>
 
 <p spaces-before="0">
-  By default, Apache puts a test HTML file in the web folder that you will be able to view from your Pi or another computer on your network.
+  Apache plaatst standaard een HTML-testbestand in de webmap die je vanaf je Pi of een andere computer in je netwerk kunt bekijken.
 </p>
 
 <p spaces-before="0">
-  Open the Apache default web page on your Raspberry Pi:
+  Open de standaard Apache-webpagina op je Raspberry Pi:
 </p>
 
 <ul>
   <li>
     <p spaces-before="0">
-      Open Chromium by selecting <strong x-id="1">Internet</strong> > <strong x-id="1">Chromium Web Browser</strong> from the menu.
+      Open Chromium door <strong x-id="1">Internet</strong> > <strong x-id="1">Chromium Web Browser</strong> te selecteren in het menu.
     </p>
   </li>
   <li>
     <p spaces-before="0">
-      Enter the address <code>http://localhost</code>.
+      Voer het adres <code>http://localhost</code> in.
     </p>
   </li>
 </ul>
 
 <p spaces-before="0">
-  You should see this in your browser window:
+  Je zou dit in je browservenster moeten zien:
 </p>
 
 <p spaces-before="0">
@@ -51,28 +51,28 @@ On its own, Apache can serve HTML files over HTTP. With additional modules it ca
 </p>
 
 <p spaces-before="0">
-  This means you have Apache working!
+  Dit betekent dat Apache werkt!
 </p>
 
 <p spaces-before="0">
-  You will also be able to open this web page from any other computer on your network using the IP address of your Raspberry Pi, e.g. <code>http://192.168.1.10</code>.
+  Je kunt deze webpagina ook vanaf elke andere computer in je netwerk openen met het IP-adres van je Raspberry Pi, bijvoorbeeld <code>http://192.168.1.10</code>.
 </p>
 
 <p spaces-before="0">
-  To find out your Raspberry Pi's IP address, type <code>hostname -I</code> into the terminal window.  Your Raspberry Pi's <a href="https://www.raspberrypi.org/documentation/remote-access/ip-address.md">IP address</a> is a really useful and will allow you to remotely access it.
+  Typ <code>hostname -I</code> in het terminalvenster om het IP-adres van je Raspberry Pi te achterhalen.  Het <a href="https://www.raspberrypi.org/documentation/remote-access/ip-address.md">IP-adres</a> van je Raspberry Pi is erg handig en stelt je in staat om er op afstand toegang toe te krijgen.
 </p>
 
 <h3 spaces-before="0">
-  Changing the default web page
+  De standaard webpagina wijzigen
 </h3>
 
 <p spaces-before="0">
-  This default web page is just a HTML file on the file system. It is located at <code>/var/www/html/index.html</code>.
+  Deze standaard webpagina is slechts een HTML-bestand op het bestandssysteem. Deze bevindt zich op <code>/var/www/html/index.html</code>.
 </p>
 
 <ul>
   <li>
-    Navigate to this directory in the terminal and have a look at what's inside:
+    Navigeer naar deze map in de terminal en kijk wat erin zit:
   </li>
 </ul>
 
@@ -81,17 +81,17 @@ ls -al
 </code></pre>
 
 <p spaces-before="0">
-  You should see this in the window:
+  Je zou dit in het venster moeten zien:
 </p>
 
 <pre><code class="bash">total 12
-drwxr-xr-x  2 root root 4096 Jan  8 01:29 .
+drwxr-xr-x 2 root root 4096 8 januari 01:29.
 drwxr-xr-x  3 root root 4096 Jan  8 01:28 ..
 -rw-r--r--  1 root root  177 Jan  8 01:29 index.html
 </code></pre>
 
 <p spaces-before="0">
-  This shows that there is one file in <code>/var/www/html/</code> called <code>index.html</code>. <code>.</code> refers to the directory itself <code>/var/www/html</code>, and <code>..</code> refers to the parent directory <code>/var/www/</code>.
+  Dit laat zien dat er één bestand is in <code>/var/www/html/</code> genaamd <code>index.html</code>. <code>.</code> refers to the directory itself <code>/var/www/html</code>, and <code>..</code> refers to the parent directory <code>/var/www/</code>.
 </p>
 
 <h3 spaces-before="0">
@@ -129,10 +129,10 @@ drwxr-xr-x  3 root root 4096 Jan  8 01:28 ..
 </p>
 
 <p spaces-before="0">
-  You can edit this file using leafpad:
+  You can edit this file using mousepad:
 </p>
 
-<pre><code class="bash">sudo leafpad index.html
+<pre><code class="bash">sudo mousepad index.html
 </code></pre>
 
 <p spaces-before="0">
