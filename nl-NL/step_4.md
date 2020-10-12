@@ -1,8 +1,8 @@
-## Install PHP
+## Installeer PHP
 
-PHP is a **preprocessor**: it's code that runs when the server receives a request for a web page via a web browser. It works out what needs to be shown on the page, and then sends that page to the browser. Unlike static HTML, PHP can show different content under different circumstances. Other languages are also capable of doing this, but since WordPress is written in PHP, that's what we need to use this time. PHP is a very popular language on the web: huge projects like Facebook and Wikipedia are written in PHP.
+PHP is een **pre-processor**: het is code die wordt uitgevoerd wanneer de server een verzoek voor een webpagina ontvangt via een webbrowser. Het zoekt uit wat er op de pagina moet worden weergegeven en stuurt die pagina vervolgens naar de browser. In tegenstelling tot statische HTML, kan PHP onder verschillende omstandigheden verschillende inhoud weergeven. Andere talen kunnen dit ook, maar aangezien WordPress in PHP is geschreven, is dat wat we deze keer moeten gebruiken. PHP is een zeer populaire taal op internet: grote projecten zoals Facebook en Wikipedia zijn geschreven in PHP.
 
-+ Install the PHP package with the following command:
++ Installeer het PHP-pakket met de volgende opdracht:
 
 ```bash
 sudo apt-get install php -y
@@ -10,43 +10,43 @@ sudo apt-get install php -y
 
 ### Test PHP
 
-+ Create the file `index.php`:
++ Maak het bestand `index.php`:
 
 ```bash
-sudo leafpad index.php
+sudo mousepad index.php
 ```
 
-+ Put some PHP content in it:
++ Zet er wat PHP-inhoud in:
 
 ```php
-<?php echo "hello world"; ?>
+<?php echo "hallo wereld"; ?>
 ```
 
-+ Save the file.
++ Sla het bestand op.
 
-+ Delete `index.html`, because it takes precedence over `index.php`:
++ Verwijder `index.html` omdat het voorrang heeft op `index.php`:
 
 ```bash
 sudo rm index.html
 ```
 
-Refresh your browser. You should see "hello world". This page is not dynamic, but it is still served by PHP.
+Ververs je browser. Je zou "hallo wereld" moeten zien. Deze pagina is niet dynamisch, maar wordt nog steeds doorgegeven door PHP.
 
-![hello world](images/apache-hello-world.png)
+![hallo wereld](images/apache-hello-world.png)
 
-If you see the raw PHP above instead of "hello world", reload and restart Apache like so:
+Als je de onbewerkte PHP hierboven ziet in plaats van "hallo wereld", herlaad en herstart Apache als volgt:
 
 ```bash
 sudo service apache2 restart
 ```
 
-+ Edit `index.php` to include some dynamic content, for example:
++ Bewerk `index.php` om wat dynamische inhoud op te nemen, bijvoorbeeld:
 
 ```php
 <?php echo date('Y-m-d H:i:s'); ?>
 ```
 
-Or show your PHP info:
+Of toon je PHP-info:
 
 ```php
 <?php phpinfo(); ?>
