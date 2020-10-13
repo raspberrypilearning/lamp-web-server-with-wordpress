@@ -1,8 +1,8 @@
-## Install MariaDB
+## Installeer MariaDB
 
-MariaDB is a popular database engine. Net als PHP wordt het veel gebruikt op webservers, daarom gebruiken projecten zoals WordPress het en daarom zijn die projecten zo populair.
+MariaDB is een populaire database-engine. Net als PHP wordt het veel gebruikt op webservers, daarom gebruiken projecten zoals WordPress het en daarom zijn die projecten zo populair.
 
-Install the MariaDB Server and PHP-MySQL packages by entering the following command into the terminal window:
+Installeer de MariaDB Server en PHP-MySQL-pakketten door de volgende opdracht in het terminalvenster in te voeren:
 
 ```bash
 sudo apt-get install mariadb-server php-mysql -y
