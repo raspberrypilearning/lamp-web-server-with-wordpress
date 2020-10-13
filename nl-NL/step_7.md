@@ -66,9 +66,9 @@ GRANT ALL PRIVILEGES ON wordpress.* TO 'root'@'localhost' IDENTIFIED BY 'YOURPAS
 FLUSH PRIVILEGES;
 ```
 
-+ Exit the MariaDB prompt with <kbd>Ctrl</kbd> + <kbd>D</kbd>.
++ Verlaat de MariaDB-prompt met <kbd>Ctrl</kbd> + <kbd>D</kbd>.
 
-+ Restart your Raspberry Pi:
++ Herstart je Raspberry Pi opnieuw op:
 
 ```
 sudo reboot
