@@ -8,10 +8,11 @@ Op zichzelf kan Apache HTML-bestanden via HTTP doorgeven. Met extra modules kan 
 
 + Open een terminalvenster door **Hulpmiddelen** > **Terminal** te selecteren in het menu.
 
-+ Installeer het `apache2` pakket door de volgende opdracht in de terminal te typen en op <kbd>Enter<kbd> te drukken:</p></li> </ul> 
++ Installeer het `apache2` pakket door de volgende opdracht in de terminal te typen en op <kbd>Enter<kbd> te drukken: 
   
-  <pre><code class="bash">sudo apt-get install apache2 -y
-</code></pre>
+```bash
+sudo apt-get install apache2 -y
+```
   
   <p spaces-before="0">
     <img src="images/install_apache.png" alt="install apache" />
@@ -132,8 +133,9 @@ drwxr-xr-x  3 root root 4096 Jan  8 01:28 ..
   Je kunt dit bestand bewerken met mousepad:
 </p>
 
-<pre><code class="bash">sudo mousepad index.html
-</code></pre>
+```bash
+sudo mousepad index.html
+```
 
 <p spaces-before="0">
   Als je een wijziging aanbrengt in het bestand, het opslaat en de browser vernieuwt, zie je je wijziging verschijnen.
