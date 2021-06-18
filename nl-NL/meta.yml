@@ -21,7 +21,7 @@ steps:
   - title: Wat heb je nodig
   - title: Stel een Apache-webserver in
   - title: Installeer PHP
-  - title: Installeer MariaDB
+  - title: Installeer MySQL
   - title: Download WordPress
   - title: Stel je WordPress-database in
   - title: WordPress-configuratie

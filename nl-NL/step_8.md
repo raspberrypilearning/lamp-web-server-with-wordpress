@@ -105,4 +105,4 @@ sudo service apache2 restart
 
 ### Maatwerk
 
-WordPress is zeer aanpasbaar. Door op je sitenaam te klikken in de WordPress-banner bovenaan de pagina (wanneer je bent ingelogd, wordt je naar het dashboard geleid). Van daaruit kun je het thema wijzigen, pagina's en berichten toevoegen, het menu bewerken, plug-ins toevoegen en nog veel meer. Dit is slechts een voorproefje om iets interessants op de webserver van de Raspberry Pi te installeren.
+WordPress is zeer aanpasbaar. Door op je sitenaam te klikken in de WordPress-banner bovenaan de pagina (wanneer je bent ingelogd) word je naar het dashboard geleid. Van daaruit kun je het thema wijzigen, pagina's en berichten toevoegen, het menu bewerken, plug-ins toevoegen en nog veel meer. Dit is slechts een voorproefje om iets interessants op de webserver van de Raspberry Pi te installeren.

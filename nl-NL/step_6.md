@@ -8,7 +8,7 @@ Je kunt WordPress downloaden van [wordpress.org](http://wordpress.org/) met behu
 title: Wat is een .tar.gz-bestand?
 ---
 
-Mocht je het je afvragen, `.tar.gz` staat voor 'gzip-compressed tar archive'. `gzip` is een tool voor het comprimeren van bestanden, wat betekent dat ze kleiner moeten worden gemaakt, zodat ze gemakkelijker kunnen worden opgeslagen of gedistribueerd. `.tar` staat voor tarball, een computerbestandsformaat dat meerdere bestanden combineert en comprimeert. Software is vaak beschikbaar om te downloaden in `.tar.gz` formaat, omdat het downloaden van een tarball veel sneller is dan het downloaden van de niet-gecomprimeerde bestanden.
+Mocht je het je afvragen, `.tar.gz` staat voor 'gzip-compressed tar archive'. `gzip` is een tool voor het comprimeren van bestanden, wat betekent dat ze kleiner worden gemaakt, zodat ze gemakkelijker kunnen worden opgeslagen of gedistribueerd. `.tar` staat voor tarball, een computerbestandsformaat dat meerdere bestanden combineert en comprimeert. Software is vaak beschikbaar om te downloaden in `.tar.gz` formaat, omdat het downloaden van een tarball veel sneller is dan het downloaden van de niet-gecomprimeerde bestanden.
 
 --- /collapse ---
 
