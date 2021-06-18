@@ -91,50 +91,50 @@ drwxr-xr-x  3 root root 4096 Jan  8 01:28 ..
 </code></pre>
 
 <p spaces-before="0">
-  Dit laat zien dat er één bestand is in <code>/var/www/html/</code> genaamd <code>index.html</code>. <code>.</code> refers to the directory itself <code>/var/www/html</code>, and <code>..</code> refers to the parent directory <code>/var/www/</code>.
+  Dit laat zien dat er één bestand is in <code>/var/www/html/</code> genaamd <code>index.html</code>. <code>.</code> verwijst naar de map <code>/var/www/html</code> zelf, en <code>..</code> verwijst naar de bovenliggende map <code>/var/www/</code>.
 </p>
 
 <h3 spaces-before="0">
-  What the columns mean
+  Wat de kolommen betekenen
 </h3>
 
 <ol start="1">
   <li>
-    The permissions of the file or directory
+    De rechten van het bestand of de map
   </li>
   
   <li>
-    The number of files in the directory (or <code>1</code> if it's a file).
+    Het aantal bestanden in de map (of <code>1</code> als het een bestand is).
   </li>
   
   <li>
-    The user that owns the file or directory
+    De gebruiker die eigenaar is van het bestand of de map
   </li>
   
   <li>
-    The group that owns the file or directory
+    De groep die de eigenaar is van het bestand of de map
   </li>
   
   <li>
-    The size of the file or directory
+    De grootte van het bestand of de map
   </li>
   
   <li>
-    The date and time of the last modification
+    De datum en tijd van de laatste wijziging
   </li>
 </ol>
 
 <p spaces-before="0">
-  As you can see, the <code>html</code> directory and <code>index.html</code> file are both owned by the <code>root</code> user, so you'll need to use <code>sudo</code> to edit them.
+  Zoals je kunt zien, zijn de <code>html</code> map en het <code>index.html</code> bestand beide eigendom van de <code>root</code> gebruiker, dus je moet <code>sudo</code> gebruiken om ze te bewerken.
 </p>
 
 <p spaces-before="0">
-  You can edit this file using mousepad:
+  Je kunt dit bestand bewerken met mousepad:
 </p>
 
 <pre><code class="bash">sudo mousepad index.html
 </code></pre>
 
 <p spaces-before="0">
-  If you make a change to the file, save it, and refresh the browser, you will see your change appear.
+  Als je een wijziging aanbrengt in het bestand, het opslaat en de browser vernieuwt, zie je je wijziging verschijnen.
 </p>
