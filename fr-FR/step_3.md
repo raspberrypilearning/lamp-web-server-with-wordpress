@@ -1,12 +1,12 @@
 ## Configurer un serveur Web Apache
 
-Apache est une application de serveur Web populaire que tu peux installer sur le Raspberry Pi pour lui permettre de servir des pages Web.
+Apache est un serveur Web populaire que tu peux installer sur le Raspberry Pi pour lui permettre d'héberger des pages Web.
 
 À lui seul, Apache peut servir des fichiers HTML sur HTTP. Avec des modules supplémentaires, il peut servir des pages Web dynamiques en utilisant des langages de script tels que PHP.
 
 ### Installer Apache
 
-+ Ouvre une fenêtre de terminal en sélectionnant **Accessoires** > **Terminal** dans le menu.
++ Ouvre un terminal en sélectionnant **Accessoires** > **Terminal** dans le menu.
 
 + Installe le paquet `apache2` en tapant la commande suivante dans le terminal et en appuyant sur <kbd>Entrée<kbd> : </p></li> </ul> 
   
