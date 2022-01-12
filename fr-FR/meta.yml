@@ -17,12 +17,14 @@ software: html-css-javascript
 version: 4
 last_tested: 2017-01-01
 steps:
-  - title: Introduction
-  - title: Ce dont tu auras besoin
-  - title: Configurer un serveur Web Apache
-  - title: Installer PHP
-  - title: Installer MySQL
-  - title: Télécharger WordPress
-  - title: Configure ta base de données WordPress
-  - title: Configuration de WordPress
-  - title: Et ensuite ?
+- title: Introduction
+- title: Ce dont tu auras besoin
+  completion: engaged
+- title: Configurer un serveur Web Apache
+- title: Installer PHP
+- title: Installer MySQL
+- title: Télécharger WordPress
+- title: Configure ta base de données WordPress
+  completion: internal
+- title: Configuration de WordPress
+- title: Et ensuite ?

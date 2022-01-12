@@ -1,7 +1,8 @@
 ---
 title: Einen LAMP-Webserver mit WordPress erstellen
 hero_image: images/banner.png
-description: Richte auf deinem Raspberry Pi einen lokalen Server für eine Website ein
+description: Richte auf deinem Raspberry Pi einen lokalen Server für eine Website
+  ein
 original_url: https://raspberrypi.org/learning/lamp-web-server-with-wordpress
 theme: turquoise
 duration: 2
@@ -17,12 +18,14 @@ software: html-css-javascript
 version: 4
 last_tested: 2017-01-01
 steps:
-  - title: Einleitung
-  - title: Was du brauchen wirst
-  - title: Richte einen Apache Webserver ein
-  - title: Installiere PHP
-  - title: Installiere MySQL
-  - title: Lade WordPress herunter
-  - title: Richte deine WordPress Datenbank ein
-  - title: WordPress Einstellungen
-  - title: Was kommt als Nächstes?
+- title: Einleitung
+- title: Was du brauchen wirst
+  completion: engaged
+- title: Richte einen Apache Webserver ein
+- title: Installiere PHP
+- title: Installiere MySQL
+- title: Lade WordPress herunter
+- title: Richte deine WordPress Datenbank ein
+  completion: internal
+- title: WordPress Einstellungen
+- title: Was kommt als Nächstes?
