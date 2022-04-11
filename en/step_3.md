@@ -14,8 +14,6 @@ On its own, Apache can serve HTML files over HTTP. With additional modules it ca
 sudo apt-get install apache2 -y
 ```
 
-![install apache](images/install_apache.png)
-
 ### Test the web server
 
 By default, Apache puts a test HTML file in the web folder that you will be able to view from your Pi or another computer on your network. 

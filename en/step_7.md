@@ -52,8 +52,6 @@ If this has been successful, you should see this:
 Query OK, 1 row affected (0.00 sec)
 ```
 
-![create database](images/create-database.png)
-
 + Now grant database privileges to the root user. **Note:** you will need to enter your own password after `IDENTIFIED BY`.
 
 ```
