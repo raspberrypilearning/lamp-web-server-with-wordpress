@@ -16,13 +16,17 @@ hardware: raspberry-pi
 software: html-css-javascript
 version: 4
 last_tested: 2017-01-01
-steps: 
+steps:
 - title: Introduction
 - title: What you will need
 - title: Set up an Apache web server
 - title: Install PHP
+  completion:
+  - engaged
 - title: Install MySQL
 - title: Download WordPress
 - title: Set up your WordPress database
 - title: WordPress configuration
+  completion:
+  - internal
 - title: What next?
