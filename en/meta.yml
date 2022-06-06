@@ -19,12 +19,14 @@ last_tested: 2017-01-01
 steps:
 - title: Introduction
 - title: What you will need
-  completion: engaged
 - title: Set up an Apache web server
 - title: Install PHP
+  completion:
+  - engaged
 - title: Install MySQL
 - title: Download WordPress
 - title: Set up your WordPress database
-  completion: internal
 - title: WordPress configuration
+  completion:
+  - internal
 - title: What next?

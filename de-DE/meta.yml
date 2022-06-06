@@ -20,12 +20,14 @@ last_tested: 2017-01-01
 steps:
 - title: Einleitung
 - title: Was du brauchen wirst
-  completion: engaged
 - title: Richte einen Apache Webserver ein
 - title: Installiere PHP
+  completion:
+  - engaged
 - title: Installiere MySQL
 - title: Lade WordPress herunter
 - title: Richte deine WordPress Datenbank ein
-  completion: internal
 - title: WordPress Einstellungen
+  completion:
+  - internal
 - title: Was kommt als Nächstes?

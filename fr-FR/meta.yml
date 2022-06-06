@@ -19,12 +19,14 @@ last_tested: 2017-01-01
 steps:
 - title: Introduction
 - title: Ce dont tu auras besoin
-  completion: engaged
 - title: Configurer un serveur Web Apache
 - title: Installer PHP
+  completion:
+  - engaged
 - title: Installer MySQL
 - title: Télécharger WordPress
 - title: Configure ta base de données WordPress
-  completion: internal
 - title: Configuration de WordPress
+  completion:
+  - internal
 - title: Et ensuite ?

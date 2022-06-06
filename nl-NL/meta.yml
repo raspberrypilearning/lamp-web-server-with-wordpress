@@ -19,12 +19,14 @@ last_tested: 2017-01-01
 steps:
 - title: Inleiding
 - title: Wat heb je nodig
-  completion: engaged
 - title: Stel een Apache-webserver in
 - title: Installeer PHP
+  completion:
+  - engaged
 - title: Installeer MySQL
 - title: Download WordPress
 - title: Stel je WordPress-database in
-  completion: internal
 - title: WordPress-configuratie
+  completion:
+  - internal
 - title: Wat kun je verder nog doen?
