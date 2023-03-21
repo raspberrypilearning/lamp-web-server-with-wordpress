@@ -25,6 +25,8 @@ steps:
     title: Richte einen Apache Webserver ein
   - 
     title: Installiere PHP
+    completion:
+      - engaged
   - 
     title: Installiere MySQL
   - 
@@ -33,5 +35,7 @@ steps:
     title: Richte deine WordPress Datenbank ein
   - 
     title: WordPress Einstellungen
+    completion:
+      - internal
   - 
     title: Wie geht es weiter?
