@@ -25,6 +25,8 @@ steps:
     title: Stel een Apache-webserver in
   - 
     title: Installeer PHP
+    completion:
+      - engaged
   - 
     title: Installeer MySQL
   - 
@@ -33,5 +35,7 @@ steps:
     title: Stel je WordPress-database in
   - 
     title: WordPress-configuratie
+    completion:
+      - internal
   - 
     title: Wat kun je verder nog doen?
