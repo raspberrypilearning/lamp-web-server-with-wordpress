@@ -25,6 +25,8 @@ steps:
     title: Ρύθμισε ένα διακομιστή ιστού Apache
   - 
     title: Εγκατέστησε την PHP
+    completion:
+      - engaged
   - 
     title: Εγκατέστησε την MySQL
   - 
@@ -33,5 +35,7 @@ steps:
     title: Ρύθμισε την βάση δεδομένων του WordPress σου
   - 
     title: Διαμόρφωση του WordPress
+    completion:
+      - internal
   - 
     title: Και τώρα;
