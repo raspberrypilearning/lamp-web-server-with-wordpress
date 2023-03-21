@@ -25,6 +25,8 @@ steps:
     title: Configurer un serveur Web Apache
   - 
     title: Installer PHP
+    completion:
+      - engaged
   - 
     title: Installer MySQL
   - 
@@ -33,5 +35,7 @@ steps:
     title: Configure ta base de données WordPress
   - 
     title: Configuration de WordPress
+    completion:
+      - internal
   - 
     title: Et ensuite ?
