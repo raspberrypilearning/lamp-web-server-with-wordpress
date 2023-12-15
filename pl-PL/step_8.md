@@ -1,18 +1,18 @@
-## WordPress configuration
+## Konfiguracja WordPress
 
-+ Open the web browser on your Pi and goto `http://localhost`, you should see a WordPress page asking to pick your language.
++ Otwórz przeglądarkę internetową na swoim Pi i przejdź do `http://localhost`, powinnaś zobaczyć stronę WordPress z prośbą o wybranie języka.
 
-![WordPress select language](images/wordpress_language.png)
+![WordPress wybierz język](images/wordpress_language.png)
 
-+ Select your language and click **Continue**.
++ Wybierz język i kliknij **Continue**.
 
-You will be presented with the WordPress welcome screen.
+Zostanie wyświetlony ekran powitalny WordPress.
 
-![WordPress welcome screen](images/wordpress-welcome.png)
+![Ekran powitalny WordPress](images/wordpress-welcome.png)
 
-+ Click the **Let's go!** button.
++ Kliknij przycisk **Let's go!** (zaczynajmy).
 
-+ Now fill out the basic site information as follows:
++ Teraz wypełnij podstawowe informacje o stronie w następujący sposób:
 
 ```
 Database Name:      wordpress
@@ -22,27 +22,27 @@ Database Host:      localhost
 Table Prefix:       wp_
 ```
 
-+ Click **Submit** to proceed.
++ Kliknij **Submit** (Prześlij), żeby przejść dalej.
 
-+ Click the **Run the install** button.
++ Kliknij przycisk **Run the install** (uruchom instalator).
 
-Now you're getting close!
+Jesteś już blisko!
 
-![WordPress Welcome screen](images/wp-info.png)
+![Ekran powitalny WordPress](images/wp-info.png)
 
-Fill out the information: give your site a title, create a username and password, and enter your email address. Hit the `Install WordPress` button, then log in using the account you just created.
+Podaj informacje: nadaj swojej witrynie tytuł, stwórz nazwę użytkownika i hasło oraz wprowadź swój adres e-mail. Kliknij przycisk `Install WordPress` (zainstaluj Wordpress), a następnie zaloguj się przy użyciu właśnie utworzonego konta.
 
-Now you're logged in and have your site set up, you can see the website by visiting your `http://localhost/wp-admin`.
+Po zalogowaniu się i skonfigurowaniu witryny można ją wyświetlić, odwiedzając stronę `http://localhost/wp-admin`.
 
 --- collapse ---
 
 ---
-title: Log in to WordPress from another computer
+title: Zaloguj się do WordPress z innego komputera
 ---
 
-To log in from another computer, open a browser and go to `http://PI-IP-ADDRESS/wp-admin`, using your Pi's IP address.
+Aby zalogować się z innego komputera, otwórz przeglądarkę i przejdź do `http://ADRES-IP-PI/wp-admin`, używając adresu IP twojego Pi.
 
-You can find your Pi's IP address using this command:
+Możesz znaleźć adres IP swojego Pi, używając tego polecenia:
 
 ```bash
 hostname -I
@@ -53,31 +53,31 @@ hostname -I
 --- /collapse ---
 
 
-### Friendly permalinks
+### Przyjazne linki bezpośrednie
 
-It's recommended that you change your permalink settings to make your URLs more friendly.
+Zaleca się zmianę ustawień linku bezpośredniego, aby adresy URL były bardziej przyjazne.
 
-To do this, log in to WordPress and go to the dashboard.
+Aby to zrobić, zaloguj się do WordPress i przejdź do pulpitu.
 
-+ Go to **Setting**, then **Permalinks**.
++ Przejdź do **Setting** (Ustawienia), a następnie **Permalinks** (linki bezpośrednie).
 
-+ Select the **Post name** option and click **Save Changes**.
++ Wybierz opcję **Post name** (nazwa wpisu) i kliknij **Save Changes** (zapisz zmiany).
 
-You'll need to enable Apache's `rewrite` mod:
+Musisz włączyć mod `rewrite` (przepisywania) Apache:
 
 ```bash
 sudo a2enmod rewrite
 ```
 
-You'll also need to tell the virtual host serving the site to allow requests to be overwritten.
+Musisz także poinformować wirtualnego hosta obsługującego witrynę, aby zezwalał na zastępowanie żądań.
 
-+ Edit the Apache configuration file for your virtual host:
++ Edytuj plik konfiguracyjny Apache dla wirtualnego hosta:
 
 ```bash
 sudo mousepad /etc/apache2/sites-available/000-default.conf
 ```
 
-+ Add the following lines after line 1.
++ Dodaj następujące wiersze po wierszu 1.
 
 ```
 <Directory "/var/www/html">
@@ -85,7 +85,7 @@ sudo mousepad /etc/apache2/sites-available/000-default.conf
 </Directory>
 ```
 
-- Ensure it's within the `<VirtualHost *:80>` like so:
+- Upewnij się, że jest zawarty pomiędzy `<VirtualHost *:80>` w następujący sposób:
 
 ```
 <VirtualHost *:80>
@@ -95,14 +95,14 @@ sudo mousepad /etc/apache2/sites-available/000-default.conf
     ...
 ```
 
-+ Save the file and exit.
++ Zapisz plik i wyjdź.
 
-+ Restart Apache.
++ Uruchom ponownie Apache.
 
 ```bash
 sudo service apache2 restart
 ```
 
-### Customisation
+### Dostosowywanie
 
-WordPress is very customisable. By clicking your site name in the WordPress banner at the top of the page (when logged you're in), you'll be taken to the Dashboard. From there, you can change the theme, add pages and posts, edit the menu, add plugins, and lots more. This is just a taster for getting something interesting set up on the Raspberry Pi's web server.
+WordPress jest bardzo konfigurowalny. Klikając nazwę swojej witryny w banerze WordPress u góry strony (po zalogowaniu się, jesteś przeniesiony do pulpitu nawigacyjnego). Stamtąd możesz zmienić motyw, dodawać strony i posty, edytować menu, dodawać wtyczki i wiele więcej. To tylko próbka skonfigurowania czegoś interesującego na serwerze stron www działającym na Raspberry Pi.
