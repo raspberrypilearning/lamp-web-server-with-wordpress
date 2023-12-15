@@ -91,50 +91,50 @@ drwxr-xr-x  3 root root 4096 Jan  8 01:28 ..
 </code></pre>
 
 <p spaces-before="0">
-  Cela montre qu'il y a un fichier dans <code>/var/www/html/</code> appelé <code>index.html</code> . <code>.</code> refers to the directory itself <code>/var/www/html</code>, and <code>..</code> refers to the parent directory <code>/var/www/</code>.
+  Cela montre qu'il y a un fichier dans <code>/var/www/html/</code> appelé <code>index.html</code> . <code>.</code> fait référence au répertoire lui-même <code>/var/www/html</code>, et <code>..</code> fait référence au répertoire parent <code>/var/www/</code>.
 </p>
 
 <h3 spaces-before="0">
-  What the columns mean
+  Ce que signifient les colonnes
 </h3>
 
 <ol start="1">
   <li>
-    The permissions of the file or directory
+    Les permissions du fichier ou du répertoire
   </li>
   
   <li>
-    The number of files in the directory (or <code>1</code> if it's a file).
+    Le nombre de fichiers dans le répertoire (ou <code>1</code> si c'est un fichier).
   </li>
   
   <li>
-    The user that owns the file or directory
+    L'utilisateur propriétaire du fichier ou du répertoire
   </li>
   
   <li>
-    The group that owns the file or directory
+    Le groupe propriétaire du fichier ou du répertoire
   </li>
   
   <li>
-    The size of the file or directory
+    La taille du fichier ou du répertoire
   </li>
   
   <li>
-    The date and time of the last modification
+    La date et l'heure de la dernière modification
   </li>
 </ol>
 
 <p spaces-before="0">
-  As you can see, the <code>html</code> directory and <code>index.html</code> file are both owned by the <code>root</code> user, so you'll need to use <code>sudo</code> to edit them.
+  peut voir, le répertoire <code>html</code> et le fichier <code>index.html</code> appartiennent tous deux à l'utilisateur <code>root</code> , vous devrez donc utiliser <code>sudo</code> pour les modifier.
 </p>
 
 <p spaces-before="0">
-  You can edit this file using mousepad:
+  Vous pouvez modifier ce fichier à l'aide du tapis de souris :
 </p>
 
 <pre><code class="bash">sudo mousepad index.html
 </code></pre>
 
 <p spaces-before="0">
-  If you make a change to the file, save it, and refresh the browser, you will see your change appear.
+  Si vous apportez une modification au fichier, enregistrez-le et actualisez le navigateur, vous verrez votre modification apparaître.
 </p>
