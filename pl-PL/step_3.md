@@ -1,14 +1,14 @@
-## Set up an Apache web server
+## Skonfiguruj serwer stron www oparty na Apache
 
-Apache is a popular web server application you can install on the Raspberry Pi to allow it to serve web pages.
+Apache to popularny serwer stron www, który można zainstalować na Raspberry Pi, aby umożliwić obsługę stron internetowych.
 
-On its own, Apache can serve HTML files over HTTP. With additional modules it can serve dynamic web pages using scripting languages such as PHP.
+Samodzielnie Apache może obsługiwać pliki HTML przez HTTP. Dzięki dodatkowym modułom może obsługiwać dynamiczne strony internetowe przy użyciu języków skryptowych, takich jak PHP.
 
-### Install Apache
+### Zainstaluj Apache
 
-+ Open a terminal window by selecting **Accessories** > **Terminal** from the menu.
++ Otwórz okno terminala, wybierając **Akcesoria** > **Terminal** z menu.
 
-+ Install the `apache2` package by typing the following command into the terminal and pressing <kbd>Enter<kbd>:</p></li> </ul> 
++ Zainstaluj pakiet `apache2`, wpisując następujące polecenie w terminalu i naciskając <kbd>Enter<kbd>: </p></li> </ul> 
   
   <pre><code class="bash">sudo apt-get install apache2 -y
 </code></pre>
@@ -18,32 +18,32 @@ On its own, Apache can serve HTML files over HTTP. With additional modules it ca
   </p>
 
 <h3 spaces-before="0">
-  Test the web server
+  Przetestuj serwer stron www
 </h3>
 
 <p spaces-before="0">
-  By default, Apache puts a test HTML file in the web folder that you will be able to view from your Pi or another computer on your network.
+  Domyślnie Apache umieszcza testowy plik HTML w folderze stron internetowych, który będzie można przeglądać z poziomu Pi lub innego komputera w sieci.
 </p>
 
 <p spaces-before="0">
-  Open the Apache default web page on your Raspberry Pi:
+  Otwórz domyślną stronę internetową Apache na swoim Raspberry Pi:
 </p>
 
 <ul>
   <li>
     <p spaces-before="0">
-      Open Chromium by selecting <strong x-id="1">Internet</strong> > <strong x-id="1">Chromium Web Browser</strong> from the menu.
+      Otwórz Chromium wybierając <strong x-id="1">Internet</strong> > <strong x-id="1">Przeglądarka internetowa Chromium</strong> z menu.
     </p>
   </li>
   <li>
     <p spaces-before="0">
-      Enter the address <code>http://localhost</code>.
+      Wpisz adres <code>http://localhost</code>.
     </p>
   </li>
 </ul>
 
 <p spaces-before="0">
-  You should see this in your browser window:
+  Powinnaś zobaczyć to w oknie przeglądarki:
 </p>
 
 <p spaces-before="0">
@@ -51,28 +51,28 @@ On its own, Apache can serve HTML files over HTTP. With additional modules it ca
 </p>
 
 <p spaces-before="0">
-  This means you have Apache working!
+  Oznacza to, że masz działający serwer Apache!
 </p>
 
 <p spaces-before="0">
-  You will also be able to open this web page from any other computer on your network using the IP address of your Raspberry Pi, e.g. <code>http://192.168.1.10</code>.
+  Będziesz także mogła otworzyć tę stronę internetową z dowolnego komputera w twojej sieci używając adresu IP swojego Raspberry Pi, np. <code>http://192.168.1.10</code>.
 </p>
 
 <p spaces-before="0">
-  To find out your Raspberry Pi's IP address, type <code>hostname -I</code> into the terminal window.  Your Raspberry Pi's <a href="https://www.raspberrypi.org/documentation/remote-access/ip-address.md">IP address</a> is a really useful and will allow you to remotely access it.
+  Aby znaleźć adres IP Raspberry Pi, wpisz <code>hostname -I</code> w oknie terminala.  <a href="https://www.raspberrypi.org/documentation/remote-access/ip-address.md">Adres IP</a> twojego Raspberry Pi jest naprawdę przydatny i umożliwia zdalny dostęp do niego.
 </p>
 
 <h3 spaces-before="0">
-  Changing the default web page
+  Zmiana domyślnej strony internetowej
 </h3>
 
 <p spaces-before="0">
-  This default web page is just a HTML file on the file system. It is located at <code>/var/www/html/index.html</code>.
+  Ta domyślna strona internetowa to tylko plik HTML w systemie plików. Plik ten znajduje się w ścieżce <code>/var/www/html/index.html</code>.
 </p>
 
 <ul>
   <li>
-    Navigate to this directory in the terminal and have a look at what's inside:
+    Przejdź do tego katalogu w terminalu i zobacz, co jest w środku:
   </li>
 </ul>
 
@@ -81,17 +81,17 @@ ls -al
 </code></pre>
 
 <p spaces-before="0">
-  You should see this in the window:
+  Powinnaś zobaczyć to w oknie:
 </p>
 
-<pre><code class="bash">total 12
+<pre><code class="bash">łącznie 12
 drwxr-xr-x  2 root root 4096 Jan  8 01:29 .
 drwxr-xr-x  3 root root 4096 Jan  8 01:28 ..
 -rw-r--r--  1 root root  177 Jan  8 01:29 index.html
 </code></pre>
 
 <p spaces-before="0">
-  This shows that there is one file in <code>/var/www/html/</code> called <code>index.html</code>. <code>.</code> refers to the directory itself <code>/var/www/html</code>, and <code>..</code> refers to the parent directory <code>/var/www/</code>.
+  To pokazuje, że jest jeden plik w katalogu <code>/var/www/html/</code> o nazwie <code>index.html</code>. <code>.</code> refers to the directory itself <code>/var/www/html</code>, and <code>..</code> refers to the parent directory <code>/var/www/</code>.
 </p>
 
 <h3 spaces-before="0">
