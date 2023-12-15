@@ -1,74 +1,74 @@
-## Set up your WordPress Database
+## Skonfiguruj bazę danych WordPress
 
-#### Set up MySQL/MariaDB
+#### Skonfiguruj MySQL/MariaDB
 
-To get your WordPress site set up, you need a database. This is where MySQL and MariaDB come in!
+Aby skonfigurować stronę WordPress, potrzebujesz bazy danych. Tutaj właśnie pojawiają się MySQL i MariaDB!
 
-+ Run the MySQL secure installation command in the terminal window.
++ Uruchom polecenie bezpiecznej instalacji MySQL w oknie terminala.
 
 ```bash
 sudo mysql_secure_installation
 ```
 
-+ You will be asked `Enter current password for root (enter for none):` — press **Enter**.
++ Zostaniesz poproszony `wpisanie obecnego hasła dla użytkownika root (wciśnij enter jeśli brak hasła):` - naciśnij **Enter**.
 
-+ Type in **Y** and press **Enter** to `Set root password?`.
++ Wpisz **Y** i naciśnij **Enter** jako odpowiedź na pytanie `Set root password?` (Ustawić hasło roota?).
 
-+ Type in a password at the `New password:` prompt, and press **Enter**. **Important:** remember this root password, as you will need it later to set up WordPress.
++ Wpisz hasło w okienku gdzie jest napisane `New password:` (Nowe hasło) i naciśnij **Enter**. **Ważne:** zapamiętaj to hasło roota, ponieważ będzie ono potrzebne później, aby skonfigurować WordPress.
 
-+ Type in **Y** to `Remove anonymous users`.
++ Wpisz **Y** jako odpowiedź na `Remove anonymous users` (usuń anonimowych użytkowników).
 
-+ Type in **Y** to `Disallow root login remotely`.
++ Wpisz **Y** jako odpowiedź na `Disallow root login remotely` (odmawiaj dostępu zdalnego dla użytkownika root).
 
-+ Type in **Y** to `Remove test database and access to it`.
++ Wpisz **Y** jako odpowiedź na `Remove test database and access to it` (Usuń testową bazę danych i dostęp do niej).
 
-+ Type in **Y** to `Reload privilege tables now`.
++ Wpisz **Y** jako odpowiedź na `Reload privilege tables now` (przeładuj tabele uprzywilejowane teraz).
 
-When complete, you will see the message `All done!` and `Thanks for using MariaDB!`.
+Po zakończeniu zobaczysz komunikat `All done!` (Wszystko gotowe!) oraz `Thanks for using MariaDB!` (Dziękujemy za korzystanie z MariaDB).
 
-#### Create the WordPress database
+#### Utwórz bazę danych WordPress
 
-+ Run `mysql` in the terminal window:
++ Uruchom `mysql` w oknie terminala:
 
 ```bash 
 sudo mysql -uroot -p
 ```
 
-+ Enter the root password you created.
++ Wprowadź hasło roota, które utworzyłaś.
 
-You will be greeted by the message `Welcome to the MariaDB monitor`.
+Zostaniesz powitana wiadomością `Welcome to the MariaDB monitor` (Witaj w monitorze MariaDB).
 
-+ Create the database for your WordPress installation at the `MariaDB [(none)]>` prompt using:
++ Utwórz bazę danych dla instalacji WordPress w wierszu poleceń `MariaDB [(none)]>` za pomocą polecenia:
 
 ```
 create database wordpress;
 ```
 
-  Note the semi-colon ending the statement.
+  Zwróć uwagę na średnik kończący instrukcję.
 
-If this has been successful, you should see this:
+Jeśli to się powiedzie, powinieneś zobaczyć to:
 
 ```
 Query OK, 1 row affected (0.00 sec)
 ```
 
-![create database](images/create-database.png)
+![utwórz bazę danych](images/create-database.png)
 
-+ Now grant database privileges to the root user. **Note:** you will need to enter your own password after `IDENTIFIED BY`.
++ Teraz nadaj uprawnienia do bazy danych użytkownikowi root. **Uwaga:** musisz wprowadzić własne hasło po `IDENTIFIED BY`.
 
 ```
-GRANT ALL PRIVILEGES ON wordpress.* TO 'root'@'localhost' IDENTIFIED BY 'YOURPASSWORD';
+GRANT ALL PRIVILEGES ON wordpress.* TO 'root'@'localhost' IDENTIFIED BY 'TWOJEHASLO';
 ```
 
-+ For the changes to take effect, you will need to flush the database privileges:
++ Aby zmiany weszły w życie, musisz opróżnić uprawnienia bazy danych:
 
 ```
 FLUSH PRIVILEGES;
 ```
 
-+ Exit the MariaDB prompt with <kbd>Ctrl</kbd> + <kbd>D</kbd>.
++ Wyjdź z wiersza poleceń MariaDB za pomocą <kbd>Ctrl</kbd> + <kbd>D</kbd>.
 
-+ Restart your Raspberry Pi:
++ Uruchom ponownie swoje Raspberry Pi:
 
 ```
 sudo reboot
