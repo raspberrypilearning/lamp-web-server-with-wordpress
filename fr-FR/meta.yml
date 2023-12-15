@@ -26,7 +26,7 @@ steps:
   - 
     title: Installer PHP
     completion:
-      - engaged
+      - engagé
   - 
     title: Installer MySQL
   - 
@@ -36,6 +36,6 @@ steps:
   - 
     title: Configuration de WordPress
     completion:
-      - internal
+      - interne
   - 
     title: Et ensuite ?
