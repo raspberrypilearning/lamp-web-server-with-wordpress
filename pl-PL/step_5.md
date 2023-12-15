@@ -1,14 +1,14 @@
-## Install MariaDB
+## Zainstaluj MariaDB
 
-MariaDB is a popular database engine. Like PHP, it's widely used on web servers, which is why projects like WordPress use it, and why those projects are so popular.
+MariaDB to popularny silnik baz danych. Podobnie jak PHP, jest szeroko stosowany na serwerach internetowych, dlatego projekty takie jak WordPress go używają i dlatego są one tak popularne.
 
-Install the MariaDB Server and PHP-MySQL packages by entering the following command into the terminal window:
+Zainstaluj pakiety MariaDB Server i PHP-MySQL, wpisując następujące polecenie w oknie terminala:
 
 ```bash
 sudo apt-get install mariadb-server php-mysql -y
 ```
 
-Now restart Apache:
+Teraz uruchom ponownie Apache:
 
 ```bash
 sudo service apache2 restart
