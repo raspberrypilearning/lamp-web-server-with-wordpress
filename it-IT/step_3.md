@@ -6,11 +6,11 @@ Apache, da solo, può pubblicare file HTML statici su protocollo HTTP. Usando mo
 
 ### Installare Apache
 
-+ Open a terminal window by selecting **Accessories** > **Terminal** from the menu.
++ Apri una finestra di terminale selezionando **Accessori** > **Terminale** dal menu.
 
-+ Install the `apache2` package by typing the following command into the terminal and pressing <kbd>Enter<kbd>:</p></li> </ul> 
++ Installa il pacchetto `apache2` digitando questo comando nel terminale e premendo <kbd>Invio<kbd>:</p></li> </ul> 
   
-  <pre><code class="bash">sudo apt-get install apache2 -y
+  <pre><code class="bash"> sudo apt-get install apache2 -y
 </code></pre>
   
   <p spaces-before="0">
@@ -18,123 +18,123 @@ Apache, da solo, può pubblicare file HTML statici su protocollo HTTP. Usando mo
   </p>
 
 <h3 spaces-before="0">
-  Test the web server
+  Prova il funzionamento del server web
 </h3>
 
 <p spaces-before="0">
-  By default, Apache puts a test HTML file in the web folder that you will be able to view from your Pi or another computer on your network.
+  Apache crea automaticamente un file HTML di prova nella cartella web che potrai visualizzare dal tuo Pi o da un altro computer sulla rete locale.
 </p>
 
 <p spaces-before="0">
-  Open the Apache default web page on your Raspberry Pi:
+  Apri la pagina Web predefinita di Apache sul tuo Raspberry Pi:
 </p>
 
 <ul>
   <li>
     <p spaces-before="0">
-      Open Chromium by selecting <strong x-id="1">Internet</strong> > <strong x-id="1">Chromium Web Browser</strong> from the menu.
+      Apri Chromium selezionando <strong x-id="1">Internet</strong> > <strong x-id="1">Browser web Chromium</strong> dal menu.
     </p>
   </li>
   <li>
     <p spaces-before="0">
-      Enter the address <code>http://localhost</code>.
+      Usa l'indirizzo <code>http://localhost</code>.
     </p>
   </li>
 </ul>
 
 <p spaces-before="0">
-  You should see this in your browser window:
+  Nella finestra del tuo browser dovrebbe apparire questo:
 </p>
 
 <p spaces-before="0">
-  <img src="images/apache-it-works.png" alt="Apache it works" />
+  <6 />
 </p>
 
 <p spaces-before="0">
-  This means you have Apache working!
+  Questo significa che Apache funziona!
 </p>
 
 <p spaces-before="0">
-  You will also be able to open this web page from any other computer on your network using the IP address of your Raspberry Pi, e.g. <code>http://192.168.1.10</code>.
+  Potrai aprire questa pagina Web anche da qualsiasi altro computer della tua rete locale utilizzando l'indirizzo IP di Raspberry Pi, ad esempio <code>http://192.168.1.10</code>.
 </p>
 
 <p spaces-before="0">
-  To find out your Raspberry Pi's IP address, type <code>hostname -I</code> into the terminal window.  Your Raspberry Pi's <a href="https://www.raspberrypi.org/documentation/remote-access/ip-address.md">IP address</a> is a really useful and will allow you to remotely access it.
+  Per scoprire l'indirizzo IP del tuo Raspberry Pi, digita <code>nome host -I</code> nella finestra del terminale.  <a href="https://www.raspberrypi.org/documentation/remote-access/ip-address.md">L'indirizzo IP di Raspberry Pi</a> è molto utile e ti permetterà di accedervi da remoto.
 </p>
 
 <h3 spaces-before="0">
-  Changing the default web page
+  Modifica la pagina web predefinita
 </h3>
 
 <p spaces-before="0">
-  This default web page is just a HTML file on the file system. It is located at <code>/var/www/html/index.html</code>.
+  La pagina web predefinita è solo un file HTML nel file system. Si trova nella directory <code>/var/www/html/index.html</code>.
 </p>
 
 <ul>
   <li>
-    Navigate to this directory in the terminal and have a look at what's inside:
+    Passa a questa directory nel terminale e controlla cosa c'è dentro:
   </li>
 </ul>
 
-<pre><code>cd /var/www/html
+<pre><code> cd /var/www/html
 ls -al
 </code></pre>
 
 <p spaces-before="0">
-  You should see this in the window:
+  Dovresti vedere questo:
 </p>
 
-<pre><code class="bash">total 12
-drwxr-xr-x  2 root root 4096 Jan  8 01:29 .
-drwxr-xr-x  3 root root 4096 Jan  8 01:28 ..
--rw-r--r--  1 root root  177 Jan  8 01:29 index.html
+<pre><code class="bash">totale 12
+drwxr-xr-x 2 root root 4096 gen 8 01:29.
+drwxr-xr-x  3 root root 4096 gen  8 01:28 ..
+-rw-r - r-- 1 root root 177 8 gen 8 01:29 index.html
 </code></pre>
 
 <p spaces-before="0">
-  This shows that there is one file in <code>/var/www/html/</code> called <code>index.html</code>. <code>.</code> refers to the directory itself <code>/var/www/html</code>, and <code>..</code> refers to the parent directory <code>/var/www/</code>.
+  Questo significa che c'è un file chiamato <code> index.html </code> in <code>/var/www/html/</code>. <code>.</code> si riferisce alla directory stessa <code>/var/www/html</code> e <code>..</code> si riferisce alla directory principale <code>/var/www/ </code>.
 </p>
 
 <h3 spaces-before="0">
-  What the columns mean
+  Che cosa significano le colonne
 </h3>
 
 <ol start="1">
   <li>
-    The permissions of the file or directory
+    I permessi del file o della directory
   </li>
   
   <li>
-    The number of files in the directory (or <code>1</code> if it's a file).
+    Il numero di file nella directory (o <code>1</code> se è un file).
   </li>
   
   <li>
-    The user that owns the file or directory
+    L'utente proprietario del file o della directory
   </li>
   
   <li>
-    The group that owns the file or directory
+    Il gruppo proprietario del file o della directory
   </li>
   
   <li>
-    The size of the file or directory
+    La dimensione del file o della directory
   </li>
   
   <li>
-    The date and time of the last modification
+    La data e l'ora dell'ultima modifica
   </li>
 </ol>
 
 <p spaces-before="0">
-  As you can see, the <code>html</code> directory and <code>index.html</code> file are both owned by the <code>root</code> user, so you'll need to use <code>sudo</code> to edit them.
+  Come puoi vedere, la directory <code>html</code> e il file <code>index.html</code> sono entrambi di proprietà dell'utente <code>root</code>, quindi avrai bisogno per utilizzare <code>sudo</code> per modificarli.
 </p>
 
 <p spaces-before="0">
-  You can edit this file using mousepad:
+  Puoi modificare questo file utilizzando mousepad:
 </p>
 
 <pre><code class="bash">sudo mousepad index.html
 </code></pre>
 
 <p spaces-before="0">
-  If you make a change to the file, save it, and refresh the browser, you will see your change appear.
+  Se apporti una modifica al file, lo salvi e aggiorni il browser, vedrai apparire la modifica.
 </p>
