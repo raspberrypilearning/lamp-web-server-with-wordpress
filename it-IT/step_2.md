@@ -3,4 +3,4 @@
 ### Hardware
 
 - Un computer Raspberry Pi connesso ad internet
-- [An up to date install of the Raspberry Pi OS](https://www.raspberrypi.org/downloads/)
+- [Un'installazione aggiornata del sistema operativo Raspberry Pi](https://www.raspberrypi.org/downloads/)
