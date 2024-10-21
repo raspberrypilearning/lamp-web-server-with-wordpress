@@ -1,52 +1,52 @@
-## Install PHP
+## Installa PHP
 
-PHP is a **preprocessor**: it's code that runs when the server receives a request for a web page via a web browser. It works out what needs to be shown on the page, and then sends that page to the browser. Unlike static HTML, PHP can show different content under different circumstances. Other languages are also capable of doing this, but since WordPress is written in PHP, that's what we need to use this time. PHP is a very popular language on the web: huge projects like Facebook and Wikipedia are written in PHP.
+PHP è un **preprocessore**: è il codice che viene eseguito quando il server riceve una richiesta per una pagina web tramite un browser web. Stabilisce quello che deve essere mostrato sulla pagina, ed invia la pagina al browser. A differenza dell'HTML statico, PHP può mostrare contenuti diversi in circostanze diverse. Anche altri linguaggi sono in grado di farlo, ma poiché WordPress è scritto in PHP, è quello che dobbiamo usare questa volta. PHP è una linguaggio molto popolare sul web: grandi progetti come Facebook e Wikipedia sono scritti in PHP.
 
-+ Install the PHP package with the following command:
++ Installa il pacchetto PHP con questo comando:
 
 ```bash
 sudo apt-get install php -y
 ```
 
-### Test PHP
+### Prova PHP
 
-+ Create the file `index.php`:
++ Crea il file `index.php`:
 
 ```bash
 sudo mousepad index.php
 ```
 
-+ Put some PHP content in it:
++ Inserisci del contenuto PHP al suo interno:
 
 ```php
-<?php echo "hello world"; ?>
+<? Php echo "ciao mondo"; ?>
 ```
 
-+ Save the file.
++ Salva il file.
 
-+ Delete `index.html`, because it takes precedence over `index.php`:
++ Elimina `index.html`, perché ha la precedenza su `index.php`:
 
 ```bash
 sudo rm index.html
 ```
 
-Refresh your browser. You should see "hello world". This page is not dynamic, but it is still served by PHP.
+Aggiorna il tuo browser. Dovresti vedere "ciao mondo". Questa pagina non è dinamica, ma è comunque servita da PHP.
 
-![hello world](images/apache-hello-world.png)
+![ciao mondo](images/apache-hello-world.png)
 
-If you see the raw PHP above instead of "hello world", reload and restart Apache like so:
+Se vedi il codice sorgente PHP invece di "ciao mondo", ricarica e riavvia Apache in questo modo:
 
 ```bash
 sudo service apache2 restart
 ```
 
-+ Edit `index.php` to include some dynamic content, for example:
++ Modifica `index.php` per aggiungere alcuni contenuti dinamici, ad esempio:
 
 ```php
 <?php echo date('Y-m-d H:i:s'); ?>
 ```
 
-Or show your PHP info:
+Oppure puoi mostrare le informazione di configurazione di PHP:
 
 ```php
 <?php phpinfo(); ?>
