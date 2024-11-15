@@ -1,94 +1,82 @@
-## Set up an Apache web server
+## Install PHP
 
-Apache is a popular web server application you can install on the Raspberry Pi to allow it to serve web pages.
-
-On its own, Apache can serve HTML files over HTTP. With additional modules it can serve dynamic web pages using scripting languages such as PHP.
-
-### Install Apache
+PHP is a **preprocessor**: it's code that runs when the server receives a request for a web page via a web browser. It works out what needs to be shown on the page, and then sends that page to the browser. 
 
 --- task ---
-Open a terminal window by selecting **Accessories** > **Terminal** from the menu.
---- /task ---
-
---- task ---
-Type the following command into the terminal and press <kbd>Enter</kbd> to install `apache2`
+Type the following command in the terminal to install PHP:
 
 --- code ---
 ---
 language: bash
 line_numbers: false
 ---
-sudo apt-get install apache2 -y
+sudo apt-get install php -y
 --- /code ---
 
-**Tip:** If you see an error, make sure you are using the latest version of Raspberry Pi OS.
 --- /task ---
 
-
-### Test the web server
-
-By default, Apache puts a test HTML file in the web folder that you will be able to view from your Pi or another computer on your network. 
+### Test PHP
 
 --- task ---
-Open Chromium by selecting **Internet** > **Chromium Web Browser** from the menu.
---- /task ---
-
---- task ---
-Type `localhost` in the address bar.
---- /task ---
-
-You should see this in your browser window:
-
-![Apache it works](images/apache-it-works.png)
-
-This means you have Apache working!
-
-### Changing the default web page
-
-This default web page is just a HTML file on the file system. It is located at `/var/www/html/index.html`.
-
---- task ---
-Type the following command in the terminal to change to the directory containing the HTML file:
+Type this command to delete the `index.html` file from earlier:
 
 --- code ---
 ---
 language: bash
 line_numbers: false
 ---
-cd /var/www/html
+sudo rm index.html
 --- /code ---
 
 --- /task ---
 
 --- task ---
-Open the `index.html` file using Geany
+Create a new file called `index.php`:
 
 --- code ---
 ---
 language: bash
 line_numbers: false
 ---
-sudo geany index.html
+sudo geany index.php
 --- /code ---
 
 --- /task ---
 
 --- task ---
-Delete the contents of the file, then type a short message and save your changes.
+In the Geany code editor, type this PHP code into the file and save it.
+
+--- code ---
+---
+language: php
+line_numbers: false
+---
+<?php echo "hello world"; ?>
+--- /code ---
+
 --- /task ---
 
 --- task ---
-Go back to Chromium and refresh the browser. You will see your message appear on the web page.
+
+Refresh your browser. You should see "hello world". This page is not dynamic, but it is still served by PHP.
+
+![hello world](images/apache-hello-world.png)
 
 --- /task ---
+
 
 --- collapse ---
---- 
-title: Access the page from another device on the network
 ---
+title: I can only see PHP code
+---
+If you see the raw PHP above instead of "hello world", use this command to reload and restart Apache:
 
-You can open your web page from any other computer on your network, using the IP address of your Raspberry Pi, e.g. `http://192.168.1.10`.
-
-To find out your Raspberry Pi's IP address, type `hostname -I` into the terminal window.  
+--- code ---
+---
+language: bash
+line_numbers: false
+---
+sudo service apache2 restart
+--- /code ---
 
 --- /collapse ---

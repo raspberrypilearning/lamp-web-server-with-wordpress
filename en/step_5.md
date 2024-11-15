@@ -1,66 +1,92 @@
-## Install MariaDB
+## Download WordPress
 
-MariaDB is a popular database engine. Like PHP, it's widely used on web servers, which is why projects like WordPress use it, and why those projects are so popular.
+WordPress is a popular tool used to quickly create a website or blog with an easy to use editor for creating new content.
 
 
 --- task ---
-
-Type this command to install the MariaDB Server and PHP-MySQL packages:
+In your terminal, make sure you are still in the directory `/var/www/html/`
 
 --- code ---
 ---
 language: bash
 line_numbers: false
 ---
-sudo apt-get install mariadb-server php-mysql -y
+cd /var/www/html/
 --- /code ---
 
 --- /task ---
 
 --- task ---
-Now restart Apache:
+Delete all the files in the folder.
 
 --- code ---
 ---
 language: bash
 line_numbers: false
 ---
-sudo service apache2 restart
+sudo rm *
 --- /code ---
 
 --- /task ---
 
-#### Set up 
-
 --- task ---
-Run the MySQL secure installation command in the terminal window.
+Type this command to download WordPress 
 
 --- code ---
 ---
 language: bash
 line_numbers: false
 ---
-sudo mysql_secure_installation
+sudo wget http://wordpress.org/latest.tar.gz
+--- /code ---
+
+--- /task ---
+
+--- task ---
+Extract the WordPress software:
+
+--- code ---
+---
+language: bash
+line_numbers: false
+---
+sudo tar xzf latest.tar.gz
 --- /code ---
 --- /task ---
 
 --- task ---
-Go through the setup wizard using the following answers:
+Move the contents of the extracted `wordpress` directory to the current directory.
 
-+ `Enter current password for root (enter for none):` — press **Enter**.
-
-+ `Set root password?` - Type in **Y** and press **Enter** 
-
-+ `New password:` - Type in a password and press **Enter**. **Important:** remember this root password, as you will need it later to set up WordPress.
-
-+ `Remove anonymous users` - Type in **Y** 
-
-+ `Disallow root login remotely` - Type in **Y** 
-
-+ `Remove test database and access to it` - Type in **Y**
-
-+ `Reload privilege tables now` - Type in **Y** 
-
+--- code ---
+---
+language: bash
+line_numbers: false
+---
+sudo mv wordpress/* .
+--- /code ---
 --- /task ---
 
-When complete, you will see the message `All done!` and `Thanks for using MariaDB!`.
+--- task ---
+Tidy up by removing the download, and the now empty `wordpress` directory.
+
+--- code ---
+---
+language: bash
+line_numbers: false
+---
+sudo rm -rf wordpress latest.tar.gz
+--- /code ---
+--- /task ---
+
+---task ---
+Change the ownership of all these files to the Apache user:
+
+--- code ---
+---
+language: bash
+line_numbers: false
+---
+sudo chown -R www-data: .
+--- /code ---
+
+--- /task ---

@@ -1,92 +1,77 @@
-## Download WordPress
-
-WordPress is a popular tool used to quickly create a website or blog with an easy to use editor for creating new content.
-
+## Set up your WordPress Database
 
 --- task ---
-In your terminal, make sure you are still in the directory `/var/www/html/`
+Run `mysql` in the terminal window:
 
 --- code ---
 ---
 language: bash
 line_numbers: false
 ---
-cd /var/www/html/
---- /code ---
-
---- /task ---
-
---- task ---
-Delete all the files in the folder.
-
---- code ---
----
-language: bash
-line_numbers: false
----
-sudo rm *
---- /code ---
-
---- /task ---
-
---- task ---
-Type this command to download WordPress 
-
---- code ---
----
-language: bash
-line_numbers: false
----
-sudo wget http://wordpress.org/latest.tar.gz
---- /code ---
-
---- /task ---
-
---- task ---
-Extract the WordPress software:
-
---- code ---
----
-language: bash
-line_numbers: false
----
-sudo tar xzf latest.tar.gz
+sudo mysql -uroot -p
 --- /code ---
 --- /task ---
 
 --- task ---
-Move the contents of the extracted `wordpress` directory to the current directory.
+Enter the root password you created when you set up the database.
+
+You will see the message `Welcome to the MariaDB monitor` and then the `MariaDB [(none)]>` prompt.
+--- /task ---
+
+--- task ---
+At the `MariaDB [(none)]>` prompt, type:
 
 --- code ---
 ---
-language: bash
+language: sql
 line_numbers: false
 ---
-sudo mv wordpress/* .
+create database wordpress;
+--- /code ---
+
+Don't forget to type the semicolon at the end.
+
+--- /task ---
+
+If this has been successful, you should see `Query OK, 1 row affected (0.00 sec)`.
+
+--- task ---
+At the MariaDB prompt, grant database privileges to the root user. Change `YOURPASSWORD` to the password you created before.  
+
+--- code ---
+---
+language: sql
+line_numbers: false
+---
+GRANT ALL PRIVILEGES ON wordpress.* TO 'root'@'localhost' IDENTIFIED BY 'YOURPASSWORD';
 --- /code ---
 --- /task ---
 
 --- task ---
-Tidy up by removing the download, and the now empty `wordpress` directory.
+For the changes to take effect, you will need to flush the database privileges:
 
 --- code ---
 ---
-language: bash
+language: sql
 line_numbers: false
 ---
-sudo rm -rf wordpress latest.tar.gz
+FLUSH PRIVILEGES;
 --- /code ---
 --- /task ---
 
----task ---
-Change the ownership of all these files to the Apache user:
+--- task ---
+Exit the MariaDB prompt with <kbd>Ctrl</kbd> + <kbd>D</kbd>.
+--- /task ---
+
+--- task ---
++ Restart your Raspberry Pi by typing this command in the terminal:
 
 --- code ---
 ---
 language: bash
 line_numbers: false
 ---
-sudo chown -R www-data: .
+sudo reboot
 --- /code ---
 
 --- /task ---

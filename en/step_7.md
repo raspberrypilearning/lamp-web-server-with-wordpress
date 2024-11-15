@@ -1,81 +1,107 @@
-## Set up your WordPress Database
+## WordPress configuration
 
 --- task ---
-Run `mysql` in the terminal window:
+Once your Raspberry Pi has rebooted, open Chromium and type `localhost` into the address bar.
 
---- code ---
----
-language: bash
-line_numbers: false
----
-sudo mysql -uroot -p
---- /code ---
+You should see a WordPress page asking to pick your language.
+
+![WordPress select language](images/wordpress_language.png)
 --- /task ---
 
 --- task ---
-Enter the root password you created when you set up the database.
+Select your language and click **Continue**.
 
-You will see the message `Welcome to the MariaDB monitor` and then the `MariaDB [(none)]>` prompt.
+--- /task ---
+
+You will be presented with the WordPress welcome screen.
+
+![WordPress welcome screen](images/wordpress-welcome.png)
+
+--- task ---
+Click the **Let's go!** button.
+
 --- /task ---
 
 --- task ---
-At the `MariaDB [(none)]>` prompt, type:
-
---- code ---
----
-language: sql
-line_numbers: false
----
-create database wordpress;
---- /code ---
-
-Don't forget to type the semicolon at the end.
-
---- /task ---
-
-If this has been successful, you should see:
+Now fill out the basic site information as follows:
 
 ```
-Query OK, 1 row affected (0.00 sec)
+Database Name:      wordpress
+User Name:          root
+Password:           <YOUR PASSWORD>
+Database Host:      localhost
+Table Prefix:       wp_
 ```
 
---- task ---
-At the MariaDB prompt, grant database privileges to the root user. Change `YOURPASSWORD` to the password you created before.  
-
---- code ---
----
-language: sql
-line_numbers: false
----
-GRANT ALL PRIVILEGES ON wordpress.* TO 'root'@'localhost' IDENTIFIED BY 'YOURPASSWORD';
---- /code ---
---- /task ---
-
---- task ---
-For the changes to take effect, you will need to flush the database privileges:
-
---- code ---
----
-language: sql
-line_numbers: false
----
-FLUSH PRIVILEGES;
---- /code ---
---- /task ---
-
---- task ---
-Exit the MariaDB prompt with <kbd>Ctrl</kbd> + <kbd>D</kbd>.
---- /task ---
-
---- task ---
-+ Restart your Raspberry Pi by typing this command in the terminal:
-
---- code ---
----
-language: bash
-line_numbers: false
----
-sudo reboot
---- /code ---
+Click **Submit** to proceed.
 
 --- /task ---
+
+
+--- task ---
+Click the **Run the install** button.
+
+--- /task ---
+
+
+![WordPress Welcome screen](images/wp-info.png)
+
+Fill out the information: give your site a title, create a username and password, and enter your email address. Hit the `Install WordPress` button, then log in using the account you just created.
+
+Now you're logged in and have your site set up, you can see the website by visiting your `http://localhost/wp-admin`. 
+
+
+
+### Friendly permalinks
+
+It's recommended that you change your permalink settings to make your URLs more friendly.
+
+To do this, log in to WordPress and go to the dashboard.
+
++ Go to **Setting**, then **Permalinks**.
+
++ Select the **Post name** option and click **Save Changes**.
+
+You'll need to enable Apache's `rewrite` mod:
+
+```bash
+sudo a2enmod rewrite
+```
+
+You'll also need to tell the virtual host serving the site to allow requests to be overwritten.
+
++ Edit the Apache configuration file for your virtual host:
+
+```bash
+sudo mousepad /etc/apache2/sites-available/000-default.conf
+```
+
++ Add the following lines after line 1.
+
+```
+<Directory "/var/www/html">
+    AllowOverride All
+</Directory>
+```
+
+- Ensure it's within the `<VirtualHost *:80>` like so:
+
+```
+<VirtualHost *:80>
+    <Directory "/var/www/html">
+        AllowOverride All
+    </Directory>
+    ...
+```
+
++ Save the file and exit.
+
++ Restart Apache.
+
+```bash
+sudo service apache2 restart
+```
+
+### Customisation
+
+WordPress is very customisable. By clicking your site name in the WordPress banner at the top of the page (when logged you're in), you'll be taken to the Dashboard. From there, you can change the theme, add pages and posts, edit the menu, add plugins, and lots more. This is just a taster for getting something interesting set up on the Raspberry Pi's web server.

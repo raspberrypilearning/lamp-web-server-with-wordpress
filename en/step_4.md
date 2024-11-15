@@ -1,75 +1,24 @@
-## Install PHP
+## Install MariaDB
 
-PHP is a **preprocessor**: it's code that runs when the server receives a request for a web page via a web browser. It works out what needs to be shown on the page, and then sends that page to the browser. 
+MariaDB is a popular database engine. Like PHP, it's widely used on web servers, which is why projects like WordPress use it, and why those projects are so popular.
+
 
 --- task ---
-Type the following command in the terminal to install PHP:
+
+Type this command to install the MariaDB Server and PHP-MySQL packages:
 
 --- code ---
 ---
 language: bash
 line_numbers: false
 ---
-sudo apt-get install php -y
---- /code ---
-
---- /task ---
-
-### Test PHP
-
---- task ---
-Type this command to delete the `index.html` file from earlier:
-
---- code ---
----
-language: bash
-line_numbers: false
----
-sudo rm index.html
+sudo apt-get install mariadb-server php-mysql -y
 --- /code ---
 
 --- /task ---
 
 --- task ---
-Create a new file called `index.php`:
-
---- code ---
----
-language: bash
-line_numbers: false
----
-sudo geany index.php
---- /code ---
-
---- /task ---
-
---- task ---
-In the Geany code editor, type this PHP code into the file and save it.
-
---- code ---
----
-language: php
-line_numbers: false
----
-<?php echo "hello world"; ?>
---- /code ---
-
---- /task ---
-
---- task ---
-
-Refresh your browser. You should see "hello world". This page is not dynamic, but it is still served by PHP.
-
-![hello world](images/apache-hello-world.png)
-
---- /task ---
-
-
---- collapse ---
----
-title: I can only see PHP code
----
-If you see the raw PHP above instead of "hello world", use this command to reload and restart Apache:
+Now restart Apache:
 
 --- code ---
 ---
@@ -79,4 +28,41 @@ line_numbers: false
 sudo service apache2 restart
 --- /code ---
 
---- /collapse ---
+--- /task ---
+
+#### Set up 
+
+--- task ---
+Run the MySQL secure installation command in the terminal window.
+
+--- code ---
+---
+language: bash
+line_numbers: false
+---
+sudo mysql_secure_installation
+--- /code ---
+--- /task ---
+
+--- task ---
+Go through the setup wizard using the following answers:
+
++ `Enter current password for root (enter for none):` — press **Enter**.
+
++ `Switch to unix_socket authentication [Y/n]` - Type in **N** and press **Enter**
+
++ `Change the root password?` - Type in **Y** and press **Enter** 
+
++ `New password:` - Type in a password and press **Enter**, then repeat a second time. **Important:** remember this root password, as you will need it later to set up WordPress.
+
++ `Remove anonymous users` - Type in **Y** 
+
++ `Disallow root login remotely` - Type in **Y** 
+
++ `Remove test database and access to it` - Type in **Y**
+
++ `Reload privilege tables now` - Type in **Y** 
+
+--- /task ---
+
+When complete, you will see the message `All done!` and `Thanks for using MariaDB!`.
