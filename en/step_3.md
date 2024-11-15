@@ -6,23 +6,29 @@ On its own, Apache can serve HTML files over HTTP. With additional modules it ca
 
 ### Install Apache
 
-+ Open a terminal window by selecting **Accessories** > **Terminal** from the menu.
+--- task ---
+Open a terminal window by selecting **Accessories** > **Terminal** from the menu.
+--- /task ---
 
-+ Install the `apache2` package by typing the following command into the terminal and pressing <kbd>Enter<kbd>:
+--- task ---
+Type the following command into the terminal and press <kbd>Enter<kbd> to install `apache2`
 
 ```bash
 sudo apt-get install apache2 -y
 ```
+--- /task ---
 
 ### Test the web server
 
 By default, Apache puts a test HTML file in the web folder that you will be able to view from your Pi or another computer on your network. 
 
-Open the Apache default web page on your Raspberry Pi:
+--- task ---
+Open Chromium by selecting **Internet** > **Chromium Web Browser** from the menu.
+--- /task ---
 
-+ Open Chromium by selecting **Internet** > **Chromium Web Browser** from the menu.
-
-+ Enter the address `http://localhost`.
+--- task ---
+Enter the address `http://localhost`.
+--- /task ---
 
 You should see this in your browser window:
 
@@ -32,18 +38,22 @@ This means you have Apache working!
 
 You will also be able to open this web page from any other computer on your network using the IP address of your Raspberry Pi, e.g. `http://192.168.1.10`.
 
+--- task ---
 To find out your Raspberry Pi's IP address, type `hostname -I` into the terminal window.  Your Raspberry Pi's [IP address](https://www.raspberrypi.org/documentation/remote-access/ip-address.md) is a really useful and will allow you to remotely access it.
+--- /task ---
 
 ### Changing the default web page
 
 This default web page is just a HTML file on the file system. It is located at `/var/www/html/index.html`.
 
-- Navigate to this directory in the terminal and have a look at what's inside:
+--- task ---
+Navigate to this directory in the terminal and have a look at what's inside:
 
 ```
 cd /var/www/html
 ls -al
 ```
+--- /task ---
 
 You should see this in the window:
 
@@ -67,10 +77,14 @@ This shows that there is one file in `/var/www/html/` called `index.html`. `.` r
 
 As you can see, the `html` directory and `index.html` file are both owned by the `root` user, so you'll need to use `sudo` to edit them.
 
-You can edit this file using mousepad:
+--- task ---
+Open the `index.html` file using mousepad
 
 ```bash
 sudo mousepad index.html
 ```
+--- /task ---
 
-If you make a change to the file, save it, and refresh the browser, you will see your change appear.
+--- task ---
+Make a change to the file, then save it and refresh the browser. You will see your change appear on the web page.
+--- /task ---
