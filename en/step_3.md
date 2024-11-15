@@ -18,7 +18,7 @@ Type the following command into the terminal and press <kbd>Enter</kbd> to insta
 language: bash
 line_numbers: false
 ---
-apt-get install apache2 -y
+sudo apt-get install apache2 -y
 --- /code ---
 
 **Tip:** If you see an error, make sure you are using the latest version of Raspberry Pi OS.

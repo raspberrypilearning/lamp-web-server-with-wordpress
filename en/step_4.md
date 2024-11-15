@@ -69,7 +69,7 @@ Refresh your browser. You should see "hello world". This page is not dynamic, bu
 ---
 title: I can only see PHP code
 ---
-If you see the raw PHP above instead of "hello world", reload and restart Apache like so:
+If you see the raw PHP above instead of "hello world", use this command to reload and restart Apache:
 
 --- code ---
 ---
