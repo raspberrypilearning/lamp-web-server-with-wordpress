@@ -4,7 +4,7 @@ WordPress is a popular tool used to quickly create a website or blog with an eas
 
 
 --- task ---
-In your terminal, change directory to `/var/www/html/`
+In your terminal, make sure you are still in the directory `/var/www/html/`
 
 --- code ---
 ---

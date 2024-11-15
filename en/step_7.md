@@ -1,73 +1,81 @@
 ## Set up your WordPress Database
 
-#### Set up MySQL/MariaDB
+--- task ---
+Run `mysql` in the terminal window:
 
-To get your WordPress site set up, you need a database. This is where MySQL and MariaDB come in!
-
-+ Run the MySQL secure installation command in the terminal window.
-
-```bash
-sudo mysql_secure_installation
-```
-
-+ You will be asked `Enter current password for root (enter for none):` — press **Enter**.
-
-+ Type in **Y** and press **Enter** to `Set root password?`.
-
-+ Type in a password at the `New password:` prompt, and press **Enter**. **Important:** remember this root password, as you will need it later to set up WordPress.
-
-+ Type in **Y** to `Remove anonymous users`.
-
-+ Type in **Y** to `Disallow root login remotely`.
-
-+ Type in **Y** to `Remove test database and access to it`.
-
-+ Type in **Y** to `Reload privilege tables now`.
-
-When complete, you will see the message `All done!` and `Thanks for using MariaDB!`.
-
-#### Create the WordPress database
-
-+ Run `mysql` in the terminal window:
-
-```bash 
+--- code ---
+---
+language: bash
+line_numbers: false
+---
 sudo mysql -uroot -p
-```
+--- /code ---
+--- /task ---
 
-+ Enter the root password you created.
+--- task ---
+Enter the root password you created when you set up the database.
 
-You will be greeted by the message `Welcome to the MariaDB monitor`.
+You will see the message `Welcome to the MariaDB monitor` and then the `MariaDB [(none)]>` prompt.
+--- /task ---
 
-+ Create the database for your WordPress installation at the `MariaDB [(none)]>` prompt using:
+--- task ---
+At the `MariaDB [(none)]>` prompt, type:
 
-```
+--- code ---
+---
+language: sql
+line_numbers: false
+---
 create database wordpress;
-```
+--- /code ---
 
-  Note the semi-colon ending the statement. 
+Don't forget to type the semicolon at the end.
 
-If this has been successful, you should see this:
+--- /task ---
+
+If this has been successful, you should see:
 
 ```
 Query OK, 1 row affected (0.00 sec)
 ```
 
-+ Now grant database privileges to the root user. **Note:** you will need to enter your own password after `IDENTIFIED BY`.
+--- task ---
+At the MariaDB prompt, grant database privileges to the root user. Change `YOURPASSWORD` to the password you created before.  
 
-```
+--- code ---
+---
+language: sql
+line_numbers: false
+---
 GRANT ALL PRIVILEGES ON wordpress.* TO 'root'@'localhost' IDENTIFIED BY 'YOURPASSWORD';
-```
+--- /code ---
+--- /task ---
 
-+ For the changes to take effect, you will need to flush the database privileges:
+--- task ---
+For the changes to take effect, you will need to flush the database privileges:
 
-```
+--- code ---
+---
+language: sql
+line_numbers: false
+---
 FLUSH PRIVILEGES;
-```
+--- /code ---
+--- /task ---
 
-+ Exit the MariaDB prompt with <kbd>Ctrl</kbd> + <kbd>D</kbd>.
+--- task ---
+Exit the MariaDB prompt with <kbd>Ctrl</kbd> + <kbd>D</kbd>.
+--- /task ---
 
-+ Restart your Raspberry Pi:
+--- task ---
++ Restart your Raspberry Pi by typing this command in the terminal:
 
-```
+--- code ---
+---
+language: bash
+line_numbers: false
+---
 sudo reboot
-```
+--- /code ---
+
+--- /task ---
