@@ -35,6 +35,8 @@ Table Prefix:       wp_
 
 Click **Submit** to proceed.
 
+**Tip:** Make sure you type a value in each box.
+
 --- /task ---
 
 
@@ -43,65 +45,93 @@ Click the **Run the install** button.
 
 --- /task ---
 
+--- task ---
+Fill in the information you are asked for, then click the `Install WordPress` button.
 
-![WordPress Welcome screen](images/wp-info.png)
+--- /task ---
 
-Fill out the information: give your site a title, create a username and password, and enter your email address. Hit the `Install WordPress` button, then log in using the account you just created.
+--- task ---
+Log in, using the account you just created.
 
 Now you're logged in and have your site set up, you can see the website by visiting your `http://localhost/wp-admin`. 
 
+--- /task ---
 
 
 ### Friendly permalinks
 
 It's recommended that you change your permalink settings to make your URLs more friendly.
 
-To do this, log in to WordPress and go to the dashboard.
+--- task ---
+Log in to WordPress and go to the dashboard.
+--- /task ---
 
-+ Go to **Setting**, then **Permalinks**.
+--- task ---
+Go to **Setting**, then **Permalinks**.
+--- /task ---
 
-+ Select the **Post name** option and click **Save Changes**.
+--- task ---
+Select the **Post name** option and click **Save Changes**.
+--- /task ---
 
-You'll need to enable Apache's `rewrite` mod:
+--- task ---
+Type the following command in a terminal to enable Apache's `rewrite` mod:
 
-```bash
+--- code ---
+---
+language: bash
+line_numbers: false
+---
 sudo a2enmod rewrite
-```
+--- /code ---
 
-You'll also need to tell the virtual host serving the site to allow requests to be overwritten.
+--- /task ---
 
-+ Edit the Apache configuration file for your virtual host:
+--- task ---
+Open the Apache configuration file
 
-```bash
-sudo mousepad /etc/apache2/sites-available/000-default.conf
-```
+--- code ---
+---
+language: bash
+line_numbers: false
+---
+sudo geany /etc/apache2/sites-available/000-default.conf
+--- /code ---
 
-+ Add the following lines after line 1.
+--- /task ---
 
-```
+--- task ---
+Add the following lines after line 1.
+
+--- code ---
+---
+language: sql
+line_numbers: true
+line_number_start: 2
+line_highlights: 3-5
+---
+<VirtualHost *:80>
 <Directory "/var/www/html">
     AllowOverride All
 </Directory>
-```
+--- /code ---
+--- /task ---
 
-- Ensure it's within the `<VirtualHost *:80>` like so:
+--- task ---
+Save the file and close Geany.
+--- /task ---
 
-```
-<VirtualHost *:80>
-    <Directory "/var/www/html">
-        AllowOverride All
-    </Directory>
-    ...
-```
+--- task ---
+In a terminal type the command to restart Apache:
 
-+ Save the file and exit.
 
-+ Restart Apache.
 
-```bash
+--- code ---
+---
+language: bash
+line_numbers: false
+---
 sudo service apache2 restart
-```
+--- /code ---
 
-### Customisation
-
-WordPress is very customisable. By clicking your site name in the WordPress banner at the top of the page (when logged you're in), you'll be taken to the Dashboard. From there, you can change the theme, add pages and posts, edit the menu, add plugins, and lots more. This is just a taster for getting something interesting set up on the Raspberry Pi's web server.
+--- /task ---
