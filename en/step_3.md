@@ -13,20 +13,17 @@ Open a terminal window by selecting **Accessories** > **Terminal** from the menu
 --- task ---
 Type the following command into the terminal and press <kbd>Enter</kbd> to install `apache2`
 
-```bash
-sudo apt-get install apache2 -y
-```
+--- code ---
+---
+language: bash
+line_numbers: false
+---
+apt-get install apache2 -y
+--- /code ---
 
 **Tip:** If you see an error, make sure you are using the latest version of Raspberry Pi OS.
 --- /task ---
 
---- task ---
-Type the following command to see your Raspberry Pi's IP address:
-
-```bash
-hostname -I
-```
---- /task ---
 
 ### Test the web server
 
@@ -52,21 +49,37 @@ This default web page is just a HTML file on the file system. It is located at `
 
 --- task ---
 Type the following command in the terminal to change to the directory containing the HTML file:
-```bash
+
+--- code ---
+---
+language: bash
+line_numbers: false
+---
 cd /var/www/html
-```
+--- /code ---
+
 --- /task ---
 
 --- task ---
-Open the `index.html` file using mousepad
+Open the `index.html` file using Geany
 
-```bash
-sudo mousepad index.html
-```
+--- code ---
+---
+language: bash
+line_numbers: false
+---
+sudo geany index.html
+--- /code ---
+
 --- /task ---
 
 --- task ---
-Make a change to the file, then save it and refresh the browser. You will see your change appear on the web page.
+Delete the contents of the file, then type a short message and save your changes.
+--- /task ---
+
+--- task ---
+Go back to Chromium and refresh the browser. You will see your message appear on the web page.
+
 --- /task ---
 
 --- collapse ---
