@@ -1,79 +1,92 @@
 ## Download WordPress
 
-You can download WordPress from [wordpress.org](http://wordpress.org/) using the `wget` command. Helpfully, a copy of the latest version of WordPress is always available at [wordpress.org/latest.tar.gz](https://wordpress.org/latest.tar.gz), so you can grab the latest version without having to look it up on the website. At the time of writing, this is version 4.5.
+WordPress is a popular tool used to quickly create a website or blog with an easy to use editor for creating new content.
 
---- collapse ---
 
+--- task ---
+In your terminal, change directory to `/var/www/html/`
+
+--- code ---
 ---
-title: What is a .tar.gz file?
+language: bash
+line_numbers: false
 ---
-
-In case you're wondering, `.tar.gz` stands for 'gzip-compressed tar archive'. `gzip` is a tool for compressing files, which means reducing their size so they can be stored or distributed more easily. `.tar` stands for tarball, which is a computer file format that combines and compresses multiple files. Software is often available for download in `.tar.gz` format, because downloading a tarball is a lot faster than downloading the non-compressed files.
-
---- /collapse ---
-
-+ Change directory to `/var/www/html/` and delete all the files in the folder.
-
-```bash
 cd /var/www/html/
+--- /code ---
+
+--- /task ---
+
+--- task ---
+Delete all the files in the folder.
+
+--- code ---
+---
+language: bash
+line_numbers: false
+---
 sudo rm *
-```
+--- /code ---
 
-+ Download WordPress using `wget`.
+--- /task ---
 
-```bash
+--- task ---
+Type this command to download WordPress 
+
+--- code ---
+---
+language: bash
+line_numbers: false
+---
 sudo wget http://wordpress.org/latest.tar.gz
-```
+--- /code ---
 
-+ Extract the WordPress tarball to get at the WordPress files.
+--- /task ---
 
-```bash
+--- task ---
+Extract the WordPress software:
+
+--- code ---
+---
+language: bash
+line_numbers: false
+---
 sudo tar xzf latest.tar.gz
-```
+--- /code ---
+--- /task ---
 
-+ Move the contents of the extracted `wordpress` directory to the current directory.
+--- task ---
+Move the contents of the extracted `wordpress` directory to the current directory.
 
-```bash
+--- code ---
+---
+language: bash
+line_numbers: false
+---
 sudo mv wordpress/* .
-```
+--- /code ---
+--- /task ---
 
-+ Tidy up by removing the tarball and the now empty `wordpress` directory.
+--- task ---
+Tidy up by removing the download, and the now empty `wordpress` directory.
 
-```bash
+--- code ---
+---
+language: bash
+line_numbers: false
+---
 sudo rm -rf wordpress latest.tar.gz
-```
+--- /code ---
+--- /task ---
 
-- Running the `ls` or `tree -L 1` command now will show you the contents of a WordPress project:
+---task ---
+Change the ownership of all these files to the Apache user:
 
-```bash
-.
-├── index.php
-├── license.txt
-├── readme.html
-├── wp-activate.php
-├── wp-admin
-├── wp-blog-header.php
-├── wp-comments-post.php
-├── wp-config-sample.php
-├── wp-content
-├── wp-cron.php
-├── wp-includes
-├── wp-links-opml.php
-├── wp-load.php
-├── wp-login.php
-├── wp-mail.php
-├── wp-settings.php
-├── wp-signup.php
-├── wp-trackback.php
-└── xmlrpc.php
-
-3 directories, 16 files
-```
-
-This is the source of a default WordPress installation. The files you edit to customise your installation belong in the `wp-content` folder.
-
-+ You should now change the ownership of all these files to the Apache user:
-
-```bash
+--- code ---
+---
+language: bash
+line_numbers: false
+---
 sudo chown -R www-data: .
-```
+--- /code ---
+
+--- /task ---

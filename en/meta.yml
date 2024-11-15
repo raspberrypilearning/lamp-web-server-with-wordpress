@@ -23,7 +23,7 @@ steps:
 - title: Install PHP
   completion:
   - engaged
-- title: Install MySQL
+- title: Install MariaDB
 - title: Download WordPress
 - title: Set up your WordPress database
 - title: WordPress configuration
