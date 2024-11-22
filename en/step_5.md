@@ -52,6 +52,7 @@ line_numbers: false
 ---
 sudo tar xzf latest.tar.gz
 --- /code ---
+
 --- /task ---
 
 --- task ---
@@ -77,11 +78,13 @@ line_numbers: false
 ---
 sudo rm -rf wordpress latest.tar.gz
 --- /code ---
+
 --- /task ---
 
 ---task ---
 Change the ownership of all these files to the Apache user:
 **Tip:** Make sure you type the whole command including the dot.
+
 --- code ---
 ---
 language: bash
