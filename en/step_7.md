@@ -24,6 +24,7 @@ Click the **Let's go!** button.
 
 --- task ---
 Now fill out the basic site information as follows:
+**Tip:** Make sure you type `wordpress` in the first box as the text displayed is only a suggestion, the box is blank.
 
 ```
 Database Name:      wordpress
@@ -35,7 +36,7 @@ Table Prefix:       wp_
 
 Click **Submit** to proceed.
 
-**Tip:** Make sure you type a value in each box.
+
 
 --- /task ---
 

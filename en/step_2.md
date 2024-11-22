@@ -18,7 +18,7 @@ Type the following command into the terminal and press <kbd>Enter</kbd> to insta
 language: bash
 line_numbers: false
 ---
-sudo apt-get install apache2 -y
+sudo apt install apache2 -y
 --- /code ---
 
 **Tip:** If you see an error, make sure you are using the latest version of Raspberry Pi OS.
@@ -61,14 +61,14 @@ cd /var/www/html
 --- /task ---
 
 --- task ---
-Open the `index.html` file using Geany
+Open the `index.html` file using Thonny
 
 --- code ---
 ---
 language: bash
 line_numbers: false
 ---
-sudo geany index.html
+sudo thonny index.html
 --- /code ---
 
 --- /task ---

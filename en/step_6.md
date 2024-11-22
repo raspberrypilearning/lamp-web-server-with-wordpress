@@ -20,6 +20,7 @@ You will see the message `Welcome to the MariaDB monitor` and then the `MariaDB 
 
 --- task ---
 At the `MariaDB [(none)]>` prompt, type:
+**Tip:** Don't forget to type the semicolon at the end.
 
 --- code ---
 ---
@@ -29,7 +30,7 @@ line_numbers: false
 create database wordpress;
 --- /code ---
 
-Don't forget to type the semicolon at the end.
+
 
 --- /task ---
 
@@ -64,7 +65,7 @@ Exit the MariaDB prompt with <kbd>Ctrl</kbd> + <kbd>D</kbd>.
 --- /task ---
 
 --- task ---
-+ Restart your Raspberry Pi by typing this command in the terminal:
+Restart your Raspberry Pi by typing this command in the terminal:
 
 --- code ---
 ---

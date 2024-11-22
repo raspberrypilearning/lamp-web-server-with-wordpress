@@ -10,7 +10,7 @@ Type the following command in the terminal to install PHP:
 language: bash
 line_numbers: false
 ---
-sudo apt-get install php -y
+sudo apt install php -y
 --- /code ---
 
 --- /task ---
@@ -38,13 +38,13 @@ Create a new file called `index.php`:
 language: bash
 line_numbers: false
 ---
-sudo geany index.php
+sudo thonny index.php
 --- /code ---
 
 --- /task ---
 
 --- task ---
-In the Geany code editor, type this PHP code into the file and save it.
+In the Thonny code editor, type this PHP code into the file and save it.
 
 --- code ---
 ---

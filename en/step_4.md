@@ -12,7 +12,7 @@ Type this command to install the MariaDB Server and PHP-MySQL packages:
 language: bash
 line_numbers: false
 ---
-sudo apt-get install mariadb-server php-mysql -y
+sudo apt install mariadb-server php-mysql -y
 --- /code ---
 
 --- /task ---

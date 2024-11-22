@@ -56,6 +56,7 @@ sudo tar xzf latest.tar.gz
 
 --- task ---
 Move the contents of the extracted `wordpress` directory to the current directory.
+**Tip:** Make sure you type the whole command including the dot.
 
 --- code ---
 ---
@@ -80,7 +81,7 @@ sudo rm -rf wordpress latest.tar.gz
 
 ---task ---
 Change the ownership of all these files to the Apache user:
-
+**Tip:** Make sure you type the whole command including the dot.
 --- code ---
 ---
 language: bash
