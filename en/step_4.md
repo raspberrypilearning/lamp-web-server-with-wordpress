@@ -30,7 +30,7 @@ sudo service apache2 restart
 
 --- /task ---
 
-#### Set up 
+### Set up 
 
 --- task ---
 Run the MySQL secure installation command in the terminal window.
