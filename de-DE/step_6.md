@@ -1,79 +1,60 @@
-## Lade WordPress herunter
+## Set up your WordPress Database
 
-Du kannst WordPress von [wordpress.org](http://wordpress.org/), mit dem Befehl `wget`, herunterladen. Nützlicherweise ist eine Kopie der neusten Version von WordPress immer unter [wordpress.org/latest.tar.gz](https://wordpress.org/latest.tar.gz) verfügbar, so kannst du einfach die neuste Version laden, ohne auf der Website nachschauen zu müssen. Zum Zeitpunkt des Schreibens ist dies Version 4.5.
+--- task --- Run `mysql` in the terminal window:
 
---- collapse ---
-
+--- code ---
 ---
-title: Was ist eine .tar.gz Datei?
+language: bash
+line_numbers: false
 ---
+sudo mysql -uroot -p --- /code --- --- /task ---
 
-Falls du dich fragst, `.tar.gz`steht für 'gzip-compressed tar archive' (also gzip-komprimiertes Tar-Archiv). `gzip` ist ein Werkzeug zum Komprimieren von Dateien, dass heißt ihre Größe zu reduzieren damit sie einfacher gespeichert oder verteilt werden können. `.tar` steht für "tarball" (engl.: "Teerklumpen"), ein Computerdateiformat, das mehrere Dateien kombiniert und komprimiert. Software steht häufig im `.tar.gz` Format zum Download zur Verfügung, da das Herunterladen eines Tarballs viel schneller ist als das Herunterladen der nicht komprimierten Dateien.
+--- task --- Enter the root password you created when you set up the database.
 
---- /collapse ---
+You will see the message `Welcome to the MariaDB monitor` and then the `MariaDB [(none)]>` prompt. --- /task ---
 
-+ Wechsel ins Verzeichnis `/var/www/html/` und lösche alle Dateien im Verzeichnis.
+--- task --- At the `MariaDB [(none)]>` prompt, type: **Tip:** Don't forget to type the semicolon at the end.
 
-```bash
-cd /var/www/html/
-sudo rm *
-```
+--- code ---
+---
+language: sql
+line_numbers: false
+---
+create database wordpress; --- /code ---
 
-+ Lade WordPress mit `wget` herunter.
 
-```bash
-sudo wget http://wordpress.org/latest.tar.gz
-```
 
-+ Extrahiere den WordPress-Tarball um an die WordPress-Dateien zu gelangen.
+--- /task ---
 
-```bash
-sudo tar xzf latest.tar.gz
-```
+If this has been successful, you should see `Query OK, 1 row affected (0.00 sec)`.
 
-+ Verschiebe den Inhalt des entpackten `wordpress` Verzeichnisses in das aktuelle Verzeichnis.
+--- task --- At the MariaDB prompt, grant database privileges to the root user. Change `YOURPASSWORD` to the password you created before.
 
-```bash
-sudo mv wordpress/* .
-```
+--- code ---
+---
+language: sql
+line_numbers: false
+---
+GRANT ALL PRIVILEGES ON wordpress.* TO 'root'@'localhost' IDENTIFIED BY 'YOURPASSWORD'; --- /code --- --- /task ---
 
-+ Räum auf, indem du den Tarball und das, nun leere, `wordpress` Verzeichnis löscht.
+--- task --- For the changes to take effect, you will need to flush the database privileges:
 
-```bash
-sudo rm -rf wordpress latest.tar.gz
-```
+--- code ---
+---
+language: sql
+line_numbers: false
+---
+FLUSH PRIVILEGES; --- /code --- --- /task ---
 
-- Wenn du jetzt den `ls` oder `tree -L 1` Befehl ausführst, wird der Inhalt des WordPress-Projekts angezeigt:
+--- task --- Exit the MariaDB prompt with <kbd>Ctrl</kbd> + <kbd>D</kbd>. --- /task ---
 
-```bash
-.
-├── index.php
-├── license.txt
-├── readme.html
-├── wp-activate.php
-├── wp-admin
-├── wp-blog-header.php
-├── wp-comments-post.php
-├── wp-config-sample.php
-├── wp-content
-├── wp-cron.php
-├── wp-includes
-├── wp-links-opml.php
-├── wp-load.php
-├── wp-login.php
-├── wp-mail.php
-├── wp-settings.php
-├── wp-signup.php
-├── wp-trackback.php
-└── xmlrpc.php
+--- task --- Restart your Raspberry Pi by typing this command in the terminal:
 
-3 directories, 16 files
-```
+--- code ---
+---
+language: bash
+line_numbers: false
+---
+sudo reboot --- /code ---
 
-Dies ist die Quelle einer Standardinstallation von WordPress. Die Dateien, die du bearbeitest, um deine Installation anzupassen, gehören in den Ordner `wp-content`.
-
-+ Du solltest jetzt den Besitzer all dieser Datein auf den Apache-Benutzer ändern:
-
-```bash
-sudo chown -R www-data: .
-```
+--- /task ---
