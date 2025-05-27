@@ -20,22 +20,25 @@ steps:
   - 
     title: Einleitung
   - 
-    title: Was du brauchen wirst
-  - 
-    title: Richte einen Apache Webserver ein
-  - 
-    title: Installiere PHP
+    title: Set up an Apache web server
     completion:
       - engaged
   - 
-    title: Installiere MySQL
+    title: Install PHP
   - 
-    title: Lade WordPress herunter
+    title: Install MariaDB
   - 
-    title: Richte deine WordPress Datenbank ein
+    title: Download WordPress
   - 
-    title: WordPress Einstellungen
+    title: Set up your WordPress database
     completion:
       - internal
   - 
-    title: Wie geht es weiter?
+    title: WordPress configuration
+    completion:
+      - external
+  - 
+    title: Challenge
+    challenge: true
+  - 
+    title: What can you do now?
