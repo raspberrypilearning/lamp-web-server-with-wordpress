@@ -20,22 +20,25 @@ steps:
   - 
     title: Introduction
   - 
-    title: Ce dont tu auras besoin
-  - 
-    title: Configurer un serveur Web Apache
-  - 
-    title: Installer PHP
+    title: Set up an Apache web server
     completion:
-      - engagé
+      - engaged
   - 
-    title: Installer MySQL
+    title: Install PHP
   - 
-    title: Télécharger WordPress
+    title: Install MariaDB
   - 
-    title: Configure ta base de données WordPress
+    title: Download WordPress
   - 
-    title: Configuration de WordPress
+    title: Set up your WordPress database
     completion:
-      - interne
+      - internal
   - 
-    title: Et ensuite ?
+    title: WordPress configuration
+    completion:
+      - external
+  - 
+    title: Challenge
+    challenge: true
+  - 
+    title: What can you do now?
