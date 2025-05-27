@@ -20,22 +20,25 @@ steps:
   - 
     title: Εισαγωγή
   - 
-    title: Τι θα χρειαστείς
-  - 
-    title: Ρύθμισε ένα διακομιστή ιστού Apache
-  - 
-    title: Εγκατέστησε την PHP
+    title: Set up an Apache web server
     completion:
       - engaged
   - 
-    title: Εγκατέστησε την MySQL
+    title: Install PHP
   - 
-    title: Κάνε λήψη του WordPress
+    title: Install MariaDB
   - 
-    title: Ρύθμισε την βάση δεδομένων του WordPress σου
+    title: Download WordPress
   - 
-    title: Διαμόρφωση του WordPress
+    title: Set up your WordPress database
     completion:
       - internal
   - 
-    title: Και τώρα;
+    title: WordPress configuration
+    completion:
+      - external
+  - 
+    title: Challenge
+    challenge: true
+  - 
+    title: What can you do now?
