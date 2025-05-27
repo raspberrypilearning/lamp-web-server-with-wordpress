@@ -13,11 +13,13 @@ language: bash
 line_numbers: false
 ---
 sudo apt install mariadb-server php-mysql -y
+
 --- /code ---
 
 --- /task ---
 
 --- task ---
+
 Now restart Apache:
 
 --- code ---
@@ -26,6 +28,7 @@ language: bash
 line_numbers: false
 ---
 sudo service apache2 restart
+
 --- /code ---
 
 --- /task ---
@@ -33,6 +36,7 @@ sudo service apache2 restart
 ### Set up 
 
 --- task ---
+
 Run the MySQL secure installation command in the terminal window.
 
 --- code ---
@@ -41,10 +45,13 @@ language: bash
 line_numbers: false
 ---
 sudo mysql_secure_installation
+
 --- /code ---
+
 --- /task ---
 
 --- task ---
+
 Go through the setup wizard using the following answers:
 
 + `Enter current password for root (enter for none):` — press **Enter**.
