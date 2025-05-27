@@ -1,7 +1,3 @@
-## Et ensuite ?
+## What can you do now?
 
-- Essaie d'ajouter des pages et des publications à ton site Web.
-- Essaie d'installer différents thèmes à partir du menu Apparence.
-- Essaie de personnaliser le thème de ton site Web ou de créer le tien.
-- Essaie d'utiliser ton serveur Web pour afficher des informations utiles pour les personnes de ton réseau.
-
+You could try setting up a [Python web server with Flask](https://projects.raspberrypi.org/en/projects/python-web-server-with-flask)
