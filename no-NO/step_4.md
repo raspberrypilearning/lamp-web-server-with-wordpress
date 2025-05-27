@@ -1,53 +1,61 @@
-## Install PHP
+## Install MariaDB
 
-PHP is a **preprocessor**: it's code that runs when the server receives a request for a web page via a web browser. It works out what needs to be shown on the page, and then sends that page to the browser. Unlike static HTML, PHP can show different content under different circumstances. Other languages are also capable of doing this, but since WordPress is written in PHP, that's what we need to use this time. PHP is a very popular language on the web: huge projects like Facebook and Wikipedia are written in PHP.
+MariaDB is a popular database engine. Like PHP, it's widely used on web servers, which is why projects like WordPress use it, and why those projects are so popular.
 
-+ Install the PHP package with the following command:
 
-```bash
-sudo apt-get install php -y
-```
+--- task ---
 
-### Test PHP
+Type this command to install the MariaDB Server and PHP-MySQL packages:
 
-+ Create the file `index.php`:
+--- code ---
+---
+language: bash
+line_numbers: false
+---
+sudo apt install mariadb-server php-mysql -y --- /code ---
 
-```bash
-sudo mousepad index.php
-```
+--- /task ---
 
-+ Put some PHP content in it:
+--- task --- Now restart Apache:
 
-```php
-<?php echo "hello world"; ?>
-```
+--- code ---
+---
+language: bash
+line_numbers: false
+---
+sudo service apache2 restart --- /code ---
 
-+ Save the file.
+--- /task ---
 
-+ Delete `index.html`, because it takes precedence over `index.php`:
+### Set up
 
-```bash
-sudo rm index.html
-```
+--- task --- Run the MySQL secure installation command in the terminal window.
 
-Refresh your browser. You should see "hello world". This page is not dynamic, but it is still served by PHP.
+--- code ---
+---
+language: bash
+line_numbers: false
+---
+sudo mysql_secure_installation --- /code --- --- /task ---
 
-![hello world](images/apache-hello-world.png)
+--- task --- Go through the setup wizard using the following answers:
 
-If you see the raw PHP above instead of "hello world", reload and restart Apache like so:
++ `Enter current password for root (enter for none):` — press **Enter**.
 
-```bash
-sudo service apache2 restart
-```
++ `Switch to unix_socket authentication [Y/n]` - Type in **N** and press **Enter**
 
-+ Edit `index.php` to include some dynamic content, for example:
++ `Change the root password?` - Type in **Y** and press **Enter**
 
-```php
-<?php echo date('Y-m-d H:i:s'); ?>
-```
++ `New password:` - Type in a password and press **Enter**, then repeat a second time. **Important:** remember this root password, as you will need it later to set up WordPress.
 
-Or show your PHP info:
++ `Remove anonymous users` - Type in **Y**
 
-```php
-<?php phpinfo(); ?>
-```
++ `Disallow root login remotely` - Type in **Y**
+
++ `Remove test database and access to it` - Type in **Y**
+
++ `Reload privilege tables now` - Type in **Y**
+
+--- /task ---
+
+When complete, you will see the message `All done!` and `Thanks for using MariaDB!`.
