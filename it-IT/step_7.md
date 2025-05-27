@@ -1,75 +1,107 @@
-## Configura il tuo database WordPress
+## WordPress configuration
 
-#### Configura MySQL/MariaDB
+--- task --- Once your Raspberry Pi has rebooted, open Chromium and type `localhost` into the address bar.
 
-Per far funzionare il tuo sito WordPress, hai bisogno di un database. È qui che entrano in gioco MySQL e MariaDB!
+You should see a WordPress page asking to pick your language.
 
-+ Esegui il comando di installazione sicura MySQL nella finestra del terminale.
+![WordPress select language](images/wordpress_language.png) --- /task ---
 
-```bash
-sudo mysql_secure_installation
-```
+--- task --- Select your language and click **Continue**.
 
-+ Ti verrà chiesto `Enter current password for root (enter for none):` - premi **Invio**.
+--- /task ---
 
-+ Digita **Y** e premi **Invio** alla domanda `Set root password?`.
+You will be presented with the WordPress welcome screen.
 
-+ Digita una password alla richiesta`New password:` e premi **Invio**. **Importante:** ricorda questa password di root, perché dopo ti servirà per configurare WordPress.
+![WordPress welcome screen](images/wordpress-welcome.png)
 
-+ Digita **Y ** alla richiesta `Rimuovi utenti anonimi`.
+--- task --- Click the **Let's go!** button.
 
-+ Digita **Y ** alla richiesta `Non consentire l'accesso root da remoto`.
+--- /task ---
 
-+ Digita **Y** alla richiesta `Rimuovi il database dei test e accedi ad esso`.
-
-+ Digita **Y** alla richiesta `Ricarica ora le tabelle dei privilegi`.
-
-Al termine, vedrai il messaggio `Tutto fatto!` e `Grazie per aver utilizzato MariaDB!`.
-
-#### Crea il database WordPress
-
-+ Esegui ` mysql ` nella finestra del terminale:
-
-```bash 
-sudo mysql -uroot -p
-```
-
-+ Inserisci la password di root che hai creato.
-
-Verrai accolto dal messaggio `Benvenuto nel monitor di MariaDB`.
-
-+ Crea il database per la tua installazione di WordPress al prompt `MariaDB [(none)]>` usando:
+--- task --- Now fill out the basic site information as follows: **Tip:** Make sure you type `wordpress` in the first box as the text displayed is only a suggestion, the box is blank.
 
 ```
-create database wordpress;
+Database Name:      wordpress
+User Name:          root
+Password:           <YOUR PASSWORD>
+Database Host:      localhost
+Table Prefix:       wp_
 ```
 
-  Nota il punto e virgola alla fine del comando.
+Click **Submit** to proceed.
 
-Se l'operazione ha avuto successo, dovresti vedere questo:
 
-```
-Query OK, 1 row affected (0.00 sec)
-```
 
-![crea database](images/create-database.png)
+--- /task ---
 
-+ Ora concedi i privilegi del database all'utente root. **Nota:** dovrai inserire la tua password dopo `IDENTIFIED BY`.
 
-```
-GRANT ALL PRIVILEGES ON wordpress.* TO 'root'@'localhost' IDENTIFIED BY 'YOURPASSWORD';
-```
+--- task --- Click the **Run the install** button.
 
-+ Per rendere effettive le modifiche, è necessario ricaricare i privilegi del database:
+--- /task ---
 
-```
-FLUSH PRIVILEGES;
-```
+--- task --- Fill in the information you are asked for, then click the `Install WordPress` button.
 
-+ Esci dal prompt di MariaDB con <kbd>Ctrl</kbd> + <kbd>D</kbd>.
+--- /task ---
 
-+ Riavvia il tuo Raspberry Pi:
+--- task --- Log in, using the account you just created.
 
-```
-sudo reboot
-```
+Now you're logged in and have your site set up, you can see the website by visiting your `http://localhost/wp-admin`.
+
+--- /task ---
+
+
+### Friendly permalinks
+
+It's recommended that you change your permalink settings to make your URLs more friendly.
+
+--- task --- Log in to WordPress and go to the dashboard. --- /task ---
+
+--- task --- Go to **Setting**, then **Permalinks**. --- /task ---
+
+--- task --- Select the **Post name** option and click **Save Changes**. --- /task ---
+
+--- task --- Type the following command in a terminal to enable Apache's `rewrite` mod:
+
+--- code ---
+---
+language: bash
+line_numbers: false
+---
+sudo a2enmod rewrite --- /code ---
+
+--- /task ---
+
+--- task --- Open the Apache configuration file
+
+--- code ---
+---
+language: bash
+line_numbers: false
+---
+sudo geany /etc/apache2/sites-available/000-default.conf --- /code ---
+
+--- /task ---
+
+--- task --- Add the following lines after line 1.
+
+--- code ---
+---
+language: sql line_numbers: true line_number_start: 2
+line_highlights: 3-5
+---
+<VirtualHost *:80> <Directory "> AllowOverride All </Directory> --- /code --- --- /task ---
+
+--- task --- Save the file and close Geany. --- /task ---
+
+--- task --- In a terminal type the command to restart Apache:
+
+
+
+--- code ---
+---
+language: bash
+line_numbers: false
+---
+sudo service apache2 restart --- /code ---
+
+--- /task ---
