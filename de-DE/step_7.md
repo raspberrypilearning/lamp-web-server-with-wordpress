@@ -1,75 +1,107 @@
-## Richte deine WordPress Datenbank ein
+## WordPress configuration
 
-#### Richte MySQL/MariaDB ein
+--- task --- Once your Raspberry Pi has rebooted, open Chromium and type `localhost` into the address bar.
 
-Um deine WordPress-Seite einrichten zu können, brauchst du eine Datenbank. Hier kommen MySQL und MariaDB ins Spiel!
+You should see a WordPress page asking to pick your language.
 
-+ Führe den Befehl zur sicheren Installation von MySQL im Terminal-Fenster aus.
+![WordPress select language](images/wordpress_language.png) --- /task ---
 
-```bash
-sudo mysql_secure_installation
-```
+--- task --- Select your language and click **Continue**.
 
-+ Du wirst gefragt, das aktuelle Passwort für den root-Nutzer einzugeben (`Enter current password for root (enter for none):`) — drücke **Enter**.
+--- /task ---
 
-+ Gib **Y** (für Yes, also Ja) ein und drücke **Enter**, um das root-Passwort zu setzen (`Set root password?`).
+You will be presented with the WordPress welcome screen.
 
-+ Gib nach der Eingabeaufforderung `New password:` ein Passwort ein und drücke **Enter**. **Wichtig:** Merke dir dieses root-Passwort, da du es später brauchen wirst um WordPress einzurichten.
+![WordPress welcome screen](images/wordpress-welcome.png)
 
-+ Gib **Y** ein, um den Anonymen-Benutzer zu entfernen (`Remove anonymous users`).
+--- task --- Click the **Let's go!** button.
 
-+ Gib **Y**, um Root-Anmeldungen aus der Ferne zu verbieten (`Disallow root login remotely`).
+--- /task ---
 
-+ Gib **Y** ein, um die Testdatenbank und den Zugriff darauf zu entfernen (`Remove test database and access to it`).
-
-+ Gib **Y** ein, um die Berechtigungstabelle neu zu laden (`Reload privilege tables now`).
-
-Wenn alles fertig ist, wirst du die Nachricht `All done!` ("Alles fertig!") und `Thanks for using MariaDB!` ("Danke, dass du MariaDB nutzt!") sehen.
-
-#### Erstelle die WordPress-Datenbank
-
-+ Führe `mysql` im Terminalfenster aus:
-
-```bash 
-sudo mysql -uroot -p
-```
-
-+ Gib das von dir erstellte Root-Passwort ein.
-
-Du wirst von der Nachricht `Welcome to the MariaDB monitor` ("Willkommen beim MariaDB Monitor") begrüßt.
-
-+ Erstelle eine Datenbank für deine WordPress-Installation in der `MariaDB [(none)]>`-Eingabeaufforderung mit folgendem Befehl:
+--- task --- Now fill out the basic site information as follows: **Tip:** Make sure you type `wordpress` in the first box as the text displayed is only a suggestion, the box is blank.
 
 ```
-create database wordpress;
+Database Name:      wordpress
+User Name:          root
+Password:           <YOUR PASSWORD>
+Database Host:      localhost
+Table Prefix:       wp_
 ```
 
-  Beachte das Semikolon, das die Anweisung beendet.
+Click **Submit** to proceed.
 
-Wenn das geklappt hat, solltest du Folgendes sehen:
 
-```
-Query OK, 1 row affected (0.00 sec)
-```
 
-![Datenbank erstellen](images/create-database.png)
+--- /task ---
 
-+ Gewähre dem Root-Benutzer nun Datenbankberechtigungen. **Hinweis:** Nach `IDENTIFIED BY` musst du dein eigenes Passwort eingeben.
 
-```
-GRANT ALL PRIVILEGES ON wordpress.* TO 'root'@'localhost' IDENTIFIED BY 'DEINPASSWORT';
-```
+--- task --- Click the **Run the install** button.
 
-+ Damit die Änderungen wirksam werden, musst du deine Datenbank-Berechtigungen neu in den Arbeitsspeicher laden:
+--- /task ---
 
-```
-FLUSH PRIVILEGES;
-```
+--- task --- Fill in the information you are asked for, then click the `Install WordPress` button.
 
-+ Exit the MariaDB prompt with <kbd>Ctrl</kbd> + <kbd>D</kbd>.
+--- /task ---
 
-+ Restart your Raspberry Pi:
+--- task --- Log in, using the account you just created.
 
-```
-sudo reboot
-```
+Now you're logged in and have your site set up, you can see the website by visiting your `http://localhost/wp-admin`.
+
+--- /task ---
+
+
+### Friendly permalinks
+
+It's recommended that you change your permalink settings to make your URLs more friendly.
+
+--- task --- Log in to WordPress and go to the dashboard. --- /task ---
+
+--- task --- Go to **Setting**, then **Permalinks**. --- /task ---
+
+--- task --- Select the **Post name** option and click **Save Changes**. --- /task ---
+
+--- task --- Type the following command in a terminal to enable Apache's `rewrite` mod:
+
+--- code ---
+---
+language: bash
+line_numbers: false
+---
+sudo a2enmod rewrite --- /code ---
+
+--- /task ---
+
+--- task --- Open the Apache configuration file
+
+--- code ---
+---
+language: bash
+line_numbers: false
+---
+sudo geany /etc/apache2/sites-available/000-default.conf --- /code ---
+
+--- /task ---
+
+--- task --- Add the following lines after line 1.
+
+--- code ---
+---
+language: sql line_numbers: true line_number_start: 2
+line_highlights: 3-5
+---
+<VirtualHost *:80> <Directory "> AllowOverride All </Directory> --- /code --- --- /task ---
+
+--- task --- Save the file and close Geany. --- /task ---
+
+--- task --- In a terminal type the command to restart Apache:
+
+
+
+--- code ---
+---
+language: bash
+line_numbers: false
+---
+sudo service apache2 restart --- /code ---
+
+--- /task ---
