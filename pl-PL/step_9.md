@@ -1,7 +1,3 @@
-## Co następne?
+## What can you do now?
 
-- Spróbuj dodać strony i posty do swojej witryny.
-- Spróbuj zainstalować różne motywy z menu Appearance (wygląd).
-- Spróbuj dostosować motyw swojej witryny lub stwórz własny.
-- Spróbuj użyć serwera stron www, aby wyświetlić przydatne informacje dla osób w sieci.
-
+You could try setting up a [Python web server with Flask](https://projects.raspberrypi.org/en/projects/python-web-server-with-flask)
