@@ -1,75 +1,107 @@
-## Stel je WordPress-database in
+## WordPress configuration
 
-#### Stel MySQL/MariaDB in
+--- task --- Once your Raspberry Pi has rebooted, open Chromium and type `localhost` into the address bar.
 
-Om je WordPress-site in te stellen, heb je een database nodig. Dit is waar MySQL en MariaDB voor gebruikt worden!
+You should see a WordPress page asking to pick your language.
 
-+ Voer de MySQL veilige installatieopdracht uit in het terminalvenster.
+![WordPress select language](images/wordpress_language.png) --- /task ---
 
-```bash
-sudo mysql_secure_installation
-```
+--- task --- Select your language and click **Continue**.
 
-+ Je wordt gevraagd `Enter current password for root (enter for none):` — druk op **Enter**.
+--- /task ---
 
-+ Typ **Y** en druk op **Enter** voor `Set root password?`.
+You will be presented with the WordPress welcome screen.
 
-+ Voer een wachtwoord in bij de `New password:` prompt en druk op **Enter**. **Belangrijk:** onthoud dit root-wachtwoord, omdat je het later nodig hebt om WordPress in te stellen.
+![WordPress welcome screen](images/wordpress-welcome.png)
 
-+ Typ **Y** voor `Remove anonymous users`.
+--- task --- Click the **Let's go!** button.
 
-+ Typ **Y** voor `Disallow root login remotely`.
+--- /task ---
 
-+ Typ **Y** voor `Remove test database and access to it`.
-
-+ Typ **Y** voor `Reload privilege tables now`.
-
-Als je klaar bent, zie je het bericht `All done!` en `Thanks for using MariaDB!`.
-
-#### Maak de WordPress-database
-
-+ Voer `mysql` uit in het terminalvenster:
-
-```bash 
-sudo mysql -uroot -p
-```
-
-+ Voer het root-wachtwoord in dat je hebt gemaakt.
-
-Je wordt begroet met het bericht `Welcome to the MariaDB monitor`.
-
-+ Maak de database voor je WordPress-installatie op de `MariaDB [(none)]>` prompt met:
+--- task --- Now fill out the basic site information as follows: **Tip:** Make sure you type `wordpress` in the first box as the text displayed is only a suggestion, the box is blank.
 
 ```
-create database wordpress;
+Database Name:      wordpress
+User Name:          root
+Password:           <YOUR PASSWORD>
+Database Host:      localhost
+Table Prefix:       wp_
 ```
 
-  Let op de puntkomma die de instructie beëindigt.
+Click **Submit** to proceed.
 
-Als dit is gelukt, zou je dit moeten zien:
 
-```
-Query OK, 1 row affected (0.000 sec)
-```
 
-![database aanmaken](images/create-database.png)
+--- /task ---
 
-+ Verleen nu databaseprivileges aan de root-gebruiker. **Opmerking:** je moet je eigen wachtwoord invoeren na `IDENTIFIED BY`.
 
-```
-GRANT ALL PRIVILEGES ON wordpress.* TO 'root'@'localhost' IDENTIFIED BY 'YOURPASSWORD';
-```
+--- task --- Click the **Run the install** button.
 
-+ Om de wijzigingen door te voeren, moet je de databasemachtigingen opschonen:
+--- /task ---
 
-```
-FLUSH PRIVILEGES;
-```
+--- task --- Fill in the information you are asked for, then click the `Install WordPress` button.
 
-+ Verlaat de MariaDB-prompt met <kbd>Ctrl</kbd> + <kbd>D</kbd>.
+--- /task ---
 
-+ Herstart je Raspberry Pi opnieuw op:
+--- task --- Log in, using the account you just created.
 
-```
-sudo reboot
-```
+Now you're logged in and have your site set up, you can see the website by visiting your `http://localhost/wp-admin`.
+
+--- /task ---
+
+
+### Friendly permalinks
+
+It's recommended that you change your permalink settings to make your URLs more friendly.
+
+--- task --- Log in to WordPress and go to the dashboard. --- /task ---
+
+--- task --- Go to **Setting**, then **Permalinks**. --- /task ---
+
+--- task --- Select the **Post name** option and click **Save Changes**. --- /task ---
+
+--- task --- Type the following command in a terminal to enable Apache's `rewrite` mod:
+
+--- code ---
+---
+language: bash
+line_numbers: false
+---
+sudo a2enmod rewrite --- /code ---
+
+--- /task ---
+
+--- task --- Open the Apache configuration file
+
+--- code ---
+---
+language: bash
+line_numbers: false
+---
+sudo geany /etc/apache2/sites-available/000-default.conf --- /code ---
+
+--- /task ---
+
+--- task --- Add the following lines after line 1.
+
+--- code ---
+---
+language: sql line_numbers: true line_number_start: 2
+line_highlights: 3-5
+---
+<VirtualHost *:80> <Directory "> AllowOverride All </Directory> --- /code --- --- /task ---
+
+--- task --- Save the file and close Geany. --- /task ---
+
+--- task --- In a terminal type the command to restart Apache:
+
+
+
+--- code ---
+---
+language: bash
+line_numbers: false
+---
+sudo service apache2 restart --- /code ---
+
+--- /task ---
