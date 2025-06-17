@@ -1,12 +1,18 @@
 ## WordPress configuration
 
---- task --- Once your Raspberry Pi has rebooted, open Chromium and type `localhost` into the address bar.
+--- task ---
+
+Once your Raspberry Pi has rebooted, open Chromium and type `localhost` into the address bar.
 
 You should see a WordPress page asking to pick your language.
 
-![WordPress select language](images/wordpress_language.png) --- /task ---
+![WordPress select language](images/wordpress_language.png)
 
---- task --- Select your language and click **Continue**.
+--- /task ---
+
+--- task ---
+
+Select your language and click **Continue**.
 
 --- /task ---
 
@@ -14,11 +20,15 @@ You will be presented with the WordPress welcome screen.
 
 ![WordPress welcome screen](images/wordpress-welcome.png)
 
---- task --- Click the **Let's go!** button.
+--- task ---
+
+Click the **Let's go!** button.
 
 --- /task ---
 
---- task --- Now fill out the basic site information as follows: **Tip:** Make sure you type `wordpress` in the first box as the text displayed is only a suggestion, the box is blank.
+--- task ---
+
+Now fill out the basic site information as follows: **Tip:** Make sure you type `wordpress` in the first box as the text displayed is only a suggestion, the box is blank.
 
 ```
 Database Name:      wordpress
@@ -30,20 +40,24 @@ Table Prefix:       wp_
 
 Click **Submit** to proceed.
 
-
-
 --- /task ---
 
 
---- task --- Click the **Run the install** button.
+--- task ---
+
+Click the **Run the install** button.
 
 --- /task ---
 
---- task --- Fill in the information you are asked for, then click the `Install WordPress` button.
+--- task ---
+
+Fill in the information you are asked for, then click the `Install WordPress` button.
 
 --- /task ---
 
---- task --- Log in, using the account you just created.
+--- task ---
+
+Log in, using the account you just created.
 
 Now you're logged in and have your site set up, you can see the website by visiting your `http://localhost/wp-admin`.
 
@@ -54,46 +68,78 @@ Now you're logged in and have your site set up, you can see the website by visit
 
 It's recommended that you change your permalink settings to make your URLs more friendly.
 
---- task --- Log in to WordPress and go to the dashboard. --- /task ---
+--- task ---
 
---- task --- Go to **Setting**, then **Permalinks**. --- /task ---
+Log in to WordPress and go to the dashboard.
 
---- task --- Select the **Post name** option and click **Save Changes**. --- /task ---
+--- /task ---
 
---- task --- Type the following command in a terminal to enable Apache's `rewrite` mod:
+--- task ---
+
+Go to **Setting**, then **Permalinks**.
+
+--- /task ---
+
+--- task ---
+
+Select the **Post name** option and click **Save Changes**.
+
+--- /task ---
+
+--- task ---
+
+Type the following command in a terminal to enable Apache's `rewrite` mod:
 
 --- code ---
 ---
 language: bash
 line_numbers: false
 ---
-sudo a2enmod rewrite --- /code ---
+sudo a2enmod rewrite
+
+--- /code ---
 
 --- /task ---
 
---- task --- Open the Apache configuration file
+--- task ---
+
+Open the Apache configuration file
 
 --- code ---
 ---
 language: bash
 line_numbers: false
 ---
-sudo geany /etc/apache2/sites-available/000-default.conf --- /code ---
+sudo geany /etc/apache2/sites-available/000-default.conf
+
+--- /code ---
 
 --- /task ---
 
---- task --- Add the following lines after line 1.
+--- task ---
+
+Add the following lines after line 1.
 
 --- code ---
 ---
 language: sql line_numbers: true line_number_start: 2
 line_highlights: 3-5
 ---
-<VirtualHost *:80> <Directory "> AllowOverride All </Directory> --- /code --- --- /task ---
+<VirtualHost *:80> <Directory "> AllowOverride All </Directory>
 
---- task --- Save the file and close Geany. --- /task ---
+--- /code ---
 
---- task --- In a terminal type the command to restart Apache:
+--- /task ---
+
+--- task ---
+
+Save the file and close Geany.
+
+--- /task ---
+
+--- task ---
+
+In a terminal type the command to restart Apache:
 
 
 
@@ -102,6 +148,8 @@ line_highlights: 3-5
 language: bash
 line_numbers: false
 ---
-sudo service apache2 restart --- /code ---
+sudo service apache2 restart
+
+--- /code ---
 
 --- /task ---
