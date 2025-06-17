@@ -80,6 +80,7 @@ sudo mv wordpress/* .
 --- /task ---
 
 --- task ---
+
 Tidy up by removing the download, and the now empty `wordpress` directory.
 
 --- code ---

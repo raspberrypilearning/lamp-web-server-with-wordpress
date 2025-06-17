@@ -24,6 +24,7 @@ You will see the message `Welcome to the MariaDB monitor` and then the `MariaDB 
 --- /task ---
 
 --- task ---
+
 At the `MariaDB [(none)]>` prompt, type:
 **Tip:** Don't forget to type the semicolon at the end.
 
