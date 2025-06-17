@@ -12,33 +12,47 @@ Type this command to install the MariaDB Server and PHP-MySQL packages:
 language: bash
 line_numbers: false
 ---
-sudo apt install mariadb-server php-mysql -y --- /code ---
+sudo apt install mariadb-server php-mysql -y
+
+--- /code ---
 
 --- /task ---
 
---- task --- Now restart Apache:
+--- task ---
+
+Now restart Apache:
 
 --- code ---
 ---
 language: bash
 line_numbers: false
 ---
-sudo service apache2 restart --- /code ---
+sudo service apache2 restart
+
+--- /code ---
 
 --- /task ---
 
 ### Set up
 
---- task --- Run the MySQL secure installation command in the terminal window.
+--- task ---
+
+Run the MySQL secure installation command in the terminal window.
 
 --- code ---
 ---
 language: bash
 line_numbers: false
 ---
-sudo mysql_secure_installation --- /code --- --- /task ---
+sudo mysql_secure_installation
 
---- task --- Go through the setup wizard using the following answers:
+--- /code ---
+
+--- /task ---
+
+--- task ---
+
+Go through the setup wizard using the following answers:
 
 + `Enter current password for root (enter for none):` — press **Enter**.
 
