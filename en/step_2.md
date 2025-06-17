@@ -27,10 +27,6 @@ sudo apt install apache2 -y
 
 **Tip:** If you see an error, make sure you are using the latest version of Raspberry Pi OS.
 
---- /code ---
-
-**Tip:** If you see an error, make sure you are using the latest version of Raspberry Pi OS.
-
 --- /task ---
 
 
