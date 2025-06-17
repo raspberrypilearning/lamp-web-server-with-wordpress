@@ -15,4 +15,3 @@ Install a different theme from the Appearance menu.
 --- /task ---
 
 --- /challenge ---
-

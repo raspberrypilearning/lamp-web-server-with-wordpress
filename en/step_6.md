@@ -51,6 +51,7 @@ At the MariaDB prompt, grant database privileges to the root user. Change `YOURP
 language: sql
 line_numbers: false
 ---
+
 GRANT ALL PRIVILEGES ON wordpress.* TO 'root'@'localhost' IDENTIFIED BY 'YOURPASSWORD';
 
 --- /code ---
