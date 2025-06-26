@@ -1,20 +1,20 @@
-## Set up an Apache web server
+## Nastavení webového serveru Apache
 
-Apache is a popular web server application you can install on the Raspberry Pi to allow it to serve web pages.
+Apache je populární webový server, který si můžete nainstalovat na Raspberry Pi a umožnit mu zobrazování webových stránek.
 
-On its own, Apache can serve HTML files over HTTP. With additional modules it can serve dynamic web pages using scripting languages such as PHP.
+Apache sám o sobě dokáže obsluhovat HTML soubory přes HTTP. S dalšími moduly může zobrazovat dynamické webové stránky pomocí skriptovacích jazyků, jako je PHP.
 
-### Install Apache
+### Instalace Apache
 
 --- task ---
 
-Open a terminal window by selecting **Accessories** > **Terminal** from the menu.
+Otevři okno terminálu výběrem možnosti **Příslušenství** > **Terminál** z nabídky.
 
 --- /task ---
 
 --- task ---
 
-Type the following command into the terminal and press <kbd>Enter</kbd> to install `apache2`
+Zadej do terminálu následující příkaz a stiskni <kbd>Enter</kbd> pro instalaci `apache2`
 
 --- code ---
 ---
@@ -25,40 +25,40 @@ sudo apt install apache2 -y
 
 --- /code ---
 
-**Tip:** If you see an error, make sure you are using the latest version of Raspberry Pi OS.
+**Tip:** Pokud se zobrazí chyba, ujisti se, že používáš nejnovější a aktualizovanou verzi operačního systému Raspberry Pi.
 
 --- /task ---
 
 
-### Test the web server
+### Otestuj webový server
 
-By default, Apache puts a test HTML file in the web folder that you will be able to view from your Pi or another computer on your network.
+Ve výchozím nastavení Apache umístí do webové složky testovací HTML soubor, který si budeš moci prohlížet z tvého Raspberry Pi nebo jiného počítače v síti.
 
 --- task ---
 
-Open Chromium by selecting **Internet** > **Chromium Web Browser** from the menu.
+Otevři Chromium výběrem možnosti **Internet** > **Webový prohlížeč Chromium** z nabídky.
 
 --- /task ---
 
 --- task ---
 
-Type `localhost` in the address bar.
+Do adresního řádku zadej `localhost`.
 
 --- /task ---
 
-You should see this in your browser window:
+Toto bys měl vidět v okně prohlížeče:
 
-![Apache it works](images/apache-it-works.png)
+![Apache2 funguje](images/apache-it-works.png)
 
-This means you have Apache working!
+To znamená, že máš Apache funkční!
 
-### Changing the default web page
+### Změna výchozí webové stránky
 
-This default web page is just a HTML file on the file system. It is located at `/var/www/html/index.html`.
+Tato výchozí webová stránka je pouze soubor HTML v souborovém systému. Nachází se na adrese `/var/www/html/index.html`.
 
 --- task ---
 
-Type the following command in the terminal to change to the directory containing the HTML file:
+Zadej do terminálu následující příkaz pro přechod do adresáře obsahujícího soubor HTML:
 
 --- code ---
 ---
@@ -73,7 +73,7 @@ cd /var/www/html
 
 --- task ---
 
-Open the `index.html` file using Thonny
+Otevři soubor `index.html` pomocí Thonny
 
 --- code ---
 ---
@@ -88,23 +88,23 @@ sudo thonny index.html
 
 --- task ---
 
-Delete the contents of the file, then type a short message and save your changes.
+Smaž obsah souboru, poté napiš krátkou zprávu a ulož změny.
 
 --- /task ---
 
 --- task ---
 
-Go back to Chromium and refresh the browser. You will see your message appear on the web page.
+Vrať se do Chromia a obnov prohlížeč. Tvá zpráva se zobrazí na webové stránce.
 
 --- /task ---
 
 --- collapse ---
 ---
-title: Access the page from another device on the network
+title: Přístup ke stránce z jiného zařízení v síti
 ---
 
-You can open your web page from any other computer on your network, using the IP address of your Raspberry Pi, e.g. `http://192.168.1.10`.
+Svou webovou stránku můžete otevřít z jakéhokoli jiného počítače v síti pomocí IP adresy vašeho Raspberry Pi, např. `http://192.168.1.10`.
 
-To find out your Raspberry Pi's IP address, type `hostname -I` into the terminal window.
+Chceš-li zjistit IP adresu tvého Raspberry Pi, zadej do terminálového okna `hostname -I`.
 
 --- /collapse ---
