@@ -20,25 +20,25 @@ steps:
   - 
     title: Inleiding
   - 
-    title: Set up an Apache web server
+    title: Wat heb je nodig
     completion:
       - engaged
   - 
-    title: Install PHP
+    title: Stel een Apache-webserver in
   - 
-    title: Install MariaDB
+    title: Installeer PHP
+  - 
+    title: Installeer MySQL
   - 
     title: Download WordPress
-  - 
-    title: Set up your WordPress database
     completion:
       - internal
   - 
-    title: WordPress configuration
+    title: Stel je WordPress-database in
     completion:
       - external
   - 
-    title: Challenge
+    title: WordPress-configuratie
     challenge: true
   - 
-    title: What can you do now?
+    title: Wat kun je verder nog doen?
