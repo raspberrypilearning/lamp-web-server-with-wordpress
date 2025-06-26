@@ -1,11 +1,11 @@
-## Download WordPress
+## Stažení nástroje WordPress
 
-WordPress is a popular tool used to quickly create a website or blog with an easy to use editor for creating new content.
+WordPress je oblíbený nástroj používaný k rychlé tvorbě webových stránek nebo blogů s snadno použitelným editorem pro tvorbu nového obsahu.
 
 
 --- task ---
 
-In your terminal, make sure you are still in the directory `/var/www/html/`
+V terminálu se ujistěti, že jsi stále v adresáři `/var/www/html/`
 
 --- code ---
 ---
@@ -20,7 +20,7 @@ cd /var/www/html/
 
 --- task ---
 
-Delete all the files in the folder.
+Smaž všechny soubory ve složce.
 
 --- code ---
 ---
@@ -35,7 +35,7 @@ sudo rm *
 
 --- task ---
 
-Type this command to download WordPress
+Zadej tento příkaz pro stažení WordPressu
 
 --- code ---
 ---
@@ -50,7 +50,7 @@ sudo wget http://wordpress.org/latest.tar.gz
 
 --- task ---
 
-Extract the WordPress software:
+Rozbal software WordPress:
 
 --- code ---
 ---
@@ -65,7 +65,7 @@ sudo tar xzf latest.tar.gz
 
 --- task ---
 
-Move the contents of the extracted `wordpress` directory to the current directory. **Tip:** Make sure you type the whole command including the dot.
+Přesuň obsah extrahovaného adresáře `wordpress` do aktuálního adresáře. **Tip:** Ujisti se, že zadáváš celý příkaz včetně tečky.
 
 --- code ---
 ---
@@ -80,7 +80,7 @@ sudo mv wordpress/* .
 
 --- task ---
 
-Tidy up by removing the download, and the now empty `wordpress` directory.
+Smaž stažený soubor a prázdný adresář`wordpress`.
 
 --- code ---
 ---
@@ -95,7 +95,7 @@ sudo rm -rf wordpress latest.tar.gz
 
 ---task ---
 
-Change the ownership of all these files to the Apache user: **Tip:** Make sure you type the whole command including the dot.
+Změň vlastnictví všech těchto souborů na uživatele Apache: **Tip:** Ujisti se, že jsi zadal celý příkaz včetně tečky.
 
 --- code ---
 ---
