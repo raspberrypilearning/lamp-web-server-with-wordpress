@@ -1,34 +1,34 @@
-## WordPress configuration
+## Konfigurace WordPressu
 
 --- task ---
 
-Once your Raspberry Pi has rebooted, open Chromium and type `localhost` into the address bar.
+Jakmile se Raspberry Pi restartuje, otevři Chromium a do adresního řádku zadej `localhost`.
 
-You should see a WordPress page asking to pick your language.
+Měl bys vidět stránku WordPressu s výzvou k výběru jazyka.
 
-![WordPress select language](images/wordpress_language.png)
+![Výběr jazyka WordPressu](images/wordpress_language.png)
 
 --- /task ---
 
 --- task ---
 
-Select your language and click **Continue**.
+Vyberte jazyk a klikněte na **Pokračovat**.
 
 --- /task ---
 
-You will be presented with the WordPress welcome screen.
+Zobrazí se vám uvítací obrazovka WordPressu.
 
-![WordPress welcome screen](images/wordpress-welcome.png)
+![Úvodní obrazovka WordPressu](images/wordpress-welcome.png)
 
 --- task ---
 
-Click the **Let's go!** button.
+Klikněte na tlačítko **Jdeme na to!**.
 
 --- /task ---
 
 --- task ---
 
-Now fill out the basic site information as follows: **Tip:** Make sure you type `wordpress` in the first box as the text displayed is only a suggestion, the box is blank.
+Nyní vyplň základní informace o webu takto: **Tip:** Ujisti se, že do prvního pole zadáš `wordpress`, protože zobrazený text je pouze návrh, pole je prázdné.
 
 ```
 Database Name:      wordpress
@@ -38,57 +38,57 @@ Database Host:      localhost
 Table Prefix:       wp_
 ```
 
-Click **Submit** to proceed.
+Klikněte na **Odeslat** pro pokračování.
 
 --- /task ---
 
 
 --- task ---
 
-Click the **Run the install** button.
+Klikněte na tlačítko **Spustit instalaci**.
 
 --- /task ---
 
 --- task ---
 
-Fill in the information you are asked for, then click the `Install WordPress` button.
+Vyplňte požadované informace a poté klikněte na tlačítko `Nainstalovat WordPress`.
 
 --- /task ---
 
 --- task ---
 
-Log in, using the account you just created.
+Přihlas se pomocí účtu, který sis právě vytvořil.
 
-Now you're logged in and have your site set up, you can see the website by visiting your `http://localhost/wp-admin`.
-
---- /task ---
-
-
-### Friendly permalinks
-
-It's recommended that you change your permalink settings to make your URLs more friendly.
-
---- task ---
-
-Log in to WordPress and go to the dashboard.
+Nyní, když jsi přihlášen a máš nastavené stránky, si je můžeš prohlédnout na adrese `http://localhost/wp-admin`.
 
 --- /task ---
 
+
+### Přátelské permalinky
+
+Doporučuje se změnit nastavení trvalých odkazů, aby byly tvé URL adresy uživatelsky přívětivější.
+
 --- task ---
 
-Go to **Setting**, then **Permalinks**.
+Přihlas se do WordPressu a přejdi na dashboard.
 
 --- /task ---
 
 --- task ---
 
-Select the **Post name** option and click **Save Changes**.
+Jdi na **Nastavení**a poté na **Trvalé odkazy**.
 
 --- /task ---
 
 --- task ---
 
-Type the following command in a terminal to enable Apache's `rewrite` mod:
+Vyber možnost **Název příspěvku** a klikni na **Uložit změny**.
+
+--- /task ---
+
+--- task ---
+
+Zadej do terminálu následující příkaz, abys povolil mod `rewrite` v Apachi:
 
 --- code ---
 ---
@@ -103,7 +103,7 @@ sudo a2enmod rewrite
 
 --- task ---
 
-Open the Apache configuration file
+Otevři konfigurační soubor Apache
 
 --- code ---
 ---
@@ -118,7 +118,7 @@ sudo geany /etc/apache2/sites-available/000-default.conf
 
 --- task ---
 
-Add the following lines after line 1.
+Za řádek 1 přidej následující řádky.
 
 --- code ---
 ---
@@ -133,13 +133,13 @@ line_highlights: 3-5
 
 --- task ---
 
-Save the file and close Geany.
+Ulož soubor a zavři editor.
 
 --- /task ---
 
 --- task ---
 
-In a terminal type the command to restart Apache:
+V terminálu zadej příkaz pro restartování Apache:
 
 
 
