@@ -1,18 +1,18 @@
 ## Install MariaDB
 
-MariaDB is a popular database engine. Like PHP, it's widely used on web servers, which is why projects like WordPress use it, and why those projects are so popular.
+MariaDB is a popular database engine. PHP ist eine sehr beliebte Sprache im Web: Große Projekte wie Facebook und Wikipedia sind in PHP geschrieben.
 
 
 --- task ---
 
-Type this command to install the MariaDB Server and PHP-MySQL packages:
+Installiere das PHP-Paket mit dem folgenden Befehl:
 
 --- code ---
 ---
 language: bash
 line_numbers: false
 ---
-sudo apt install mariadb-server php-mysql -y
+sudo apt-get install php -y
 
 --- /code ---
 
@@ -44,7 +44,7 @@ Run the MySQL secure installation command in the terminal window.
 language: bash
 line_numbers: false
 ---
-sudo mysql_secure_installation
+Installiere PHP
 
 --- /code ---
 
