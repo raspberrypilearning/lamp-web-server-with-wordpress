@@ -87,7 +87,7 @@ Tidy up by removing the download, and the now empty `wordpress` directory.
 language: bash
 line_numbers: false
 ---
-sudo rm -rf wordpress latest.tar.gz
+sudo service apache2 restart
 
 --- /code ---
 
