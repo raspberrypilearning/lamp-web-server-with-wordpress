@@ -1,11 +1,11 @@
-## Install MariaDB
+## Instalace MariaDB
 
-MariaDB is a popular database engine. Like PHP, it's widely used on web servers, which is why projects like WordPress use it, and why those projects are so popular.
+MariaDB je populární databázový engine. Stejně jako PHP se hojně používá na webových serverech, a proto ho používají projekty jako WordPress a proč jsou tyto projekty tak populární.
 
 
 --- task ---
 
-Type this command to install the MariaDB Server and PHP-MySQL packages:
+Zadej tento příkaz pro instalaci balíčků MariaDB Server a PHP-MySQL:
 
 --- code ---
 ---
@@ -20,7 +20,7 @@ sudo apt install mariadb-server php-mysql -y
 
 --- task ---
 
-Now restart Apache:
+Nyní restartuj Apache:
 
 --- code ---
 ---
@@ -33,11 +33,11 @@ sudo service apache2 restart
 
 --- /task ---
 
-### Set up
+### Nastavení
 
 --- task ---
 
-Run the MySQL secure installation command in the terminal window.
+Spusť příkaz pro bezpečnou instalaci MySQL v terminálovém okně.
 
 --- code ---
 ---
@@ -52,24 +52,24 @@ sudo mysql_secure_installation
 
 --- task ---
 
-Go through the setup wizard using the following answers:
+Projdi si průvodce nastavením pomocí následujících odpovědí:
 
-+ `Enter current password for root (enter for none):` — press **Enter**.
++ `Zadej aktuální heslo pro root (enter, pokud žádné nemáš):` — stiskni **Enter**.
 
-+ `Switch to unix_socket authentication [Y/n]` - Type in **N** and press **Enter**
++ `Přepnout na ověřování unix_socket [A/n]` - Zadejte **N** a stiskněte **Enter**
 
-+ `Change the root password?` - Type in **Y** and press **Enter**
++ `Změnit heslo roota?` - Zadej **Y** a stiskni **Enter**
 
-+ `New password:` - Type in a password and press **Enter**, then repeat a second time. **Important:** remember this root password, as you will need it later to set up WordPress.
++ `Nové heslo:` - Zadej heslo a stiskni **Enter**a poté opakuj podruhé. **Důležité:** zapamatuj si toto heslo root, protože ho budeš později potřebovat k nastavení WordPressu.
 
-+ `Remove anonymous users` - Type in **Y**
++ `Odebrat anonymní uživatele` - Zadej **Y**
 
-+ `Disallow root login remotely` - Type in **Y**
++ `Zakázat vzdálené přihlášení root` - Zadej **Y**
 
-+ `Remove test database and access to it` - Type in **Y**
++ `Odebrat testovací databázi a přístup k ní` - Zadej **Y**
 
-+ `Reload privilege tables now` - Type in **Y**
++ `Znovu načíst tabulky oprávnění` - Zadej **Y**
 
 --- /task ---
 
-When complete, you will see the message `All done!` and `Thanks for using MariaDB!`.
+Po dokončení se zobrazí zpráva `All done!` a `Thanks for using MariaDB!`.
