@@ -1,4 +1,4 @@
-## Install PHP
+## Installeer Apache
 
 PHP is a **preprocessor**: it's code that runs when the server receives a request for a web page via a web browser. It works out what needs to be shown on the page, and then sends that page to the browser.
 
