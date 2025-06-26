@@ -1,4 +1,4 @@
-## WordPress configuration
+## Stel je WordPress-database in
 
 --- task ---
 
@@ -22,7 +22,7 @@ You will be presented with the WordPress welcome screen.
 
 --- task ---
 
-Click the **Let's go!** button.
+Typ **Y** en druk op **Enter** voor `Set root password?`.
 
 --- /task ---
 
@@ -38,14 +38,14 @@ Database Host:      localhost
 Table Prefix:       wp_
 ```
 
-Click **Submit** to proceed.
+Typ **Y** voor `Reload privilege tables now`.
 
 --- /task ---
 
 
 --- task ---
 
-Click the **Run the install** button.
+Je wordt gevraagd `Enter current password for root (enter for none):` — druk op **Enter**.
 
 --- /task ---
 
@@ -76,7 +76,7 @@ Log in to WordPress and go to the dashboard.
 
 --- task ---
 
-Go to **Setting**, then **Permalinks**.
+Typ **Y** voor `Remove anonymous users`.
 
 --- /task ---
 
