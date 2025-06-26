@@ -1,16 +1,16 @@
-## Challenge
+## Výzva
 
 --- challenge ---
 
 --- task ---
 
-Add more pages to your website.
+Přidej na svůj web další stránky.
 
 --- /task ---
 
 --- task ---
 
-Install a different theme from the Appearance menu.
+Nainstaluj si jiný motiv z nabídky Vzhled.
 
 --- /task ---
 
