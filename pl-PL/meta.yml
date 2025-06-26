@@ -1,6 +1,6 @@
 ---
 title: Zbuduj serwer WWW LAMP za pomocą WordPress
-hero_image: images/banner.png
+hero_image: images / banner.png
 description: Skonfiguruj lokalny serwer dla strony internetowej na swoim Raspberry Pi
 original_url: https://raspberrypi.org/learning/lamp-web-server-with-wordpress
 theme: turquoise
@@ -11,7 +11,7 @@ copyedit: false
 curriculum: 3, design-0, programming-3, phys-comp-0, manufacture-0, community-0
 interests: ''
 technologies: raspberry-pi, html-css-javascript
-site_areas: projects
+site_areas: projekty
 hardware: raspberry-pi
 software: html-css-javascript
 version: 4
