@@ -1,4 +1,4 @@
-## WordPress configuration
+## Configure ta base de données WordPress
 
 --- task ---
 
@@ -22,7 +22,7 @@ You will be presented with the WordPress welcome screen.
 
 --- task ---
 
-Click the **Let's go!** button.
+Tape **O** à `Supprimer les utilisateurs anonymes`.
 
 --- /task ---
 
@@ -38,14 +38,14 @@ Database Host:      localhost
 Table Prefix:       wp_
 ```
 
-Click **Submit** to proceed.
+Tape **O** pour `Recharger les tables de privilèges maintenant`.
 
 --- /task ---
 
 
 --- task ---
 
-Click the **Run the install** button.
+Tape **O** et appuie sur **Entrée** pour `Définir le mot de passe root ?` .
 
 --- /task ---
 
@@ -76,7 +76,7 @@ Log in to WordPress and go to the dashboard.
 
 --- task ---
 
-Go to **Setting**, then **Permalinks**.
+Tape **O** pour `Interdire la connexion root à distance`.
 
 --- /task ---
 
