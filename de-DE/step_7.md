@@ -1,4 +1,4 @@
-## WordPress configuration
+## Richte deine WordPress Datenbank ein
 
 --- task ---
 
@@ -22,7 +22,7 @@ You will be presented with the WordPress welcome screen.
 
 --- task ---
 
-Click the **Let's go!** button.
+Gib **Y** ein, um den Anonymen-Benutzer zu entfernen (`Remove anonymous users`).
 
 --- /task ---
 
@@ -38,7 +38,7 @@ Database Host:      localhost
 Table Prefix:       wp_
 ```
 
-Click **Submit** to proceed.
+**Hinweis:** Nach `IDENTIFIED BY` musst du dein eigenes Passwort eingeben.
 
 --- /task ---
 
@@ -76,7 +76,7 @@ Log in to WordPress and go to the dashboard.
 
 --- task ---
 
-Go to **Setting**, then **Permalinks**.
+Gib **Y** (für Yes, also Ja) ein und drücke **Enter**, um das root-Passwort zu setzen (`Set root password?`).
 
 --- /task ---
 
