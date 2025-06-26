@@ -1,5 +1,5 @@
 ## Was du machen wirst
-Learn to set up a LAMP (**L**inux, **A**pache, **M**ySQL, **P**HP) stack on your Raspberry Pi and configure it to work as a web server.
+Lerne wie du einen LAMP-Stack (**L**inux, **A**pache, **M**ySQL, **P**HP) auf deinem Raspberry Pi aufsetzt und so konfigurierst, dass er als Webserver arbeitet.
 
  - Software auf deinem Raspberry Pi installierst
  - Apache, PHP und MySQL installierst und konfigurierst um einen LAMP-Webserver zu erstellen
