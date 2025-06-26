@@ -1,8 +1,8 @@
-## Set up your WordPress Database
+## Nastavení databáze pro WordPress
 
 --- task ---
 
-Run `mysql` in the terminal window:
+V terminálovém okně spusť `mysql`:
 
 --- code ---
 ---
@@ -17,15 +17,15 @@ sudo mysql -uroot -p
 
 --- task ---
 
-Enter the root password you created when you set up the database.
+Zadej heslo uživatele root, které jsi vytvořil při nastavení databáze.
 
-You will see the message `Welcome to the MariaDB monitor` and then the `MariaDB [(none)]>` prompt.
+Zobrazí se zpráva `Vítejte v monitoru MariaDB` a poté výzva `MariaDB [(none)]>`.
 
 --- /task ---
 
 --- task ---
 
-At the `MariaDB [(none)]>` prompt, type: **Tip:** Don't forget to type the semicolon at the end.
+V příkazovém řádku `MariaDB [(none)]>` zadej: **Tip:** Nezapomeň na konec zadat středník.
 
 --- code ---
 ---
@@ -40,11 +40,11 @@ create database wordpress;
 
 --- /task ---
 
-If this has been successful, you should see `Query OK, 1 row affected (0.00 sec)`.
+Pokud se to podařilo, měl bys vidět `Query OK, 1 row affected (0.00 sec)`.
 
 --- task ---
 
-At the MariaDB prompt, grant database privileges to the root user. Change `YOURPASSWORD` to the password you created before.
+V příkazovém řádku MariaDB uděl uživateli root oprávnění k databázi. Změň `YOURPASSWORD` na heslo, které sis vytvořil dříve.
 
 --- code ---
 ---
@@ -60,7 +60,7 @@ GRANT ALL PRIVILEGES ON wordpress.* TO 'root'@'localhost' IDENTIFIED BY 'YOURPAS
 
 --- task ---
 
-For the changes to take effect, you will need to flush the database privileges:
+Aby se změny projevily, budeš muset obnovit oprávnění databáze:
 
 --- code ---
 ---
@@ -75,13 +75,13 @@ FLUSH PRIVILEGES;
 
 --- task ---
 
-Exit the MariaDB prompt with <kbd>Ctrl</kbd> + <kbd>D</kbd>.
+Ukonči příkazový řádek MariaDB stisknutím <kbd>Ctrl</kbd> + <kbd>D</kbd>.
 
 --- /task ---
 
 --- task ---
 
-Restart your Raspberry Pi by typing this command in the terminal:
+Restartuj Raspberry Pi zadáním tohoto příkazu do terminálu:
 
 --- code ---
 ---
