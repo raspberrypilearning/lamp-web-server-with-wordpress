@@ -1,11 +1,11 @@
 ## Install MariaDB
 
-MariaDB is a popular database engine. Like PHP, it's widely used on web servers, which is why projects like WordPress use it, and why those projects are so popular.
+MariaDB is a popular database engine. PHP is een zeer populaire taal op internet: grote projecten zoals Facebook en Wikipedia zijn geschreven in PHP.
 
 
 --- task ---
 
-Type this command to install the MariaDB Server and PHP-MySQL packages:
+Installeer het PHP-pakket met de volgende opdracht:
 
 --- code ---
 ---
