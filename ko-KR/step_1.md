@@ -1,4 +1,4 @@
-## What you will make
+## 무엇을 만들 수 있을까?
 Learn to set up a LAMP (**L**inux, **A**pache, **M**ySQL, **P**HP) stack on your Raspberry Pi and configure it to work as a web server.
 
  - Install software on your Raspberry Pi
