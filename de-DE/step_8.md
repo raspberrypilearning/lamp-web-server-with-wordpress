@@ -1,17 +1,17 @@
 ## Challenge
 
---- challenge ---
+--- /collapse ---
 
---- task ---
+images/wp-info.png
 
 Add more pages to your website.
 
---- /task ---
+images/wordpress-welcome.png
 
---- task ---
+hostname -I
 
 Install a different theme from the Appearance menu.
 
---- /task ---
+images/wordpress_language.png
 
---- /challenge ---
+--- collapse ---
