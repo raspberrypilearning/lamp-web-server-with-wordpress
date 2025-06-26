@@ -1,10 +1,10 @@
-## Install PHP
+## Instalace PHP
 
-PHP is a **preprocessor**: it's code that runs when the server receives a request for a web page via a web browser. It works out what needs to be shown on the page, and then sends that page to the browser.
+PHP je **preprocesor**: je to kód, který se spustí, když server obdrží požadavek na webovou stránku prostřednictvím webového prohlížeče. Zjistí, co se má na stránce zobrazit, a poté tuto stránku odešle do prohlížeče.
 
 --- task ---
 
-Type the following command in the terminal to install PHP:
+Pro instalaci PHP zadej do terminálu následující příkaz:
 
 --- code ---
 ---
@@ -21,7 +21,7 @@ sudo apt install php -y
 
 --- task ---
 
-Type this command to delete the `index.html` file from earlier:
+Zadej tento příkaz pro odstranění souboru `index.html` z dřívější doby:
 
 --- code ---
 ---
@@ -36,7 +36,7 @@ sudo rm index.html
 
 --- task ---
 
-Create a new file called `index.php`:
+Vytvoř nový soubor s názvem `index.php`:
 
 --- code ---
 ---
@@ -51,7 +51,7 @@ sudo thonny index.php
 
 --- task ---
 
-In the Thonny code editor, type this PHP code into the file and save it.
+V editoru kódu Thonny zadej tento PHP kód do souboru a ulož jej.
 
 --- code ---
 ---
@@ -66,18 +66,18 @@ line_numbers: false
 
 --- task ---
 
-Refresh your browser. You should see "hello world". This page is not dynamic, but it is still served by PHP.
+Obnov prohlížeč. Měl bys vidět „ahoj světe“. Tato stránka není dynamická, ale stále je obsluhována PHP.
 
-![hello world](images/apache-hello-world.png)
+![ahoj světe](images/apache-hello-world.png)
 
 --- /task ---
 
 
 --- collapse ---
 ---
-title: I can only see PHP code
+title: Vidím pouze PHP kód
 ---
-If you see the raw PHP above instead of "hello world", use this command to reload and restart Apache:
+Pokud se ti místo „ahoj světe“ zobrazí nezpracované PHP, použij tento příkaz k opětovnému spuštění a restartování Apache:
 
 --- code ---
 ---
