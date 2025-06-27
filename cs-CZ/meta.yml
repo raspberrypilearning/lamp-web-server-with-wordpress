@@ -1,0 +1,35 @@
+---
+title: Vytvoř si webový server LAMP s WordPressem
+hero_image: images/banner.png
+description: Nastavení lokálního serveru pro webovou stránku na Raspberry Pi
+original_url: https://raspberrypi.org/learning/lamp-web-server-with-wordpress
+theme: turquoise
+duration: 2
+listed: true
+ingredient: false
+copyedit: false
+curriculum: 3, design-0, programming-3, phys-comp-0, manufacture-0, community-0
+interests: ''
+technologies: raspberry-pi, html-css-javascript
+site_areas: projects
+hardware: raspberry-pi
+software: html-css-javascript
+version: 4
+last_tested: 2017-01-01
+steps:
+  - title: Úvod
+  - title: Nastavení webového serveru Apache
+    completion:
+      - engaged
+  - title: Instalace PHP
+  - title: Instalace MariaDB
+  - title: Stažení nástroje WordPress
+  - title: Nastavení databáze pro WordPress
+    completion:
+      - internal
+  - title: Konfigurace WordPressu
+    completion:
+      - external
+  - title: Výzva
+    challenge: true
+  - title: Co můžeš dělat dál?
